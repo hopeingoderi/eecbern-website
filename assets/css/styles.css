@@ -205,3 +205,140 @@ small{color:var(--muted)}
   color: #143a20;
 }
 .list-clean{margin:0; padding-left:18px}
+
+
+/* === Kirubel-inspired earthy theme (dark header + warm accents) === */
+:root{
+  --bg-dark: #0f2b23;
+  --bg-dark-2:#12362c;
+  --paper: #fbf7ee;
+  --paper-2:#f2e7d5;
+  --accent: #e28b3b;
+  --accent-2:#c96b2b;
+  --olive:#8aa06a;
+  --ink:#0b1a14;
+}
+
+body{
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(226,139,59,.18), rgba(255,255,255,0)),
+    radial-gradient(1100px 600px at 90% 0%, rgba(138,160,106,.18), rgba(255,255,255,0)),
+    var(--paper);
+  color: var(--ink);
+}
+
+/* Dark “kirubel-like” top bar */
+header{
+  background: linear-gradient(180deg, rgba(15,43,35,.92), rgba(15,43,35,.84));
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.navbar{
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.brand .title strong, .brand .title span{
+  color: rgba(255,255,255,.92) !important;
+}
+nav a{
+  color: rgba(255,255,255,.82);
+  text-decoration-color: rgba(255,255,255,.0);
+}
+nav a:hover{
+  color:#fff;
+  text-decoration-color: rgba(226,139,59,.75);
+}
+nav a.active{
+  color:#fff;
+  text-decoration-color: rgba(226,139,59,.85);
+}
+
+/* Buttons */
+.button{
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.button.primary{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1b120a;
+  font-weight: 700;
+}
+.button.primary:hover{
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15,43,35,.24);
+}
+.button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15,43,35,.18);
+}
+
+/* Cards + hover */
+.card{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  background: linear-gradient(180deg, #ffffff, rgba(255,255,255,.96));
+}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(15,43,35,.16);
+  border-color: rgba(15,43,35,.20);
+}
+
+/* Hero section + “hills” */
+.hero{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.0), rgba(15,43,35,.02));
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  left:-10%;
+  right:-10%;
+  bottom:-90px;
+  height:240px;
+  background:
+    radial-gradient(440px 220px at 18% 35%, rgba(226,139,59,.55) 0 60%, rgba(0,0,0,0) 61%),
+    radial-gradient(540px 260px at 50% 40%, rgba(201,107,43,.52) 0 62%, rgba(0,0,0,0) 63%),
+    radial-gradient(580px 280px at 82% 35%, rgba(138,160,106,.55) 0 60%, rgba(0,0,0,0) 61%),
+    linear-gradient(180deg, rgba(0,0,0,0), rgba(15,43,35,.04));
+  opacity:.95;
+  pointer-events:none;
+}
+
+/* Text accents */
+.kicker{
+  color: var(--olive);
+  letter-spacing: .12em;
+}
+.quote{
+  border-left-color: var(--accent);
+  background: linear-gradient(180deg, rgba(226,139,59,.10), rgba(255,255,255,0));
+}
+.callout{
+  border-color: rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  color: rgba(255,255,255,.90);
+}
+
+/* Form focus */
+input, textarea{
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, textarea:focus{
+  outline: none;
+  border-color: rgba(226,139,59,.70);
+  box-shadow: 0 0 0 4px rgba(226,139,59,.18);
+}
+
+/* Footer dark */
+footer{
+  background: linear-gradient(180deg, rgba(15,43,35,.92), rgba(15,43,35,.86));
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+footer strong, footer small, footer a{
+  color: rgba(255,255,255,.86) !important;
+}
+footer a:hover{
+  color: #fff !important;
+}
