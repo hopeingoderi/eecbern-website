@@ -9,21 +9,21 @@
     });
   }
 
-  // highlight active link (supports /about/ style paths)
+  // highlight active link (supports absolute URLs)
   const path = (location.pathname || '/').replace(/\/+$/, '/');
-  const normalize = (href) => {
-    if(!href) return '';
-    if(href === '/' || href === '/index.html') return '/';
-    // allow relative folder links like "about/"
-    if(!href.endsWith('/')) href = href + '/';
-    if(!href.startsWith('/')) href = '/' + href;
-    return href;
+  const toPath = (href) => {
+    try {
+      const u = new URL(href, location.origin);
+      return (u.pathname || '/').replace(/\/+$/, '/');
+    } catch(e){
+      return '';
+    }
   };
 
   document.querySelectorAll('nav a').forEach(a => {
     const href = a.getAttribute('href') || '';
-    const nh = normalize(href);
-    if(nh && (path === nh || (nh !== '/' && path.startsWith(nh)))) a.classList.add('active');
+    const p = toPath(href);
+    if(p && (path === p || (p !== '/' && path.startsWith(p)))) a.classList.add('active');
   });
 
   const y = document.querySelector('[data-year]');
