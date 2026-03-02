@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="EEC Bern logo placeholder">
+  <rect width="120" height="120" rx="22" fill="#0b5fff"/>
+  <path d="M60 22c2 0 4 2 4 4v20h20c2 0 4 2 4 4v12c0 2-2 4-4 4H64v20c0 2-2 4-4 4H48c-2 0-4-2-4-4V70H24c-2 0-4-2-4-4V54c0-2 2-4 4-4h20V26c0-2 2-4 4-4h12z" fill="#ffffff" opacity=".92"/>
+  <text x="60" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#ffffff" opacity=".95">EEC Bern</text>
+</svg>

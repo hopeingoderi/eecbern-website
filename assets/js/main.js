@@ -9,14 +9,23 @@
     });
   }
 
-  // highlight active link
-  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  // highlight active link (supports /about/ style paths)
+  const path = (location.pathname || '/').replace(/\/+$/, '/');
+  const normalize = (href) => {
+    if(!href) return '';
+    if(href === '/' || href === '/index.html') return '/';
+    // allow relative folder links like "about/"
+    if(!href.endsWith('/')) href = href + '/';
+    if(!href.startsWith('/')) href = '/' + href;
+    return href;
+  };
+
   document.querySelectorAll('nav a').forEach(a => {
-    const href = (a.getAttribute('href') || '').toLowerCase();
-    if(href === path) a.classList.add('active');
+    const href = a.getAttribute('href') || '';
+    const nh = normalize(href);
+    if(nh && (path === nh || (nh !== '/' && path.startsWith(nh)))) a.classList.add('active');
   });
 
-  // current year
   const y = document.querySelector('[data-year]');
   if(y) y.textContent = new Date().getFullYear();
 })();
