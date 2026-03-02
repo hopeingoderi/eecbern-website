@@ -150,6 +150,12 @@ h1{margin:10px 0 10px; font-size:40px; line-height:1.15}
   border-radius:999px;
   font-size:13px;
   color:var(--muted);
+  cursor:pointer;
+}
+
+.pill:focus-visible{
+  outline:3px solid rgba(214, 126, 54, .35);
+  outline-offset:2px;
 }
 
 .section{padding: 28px 0}

@@ -38,6 +38,29 @@
     if(p && (path === p || (p !== '/' && path.startsWith(p)))) a.classList.add('active');
   });
 
+  // Language switch (keeps preference in localStorage)
+  const applyLang = (lang) => {
+    const safe = (lang === 'de' || lang === 'en') ? lang : 'en';
+    document.documentElement.setAttribute('lang', safe);
+    document.body.setAttribute('data-lang', safe);
+    try { localStorage.setItem('lang', safe); } catch(e) {}
+
+    // Optional text swap for elements that provide data-en / data-de
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = el.getAttribute(`data-${safe}`);
+      if(v) el.textContent = v;
+    });
+  };
+
+  try {
+    const stored = localStorage.getItem('lang');
+    if(stored) applyLang(stored);
+  } catch(e) {}
+
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.addEventListener('click', () => applyLang(el.getAttribute('data-lang')));
+  });
+
   // Footer year
   const y = document.querySelector('[data-year]');
   if(y) y.textContent = new Date().getFullYear();
