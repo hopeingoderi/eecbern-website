@@ -20,25 +20,25 @@
       </div>
     </a>
 
-    <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav">
+    <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav" data-i18n data-en="Menu" data-de="Menü">
       Menu
     </button>
 
     <nav id="site-nav" aria-label="Primary">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/ministries/">Ministries</a></li>
-        <li><a href="/sermons/">Sermons</a></li>
-        <li><a href="/events/">Events</a></li>
-        <li><a href="/service-times/">Service Times</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/" data-i18n data-en="Home" data-de="Start">Home</a></li>
+        <li><a href="/about/" data-i18n data-en="About" data-de="Über uns">About</a></li>
+        <li><a href="/ministries/" data-i18n data-en="Ministries" data-de="Dienste">Ministries</a></li>
+        <li><a href="/sermons/" data-i18n data-en="Sermons" data-de="Predigten">Sermons</a></li>
+        <li><a href="/events/" data-i18n data-en="Events" data-de="Veranstaltungen">Events</a></li>
+        <li><a href="/service-times/" data-i18n data-en="Service Times" data-de="Gottesdienstzeiten">Service Times</a></li>
+        <li><a href="/contact/" data-i18n data-en="Contact" data-de="Kontakt">Contact</a></li>
       </ul>
     </nav>
 
     <div class="nav-actions">
-      <a class="button" href="/contact/">Visit us</a>
-      <a class="button primary" href="/service-times/">This week</a>
+      <a class="button" href="/contact/" data-i18n data-en="Visit us" data-de="Besuchen">Visit us</a>
+      <a class="button primary" href="/service-times/" data-i18n data-en="This week" data-de="Diese Woche">This week</a>
     </div>
   </div>
 </header>
@@ -55,8 +55,8 @@
         Join us for worship, prayer, teaching, and warm fellowship in <strong>German</strong> and <strong>English</strong>.
       </p>
       <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="button primary" href="/service-times/">See service times</a>
-        <a class="button" href="/about/">Learn about us</a>
+        <a class="button primary" href="/service-times/" data-i18n data-en="See service times" data-de="Zeiten ansehen">See service times</a>
+        <a class="button" href="/about/" data-i18n data-en="Learn about us" data-de="Mehr erfahren">Learn about us</a>
       </div>
 
       <div class="section">
@@ -94,12 +94,12 @@
       </div>
 
       <div class="pills lang-switch" aria-label="Language">
-        <button class="pill" type="button" data-lang="de" aria-label="Switch to German">Deutsch</button>
-        <button class="pill" type="button" data-lang="en" aria-label="Switch to English">English</button>
+        <button class="pill" type="button" data-lang="de" aria-label="Switch to German" aria-pressed="false">Deutsch</button>
+        <button class="pill" type="button" data-lang="en" aria-label="Switch to English" aria-pressed="false">English</button>
       </div>
 
       <div style="margin-top:14px">
-        <a class="button primary" href="/contact/">Get directions</a>
+        <a class="button primary" href="/contact/" data-i18n data-en="Get directions" data-de="Route öffnen">Get directions</a>
       </div>
     </aside>
   </div>
@@ -107,9 +107,10 @@
 
 <section class="section">
   <div class="container">
-    <div class="quote">
-      <strong>“Come to me, all you who are weary and burdened, and I will give you rest.”</strong>
-      <div><small>Matthew 11:28</small></div>
+    <div class="quote" aria-label="Bible verse">
+      <div class="quote-kicker" data-i18n data-en="Verse of the week" data-de="Vers der Woche">Verse of the week</div>
+      <strong data-verse-text>“Come to me, all you who are weary and burdened, and I will give you rest.”</strong>
+      <div><small data-verse-ref>Matthew 11:28</small></div>
     </div>
   </div>
 </section>
