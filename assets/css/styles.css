@@ -232,15 +232,6 @@ small{color:var(--muted)}
   border-radius:12px;
   color: #143a20;
 }
-.quote-kicker{
-  display:inline-block;
-  font-size:.72rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight:800;
-  color: var(--muted);
-  margin-bottom:6px;
-}
 .list-clean{margin:0; padding-left:18px}
 
 
@@ -420,8 +411,6 @@ footer a:hover{
   gap:10px;
   flex: 0 0 auto;
   white-space:nowrap;
-  position:relative;
-  z-index:25;
 }
 
 /* At medium widths, switch to hamburger instead of wrapping */
@@ -443,8 +432,3 @@ footer a:hover{
     display:none;
   }
 }
-
-/* Ensure language pills remain clickable above decorative shapes */
-.lang-pills{position:relative; z-index:5; pointer-events:auto;}
-.lang-pills a{pointer-events:auto;}
-
