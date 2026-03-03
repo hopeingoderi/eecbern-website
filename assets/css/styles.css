@@ -588,3 +588,25 @@ header,
 @media (max-width: 780px){
   .page-head .lead{font-size: 1rem;}
 }
+
+/* ---- iPhone fix: menu button must be above the brand overlay ---- */
+.navbar{ position: relative; }
+
+.brand{
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;      /* IMPORTANT: don't stretch across the header */
+  max-width: 75%;
+}
+
+.mobile-toggle{
+  position: relative;
+  z-index: 3000;       /* above everything */
+  pointer-events: auto;
+}
+
+/* if any header decoration exists */
+header::before, header::after,
+.navbar::before, .navbar::after{
+  pointer-events: none;
+}
