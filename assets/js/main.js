@@ -2,26 +2,44 @@
   'use strict';
 
   // -----------------------------
-  // Mobile menu
+  // Mobile menu (robust for iPhone/Android)
   // -----------------------------
+  // Use the primary nav by id to avoid accidentally selecting a footer <nav>.
   const btn = document.querySelector('[data-mobile-toggle]');
-  const nav = document.querySelector('nav');
+  const nav = document.querySelector('#site-nav');
 
-  if(btn && nav){
-    btn.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-    });
+  const toggleMenu = (e) => {
+    // iOS can fire both touchend + click. Handle touchend and prevent the
+    // follow-up click from toggling twice.
+    if (e && e.type === 'touchend') {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (!nav) return;
+
+    nav.classList.toggle('open');
+    const isOpen = nav.classList.contains('open');
+
+    if (btn) {
+      btn.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    // Lock page scroll behind the menu for better mobile UX
+    document.documentElement.classList.toggle('nav-open', isOpen);
+  };
+
+  if (btn && nav) {
+    btn.addEventListener('click', toggleMenu);
+    btn.addEventListener('touchend', toggleMenu, { passive: false });
 
     // Close menu after tapping a link (mobile)
     nav.addEventListener('click', (e) => {
       const a = e.target.closest('a');
-      if(!a) return;
-      if(nav.classList.contains('open')){
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
+      if (!a) return;
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('nav-open');
     });
   }
 

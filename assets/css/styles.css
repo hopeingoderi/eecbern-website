@@ -92,6 +92,12 @@ nav a.active{color:var(--accent)}
   font-weight:800;
 }
 
+/* When the mobile menu is open, prevent scrolling behind it */
+html.nav-open,
+html.nav-open body{
+  overflow: hidden;
+}
+
 @media (max-width: 860px){
   .mobile-toggle{display:inline-flex; cursor:pointer; position:relative; z-index:1200; touch-action:manipulation}
   .navbar{flex-wrap:wrap; position:relative}
