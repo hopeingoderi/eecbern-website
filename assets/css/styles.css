@@ -513,3 +513,27 @@ header,
 
 /* Language switch must be above decorative shapes */
 .lang-switch{ position: relative; z-index: 5; }
+
+/* Fix: decorative layers must NOT block clicks */
+.hero::before,
+.hero::after {
+  pointer-events: none;
+}
+
+/* Fix: language buttons must stay above decorations */
+.lang-switch{
+  position: relative;
+  z-index: 5;
+}
+
+/* Keep header/menu above everything (mobile + desktop) */
+header,
+.navbar{
+  position: relative;
+  z-index: 100;
+}
+
+.mobile-toggle{
+  position: relative;
+  z-index: 120;
+}
