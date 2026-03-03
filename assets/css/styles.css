@@ -352,11 +352,62 @@ nav a.active{
   border-left-color: var(--accent);
   background: linear-gradient(180deg, rgba(226,139,59,.10), rgba(255,255,255,0));
 }
+/*
+  IMPORTANT:
+  Callouts are used on BOTH light and dark backgrounds.
+  Keep the base (light) style readable, and only switch to white text
+  when the callout sits inside a dark container.
+*/
 .callout{
+  border-color: var(--border);
+  background: rgba(255,255,255,.72);
+  color: var(--text);
+}
+.hero-card .callout,
+footer .callout{
   border-color: rgba(255,255,255,.12);
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
   color: rgba(255,255,255,.90);
 }
+
+/* Verse rotation (fade) */
+.verse-rotator{ position: relative; }
+.verse-rotator.is-fading{ opacity: .25; transition: opacity .25s ease; }
+.verse-rotator{ opacity: 1; transition: opacity .25s ease; }
+
+/* Leadership cards (About page) */
+.leaders{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.leader-card{
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.78);
+  box-shadow: var(--shadow);
+}
+.leader-card .avatar{
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, rgba(15,43,35,.10), rgba(226,139,59,.12));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: rgba(15,43,35,.78);
+}
+.leader-card .avatar img{ width:100%; height:100%; object-fit: cover; display:block; }
+.leader-card .role{ color: var(--olive); font-weight: 800; margin: 0; }
+.leader-card .name{ margin: 2px 0 0; font-size: 1.02rem; }
+.leader-card .note{ margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
 
 /* Form focus */
 input, textarea{
@@ -513,27 +564,3 @@ header,
 
 /* Language switch must be above decorative shapes */
 .lang-switch{ position: relative; z-index: 5; }
-
-/* Fix: decorative layers must NOT block clicks */
-.hero::before,
-.hero::after {
-  pointer-events: none;
-}
-
-/* Fix: language buttons must stay above decorations */
-.lang-switch{
-  position: relative;
-  z-index: 5;
-}
-
-/* Keep header/menu above everything (mobile + desktop) */
-header,
-.navbar{
-  position: relative;
-  z-index: 100;
-}
-
-.mobile-toggle{
-  position: relative;
-  z-index: 120;
-}
