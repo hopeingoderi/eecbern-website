@@ -432,3 +432,23 @@ footer a:hover{
     display:none;
   }
 }
+
+/* FIX: main container must allow clicks */
+main,
+#main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure header/navigation stays above */
+header,
+.navbar {
+  position: relative;
+  z-index: 50;
+}
+
+/* Ensure no invisible overlay blocks page */
+body::before,
+body::after {
+  pointer-events: none;
+}
