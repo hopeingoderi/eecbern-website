@@ -690,3 +690,35 @@ header, .navbar { isolation: isolate; }
 html.nav-open, body.nav-open {
   overflow: hidden;
 }
+
+/* ===== iPhone SAFARI: ensure open menu receives taps, not header buttons ===== */
+
+/* Menu must be above everything */
+@media (max-width: 900px){
+  #site-nav{ z-index: 9999 !important; }
+  body::before{ z-index: 9998 !important; pointer-events:auto !important; }
+
+  /* When menu is open, disable header click targets that can steal taps */
+  html.nav-open header .brand,
+  html.nav-open header .nav-actions{
+    pointer-events: none !important;
+  }
+
+  /* But keep the menu button clickable so user can close */
+  html.nav-open header .mobile-toggle{
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+  }
+
+  /* Make sure menu links are clickable */
+  #site-nav.open,
+  #site-nav.open *{
+    pointer-events: auto !important;
+  }
+
+  #site-nav a{
+    position: relative;
+    z-index: 10001;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+}
