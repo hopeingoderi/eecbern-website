@@ -35,17 +35,36 @@ const toggleMenu = (e) => {
 
   // Lock page scroll behind the menu for better mobile UX
   document.documentElement.classList.toggle('nav-open', isOpen);
+// Close menu when clicking a nav link (ONE handler, not many)
+if (nav && btn) {
+  nav.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
 
-  // Close the menu when navigating
-  if (isOpen) {
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        document.documentElement.classList.remove('nav-open');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }, { once: true });
-    });
-  }
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('nav-open');
+  }, true);
+
+  // iOS Safari: also handle touchend to prevent tap-through
+  nav.addEventListener('touchend', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const href = a.getAttribute('href');
+
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('nav-open');
+
+    setTimeout(() => {
+      if (href) window.location.href = href;
+    }, 60);
+  }, { passive: false, capture: true });
+}
 };
 
 if (btn) {
