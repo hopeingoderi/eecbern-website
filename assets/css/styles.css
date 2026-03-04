@@ -329,6 +329,55 @@ header{
 /* Page heads */
 .page-head{ padding:22px 0 6px; }
 
+/* ==========================================================
+   Layout helpers (used across inner pages)
+   ========================================================== */
+
+.grid{ display:grid; gap:24px; }
+.grid-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+@media (max-width: 980px){
+  .grid-3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 720px){
+  .grid-2, .grid-3{ grid-template-columns: 1fr; }
+}
+
+/* Inner page headings feel more premium */
+.page-head .eyebrow{ letter-spacing:.18em; text-transform:uppercase; font-weight:900; font-size:.72rem; color:rgba(22,82,67,.7); }
+.page-head h1{ margin:.35rem 0 .4rem; font-size: clamp(1.7rem, 2.4vw, 2.35rem); line-height:1.12; }
+.page-head .lead{ max-width: 68ch; color: var(--muted); }
+
+/* Leadership list (About page) */
+.leaders{ margin-top: 14px; }
+.leaders .leader-card{
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(14,21,19,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
+  box-shadow: var(--shadow-soft);
+  padding: 16px 16px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.leaders .leader-card + .leader-card{ margin-top: 12px; }
+.leaders .leader-card strong{ display:block; font-weight: 950; }
+.leaders .leader-card span{ display:block; color: var(--muted); margin-top: 3px; }
+.leaders .leader-card .tag{
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(196,120,59,.22);
+  background: rgba(196,120,59,.12);
+  color: rgba(14,21,19,.82);
+  font-weight: 900;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
 /* Quote / verse */
 .quote{
   margin-top:18px;
