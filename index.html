@@ -4,157 +4,216 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home | EEC Bern</title>
-  <meta name="description" content="Eritrean Evangelical Church Bern (EEC Bern) — worship, prayer and fellowship in Bern." />
-  <link rel="icon" href="/assets/img/logo.svg?v=2" type="image/svg+xml" />
+  <meta name="description" content="Eritrean Evangelical Church Bern (EEC Bern) — worship, prayer, teaching, and fellowship in Bern, Switzerland." />
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header>
-  <div class="container navbar">
-    <a class="brand" href="/" aria-label="EEC Bern home">
-      <img src="/assets/img/logo.svg?v=2" alt="EEC Bern logo" />
-      <div class="title">
-        <strong>EEC Bern</strong>
-        <span>Eritrean Evangelical Church Bern</span>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="EEC Bern home">
+        <img src="/assets/img/logo.svg" alt="EEC Bern logo" />
+        <div class="title">
+          <strong>EEC Bern</strong>
+          <span>Eritrean Evangelical Church Bern</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false">Menu</button>
+
+      <nav id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a class="" href="/about/">About</a></li>
+          <li><a class="" href="/sermons/">Sermons</a></li>
+          <li><a class="" href="/ministries/">Ministries</a></li>
+          <li><a class="" href="/events/">Events</a></li>
+          <li><a class="" href="/service-times/">Service Times</a></li>
+          <li><a class="" href="/contact/">Contact</a></li>
+          <li><a class="" href="/visit-us/">Visit us</a></li>
+          <li><a class="" href="/give/">Give</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="/visit-us/">Visit us</a>
+        <a class="btn btn-gold" href="/events/">This week</a>
       </div>
-    </a>
-
-    <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav" data-i18n data-en="Menu" data-de="Menü">
-      Menu
-    </button>
-
-    <nav id="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="/" data-i18n data-en="Home" data-de="Start">Home</a></li>
-        <li><a href="/about/" data-i18n data-en="About" data-de="Über uns">About</a></li>
-        <li><a href="/ministries/" data-i18n data-en="Ministries" data-de="Dienste">Ministries</a></li>
-        <li><a href="/sermons/" data-i18n data-en="Sermons" data-de="Predigten">Sermons</a></li>
-        <li><a href="/events/" data-i18n data-en="Events" data-de="Veranstaltungen">Events</a></li>
-        <li><a href="/service-times/" data-i18n data-en="Service Times" data-de="Gottesdienstzeiten">Service Times</a></li>
-        <li><a href="/contact/" data-i18n data-en="Contact" data-de="Kontakt">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <a class="button" href="/contact/" data-i18n data-en="Visit us" data-de="Besuchen">Visit us</a>
-      <a class="button primary" href="/service-times/" data-i18n data-en="This week" data-de="Diese Woche">This week</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<main id="main">
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
+  <main id="main" class="container">
+    
+<section class="section hero">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-panel">
       <div class="kicker">Welcome</div>
-      <h1>Eritrean Evangelical Church Bern</h1>
-      <p class="lead">
-        Welcome to <strong>EEC Bern</strong> — a Christ-centered community in Bern.
-        Join us for worship, prayer, teaching, and warm fellowship in <strong>German</strong> and <strong>English</strong>.
-      </p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="button primary" href="/service-times/" data-i18n data-en="See service times" data-de="Zeiten ansehen">See service times</a>
-        <a class="button" href="/about/" data-i18n data-en="Learn about us" data-de="Mehr erfahren">Learn about us</a>
+      <h1 class="h1">Eritrean Evangelical Church Bern</h1>
+      <p class="lead">A Christ‑centered community in Bern. Join us for worship, prayer, teaching, and warm fellowship in German and English.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <a class="btn btn-gold" href="/service-times/">See service times</a>
+        <a class="btn" href="/about/">Learn about us</a>
       </div>
 
-      <div class="section">
-        <div class="grid-3">
-          <div class="card">
-            <div class="kicker">Worship</div>
-            <h3>Sunday Service</h3>
-            <p>Weekly worship, preaching, and fellowship.<br><small>Hebrews 10:25</small></p>
+      <div style="margin-top:16px;" class="list">
+        <div class="item">
+          <div>
+            <div class="kicker" style="margin:0;">Worship</div>
+            <strong>Sunday Service</strong>
+            <span>Weekly worship, preaching, and fellowship.</span>
           </div>
-          <div class="card">
-            <div class="kicker">Prayer</div>
-            <h3>Prayer Meeting</h3>
-            <p>Midweek prayer for families, the church, and the city.<br><small>Philippians 4:6–7</small></p>
+          <div class="badge">Sunday</div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="kicker" style="margin:0;">Prayer</div>
+            <strong>Prayer Meeting</strong>
+            <span>Midweek prayer for families, the church, and the city.</span>
           </div>
-          <div class="card">
-            <div class="kicker">Discipleship</div>
-            <h3>Bible Study</h3>
-            <p>Growing in faith through Scripture and practical teaching.<br><small>2 Timothy 3:16–17</small></p>
+          <div class="badge">Thu</div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="kicker" style="margin:0;">Discipleship</div>
+            <strong>Bible Study</strong>
+            <span>Growing in faith through Scripture and practical teaching.</span>
           </div>
+          <div class="badge">Thu</div>
         </div>
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="This week card">
-      <div class="hero-photo" style="margin-bottom:12px">
-        <div class="ph">Add a photo (service / fellowship)</div>
-        <div style="margin-top:8px"><small>Tip: replace this placeholder with a real photo (Sunday worship, building, or community).</small></div>
+    <aside class="hero-aside">
+      <div class="pill">This week</div>
+      <div style="margin-top:12px;" class="list">
+        <div class="item">
+          <div>
+            <strong>Sunday Worship</strong>
+            <span>14:00–19:00 • Eymattstrasse 2b, 3027 Bern</span>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <strong>Prayer Meeting</strong>
+            <span>Thursday • Eymattstrasse 2b, 3027 Bern</span>
+          </div>
+        </div>
       </div>
-      <div class="kicker">This week</div>
-      <h3>Service & gatherings</h3>
-      <div class="meta">
-        <p><strong>Sunday Worship:</strong> <span>14:00–19:00</span></p>
-        <p><strong>Prayer Meeting:</strong> <span>Thursday</span></p>
-        <p><strong>Location:</strong> <span>Eymattstrasse 2b, 3027 Bern</span></p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <a class="btn btn-outline" href="/contact/">Contact</a>
+        <a class="btn btn-gold" href="/visit-us/">Get directions</a>
       </div>
-
-      <div class="pills lang-switch" aria-label="Language">
-        <button class="pill" type="button" data-lang="de" aria-label="Switch to German" aria-pressed="false">Deutsch</button>
-        <button class="pill" type="button" data-lang="en" aria-label="Switch to English" aria-pressed="false">English</button>
-      </div>
-
-      <div style="margin-top:14px">
-        <a class="button primary" href="/contact/" data-i18n data-en="Get directions" data-de="Route öffnen">Get directions</a>
+      <div style="margin-top:14px; color:var(--muted2); font-size:13px;">
+        Tip: Replace the hero background with a real photo/video later (Sunday service, building, or community).
       </div>
     </aside>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="quote verse-rotator" data-verse-rotator aria-label="Bible verse">
-      <div class="quote-kicker" data-i18n data-en="Verse of the week" data-de="Vers der Woche">Verse of the week</div>
-      <strong data-verse-text>Come to me, all you who are weary and burdened, and I will give you rest.</strong>
-      <div><small data-verse-ref>Matthew 11:28</small></div>
-    </div>
+  <div class="kicker">Latest sermon</div>
+  <div class="grid">
+    <article class="card">
+      <div class="glass-media"></div>
+      <div class="card-inner">
+        <h3>Sunday message</h3>
+        <p>Add your YouTube link or audio file here. Include notes or a short summary.</p>
+        <div class="meta">Updated weekly • <a href="/sermons/">View all sermons</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="glass-media"></div>
+      <div class="card-inner">
+        <h3>Ministries</h3>
+        <p>Serving together — worship, Bible study, prayer care, youth, women, and men.</p>
+        <div class="meta"><a href="/ministries/">Explore ministries</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="glass-media"></div>
+      <div class="card-inner">
+        <h3>Upcoming events</h3>
+        <p>Special services, guest speakers, baptisms, and community events.</p>
+        <div class="meta"><a href="/events/">See what’s happening</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="callout">
-      <strong>New here?</strong>
-      <div>Send us a message and we’ll help you with directions and what to expect on your first visit.</div>
-      <div style="margin-top:10px">
-        <a class="button" href="/contact/">Contact the church</a>
+  <div class="kicker">Contact & location</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-inner">
+        <h3>Get in touch</h3>
+        <p>Email: <a href="mailto:info@eecbern.ch">info@eecbern.ch</a><br/>Phone: <a href="tel:+41752221226">+41 75 222 12 26</a></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <h3>Address</h3>
+        <p>Eymattstrasse 2b<br/>3027 Bern<br/>Switzerland</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <h3>First time?</h3>
+        <p>We’d love to welcome you. See what to expect and how to find the building.</p>
+        <div class="meta"><a href="/visit-us/">Visit us →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-</main>
+  </main>
 
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <strong>EEC Bern</strong><br/>
-      <small>Eritrean Evangelical Church Bern • Bern, Switzerland • Domain: eecbern.ch</small>
-      <div style="margin-top:10px" class="footer-links">
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="/assets/img/logo.svg" alt="" style="width:38px;height:38px;border-radius:14px;box-shadow:0 10px 18px rgba(0,0,0,.25);" />
+          <div>
+            <strong style="display:block; color:rgba(255,255,255,.92);">EEC Bern</strong>
+            <small style="color:rgba(255,255,255,.72);">Eritrean Evangelical Church Bern • Bern, Switzerland</small>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Need help?</strong>
+          <div style="margin-top:6px; color:rgba(255,255,255,.78);">
+            For directions or questions, email <a href="mailto:info@eecbern.ch" style="color:rgba(255,255,255,.92);">info@eecbern.ch</a>.
+          </div>
+        </div>
+        <div style="margin-top:12px; color:rgba(255,255,255,.65);">
+          <small>© <span data-year></span> EEC Bern. All rights reserved.</small>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <strong style="color:rgba(255,255,255,.92);">Pages</strong>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/ministries/">Ministries</a>
         <a href="/sermons/">Sermons</a>
         <a href="/events/">Events</a>
-        <a href="/service-times/">Service Times</a>
+      </div>
+
+      <div class="footer-links">
+        <strong style="color:rgba(255,255,255,.92);">Quick links</strong>
+        <a href="/service-times/">Service times</a>
+        <a href="/visit-us/">Visit us</a>
+        <a href="/give/">Give</a>
         <a href="/contact/">Contact</a>
       </div>
-      <div style="margin-top:10px"><small>© <span data-year></span> EEC Bern. All rights reserved.</small></div>
     </div>
-    <div>
-      <div class="callout">
-        <strong>Need help?</strong>
-        <div>For directions or questions, email <a href="mailto:info@eecbern.ch">info@eecbern.ch</a> or call <a href="tel:4175222126">075 222 12 6</a>.</div>
-      </div>
-    </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
