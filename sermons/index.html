@@ -4,15 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sermons | EEC Bern</title>
-  <meta name="description" content="Eritrean Evangelical Church Bern (EEC Bern) — worship, prayer, teaching, and fellowship in Bern, Switzerland." />
+  <meta name="description" content="Eritrean Evangelical Church Bern (EEC Bern) — worship, prayer, teaching, and fellowship in Bern." />
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
-
   <header>
     <div class="container navbar">
       <a class="brand" href="/" aria-label="EEC Bern home">
@@ -23,106 +20,78 @@
         </div>
       </a>
 
-      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false">Menu</button>
+      <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
 
       <nav id="site-nav" aria-label="Primary">
         <ul>
-          <li><a class="" href="/">Home</a></li>
-          <li><a class="" href="/about/">About</a></li>
-          <li><a class="active" href="/sermons/">Sermons</a></li>
-          <li><a class="" href="/ministries/">Ministries</a></li>
-          <li><a class="" href="/events/">Events</a></li>
-          <li><a class="" href="/service-times/">Service Times</a></li>
-          <li><a class="" href="/contact/">Contact</a></li>
-          <li><a class="" href="/visit-us/">Visit us</a></li>
-          <li><a class="" href="/give/">Give</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/sermons/">Sermons</a></li>
+          <li><a href="/ministries/">Ministries</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/visit-us/">Visit</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/give/" class="nav-cta">Give</a></li>
         </ul>
       </nav>
-
-      <div class="nav-cta">
-        <a class="btn btn-outline" href="/visit-us/">Visit us</a>
-        <a class="btn btn-gold" href="/events/">This week</a>
-      </div>
     </div>
   </header>
 
-  <main id="main" class="container">
-    
-<section class="section" data-reveal>
-  <div class="kicker">Sermons</div>
-  <h1 class="h1">Messages & teaching</h1>
-  <p class="lead">Share sermon recordings, notes, or YouTube links. Keep it simple now — expand later.</p>
-</section>
+  <main id="main">
+  <section class="section">
+    <div class="container">
+      <p class="kicker">SERMONS</p>
+      <h1>Messages & teaching</h1>
+      <p class="muted">Share sermon recordings, notes, or YouTube playlists.</p>
 
-<section class="section" data-reveal>
-  <div class="grid">
-    <article class="card">
-      <div class="card-inner">
-        <div class="kicker">Latest</div>
-        <h3>Sunday message</h3>
-        <div class="yt" data-youtube="VIDEO_ID"></div>
-        <p style="margin-top:10px;">Replace <code>VIDEO_ID</code> with your YouTube sermon ID.</p>
-        <div class="meta"><a href="/">Back to Home</a></div>
+      <div class="card glass" style="margin-top:18px;">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Sermon video (replace link)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="btn-row" style="margin-top:12px;">
+          <a class="btn primary" href="#" onclick="return false;">Watch on YouTube</a>
+          <a class="btn" href="#" onclick="return false;">Download notes</a>
+        </div>
+        <p class="small" style="margin-top:10px;">Tip: Replace the embed link with your real sermon video.</p>
       </div>
-    </article>
-    <article class="card">
-      <div class="card-inner">
-        <div class="kicker">Series</div>
-        <h3>Bible teaching</h3>
-        <p>Add your YouTube playlist link, or embed a second video here:</p>
-        <div class="yt" data-youtube="PLAYLIST_VIDEO_ID"></div>
-        <div class="meta" style="margin-top:10px;">New series • Coming soon</div>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-inner">
-        <div class="kicker">Notes</div>
-        <h3>Sermon notes</h3>
-        <p>Upload PDFs or paste notes and summaries.</p>
-        <div class="meta">Optional</div>
-      </div>
-    </article>
-  </div>
-</section>
+    </div>
+  </section>
 
   </main>
 
   <footer>
     <div class="container footer-grid">
       <div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <img src="/assets/img/logo.svg" alt="" style="width:38px;height:38px;border-radius:14px;box-shadow:0 10px 18px rgba(0,0,0,.25);" />
+        <div style="display:flex; gap:12px; align-items:center;">
+          <img src="/assets/img/logo.svg" alt="" style="width:40px;height:40px;border-radius:14px;" />
           <div>
-            <strong style="display:block; color:rgba(255,255,255,.92);">EEC Bern</strong>
-            <small style="color:rgba(255,255,255,.72);">Eritrean Evangelical Church Bern • Bern, Switzerland</small>
+            <strong>EEC Bern</strong><br/>
+            <small class="muted" style="color:rgba(255,255,255,.72)">Bern, Switzerland</small>
           </div>
         </div>
-        <div class="callout">
-          <strong>Need help?</strong>
-          <div style="margin-top:6px; color:rgba(255,255,255,.78);">
-            For directions or questions, email <a href="mailto:info@eecbern.ch" style="color:rgba(255,255,255,.92);">info@eecbern.ch</a>.
-          </div>
+        <div class="footer-links" style="margin-top:12px;">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/ministries/">Ministries</a>
+          <a href="/sermons/">Sermons</a>
+          <a href="/events/">Events</a>
+          <a href="/visit-us/">Visit</a>
+          <a href="/contact/">Contact</a>
+          <a href="/give/">Give</a>
         </div>
-        <div style="margin-top:12px; color:rgba(255,255,255,.65);">
-          <small>© <span data-year></span> EEC Bern. All rights reserved.</small>
+        <div style="margin-top:10px;">
+          <small style="color:rgba(255,255,255,.72)">© <span data-year></span> EEC Bern. All rights reserved.</small>
         </div>
       </div>
-
-      <div class="footer-links">
-        <strong style="color:rgba(255,255,255,.92);">Pages</strong>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/ministries/">Ministries</a>
-        <a href="/sermons/">Sermons</a>
-        <a href="/events/">Events</a>
-      </div>
-
-      <div class="footer-links">
-        <strong style="color:rgba(255,255,255,.92);">Quick links</strong>
-        <a href="/service-times/">Service times</a>
-        <a href="/visit-us/">Visit us</a>
-        <a href="/give/">Give</a>
-        <a href="/contact/">Contact</a>
+      <div class="card glass" style="background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.16); color:rgba(255,255,255,.88);">
+        <strong>Need help?</strong>
+        <div class="small" style="color:rgba(255,255,255,.72); margin-top:6px;">
+          Email <a href="mailto:info@eecbern.ch" style="text-decoration:underline;">info@eecbern.ch</a>
+          or call <a href="tel:+41752221226" style="text-decoration:underline;">+41 75 222 12 26</a>.
+        </div>
       </div>
     </div>
   </footer>
