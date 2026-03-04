@@ -489,3 +489,19 @@ footer{
 /* Utility: keep embedded maps/videos responsive if added later */
 .responsive-media{ position:relative; padding-top:56.25%; border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--border); background:rgba(255,255,255,.5); }
 .responsive-media iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+/* ==========================================================
+   Mobile menu tap safety (prevents CTA buttons capturing taps)
+   ========================================================== */
+@media (max-width: 980px){
+  /* Ensure the slide-in nav is the topmost interactive layer */
+  #site-nav{ z-index: 10000; pointer-events: auto; }
+  #site-nav *{ pointer-events: auto; }
+
+  /* While menu is open, disable header CTAs from receiving taps */
+  html.nav-open .nav-actions,
+  html.nav-open .nav-actions *{ pointer-events: none !important; }
+
+  /* Make sure the menu links are tappable */
+  #site-nav a{ touch-action: manipulation; }
+}
