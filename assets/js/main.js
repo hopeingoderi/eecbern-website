@@ -68,5 +68,59 @@
     const onMq = () => { if (mq.matches && isOpen()) closeMenu(); };
     if (mq.addEventListener) mq.addEventListener("change", onMq);
     else mq.addListener(onMq);
+
+    /* ----------------------------------------------
+       Reveal-on-scroll (premium motion, safe)
+       Usage: add data-reveal to any element
+       ---------------------------------------------- */
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (revealEls.length) {
+      if (prefersReduced) {
+        revealEls.forEach(el => el.classList.add("is-in"));
+      } else if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(ent => {
+            if (ent.isIntersecting) {
+              ent.target.classList.add("is-in");
+              io.unobserve(ent.target);
+            }
+          });
+        }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+        revealEls.forEach(el => io.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add("is-in"));
+      }
+    }
+
+    /* ----------------------------------------------
+       Lazy YouTube embeds
+       Markup:
+         <div class="yt" data-youtube="VIDEO_ID"></div>
+       ---------------------------------------------- */
+    document.querySelectorAll(".yt[data-youtube]").forEach((wrap) => {
+      const id = wrap.getAttribute("data-youtube");
+      if (!id) return;
+
+      // Lightweight poster button (no external requests until click)
+      wrap.innerHTML = `
+        <button class="yt-btn" type="button" aria-label="Play sermon video">
+          <span class="yt-play" aria-hidden="true"></span>
+          <span class="yt-text">Play</span>
+        </button>
+      `;
+
+      wrap.querySelector(".yt-btn")?.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0`;
+        wrap.innerHTML = "";
+        wrap.appendChild(iframe);
+      });
+    });
   });
 })();

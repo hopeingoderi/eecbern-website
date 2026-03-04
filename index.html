@@ -49,9 +49,14 @@
   <main id="main" class="container">
     
 <section class="section hero">
-  <div class="hero-media" aria-hidden="true"></div>
+  <!-- Hero video background (upload your file to /assets/video/hero.mp4) -->
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero.svg">
+      <source src="/assets/video/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
   <div class="hero-inner">
-    <div class="hero-panel">
+    <div class="hero-panel" data-reveal>
       <div class="kicker">Welcome</div>
       <h1 class="h1">Eritrean Evangelical Church Bern</h1>
       <p class="lead">A Christ‑centered community in Bern. Join us for worship, prayer, teaching, and warm fellowship in German and English.</p>
@@ -88,7 +93,7 @@
       </div>
     </div>
 
-    <aside class="hero-aside">
+    <aside class="hero-aside" data-reveal>
       <div class="pill">This week</div>
       <div style="margin-top:12px;" class="list">
         <div class="item">
@@ -115,39 +120,94 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-reveal>
   <div class="kicker">Latest sermon</div>
-  <div class="grid">
+  <div class="grid" style="grid-template-columns: 1.2fr .8fr;">
     <article class="card">
-      <div class="glass-media"></div>
       <div class="card-inner">
-        <h3>Sunday message</h3>
-        <p>Add your YouTube link or audio file here. Include notes or a short summary.</p>
-        <div class="meta">Updated weekly • <a href="/sermons/">View all sermons</a></div>
+        <!-- Replace the VIDEO_ID below with your YouTube sermon ID -->
+        <div class="yt" data-youtube="VIDEO_ID"></div>
+        <div style="margin-top:14px;">
+          <h3 style="margin:0 0 6px;">Sunday message</h3>
+          <p style="margin:0;">Add your YouTube sermon here, plus notes and Scripture references.</p>
+          <div class="meta" style="margin-top:10px;">Updated weekly • <a href="/sermons/">View all sermons</a></div>
+        </div>
       </div>
     </article>
 
-    <article class="card">
-      <div class="glass-media"></div>
-      <div class="card-inner">
-        <h3>Ministries</h3>
-        <p>Serving together — worship, Bible study, prayer care, youth, women, and men.</p>
-        <div class="meta"><a href="/ministries/">Explore ministries</a></div>
-      </div>
-    </article>
+    <div style="display:grid; gap:14px;">
+      <article class="card" data-reveal>
+        <div class="card-inner">
+          <h3>Ministries</h3>
+          <p>Serving together — worship, Bible study, prayer care, youth, women, men, kids, media, and outreach.</p>
+          <div class="meta"><a href="/ministries/">Explore ministries</a></div>
+        </div>
+      </article>
 
-    <article class="card">
-      <div class="glass-media"></div>
-      <div class="card-inner">
-        <h3>Upcoming events</h3>
-        <p>Special services, guest speakers, baptisms, and community events.</p>
-        <div class="meta"><a href="/events/">See what’s happening</a></div>
-      </div>
-    </article>
+      <article class="card" data-reveal>
+        <div class="card-inner">
+          <h3>Upcoming events</h3>
+          <p>Special services, guest speakers, baptisms, and community events.</p>
+          <div class="meta"><a href="/events/">See what’s happening</a></div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-reveal>
+  <div class="kicker">Our church</div>
+  <div class="grid" style="grid-template-columns: 1.1fr .9fr; align-items:stretch;">
+    <div class="card">
+      <div class="card-inner" style="display:grid; gap:12px;">
+        <img src="/assets/img/church-photo.svg" alt="Church community" style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,.22); box-shadow:var(--shadow-soft);" />
+        <div>
+          <h3 style="margin:0 0 6px;">A place to worship, grow, and belong</h3>
+          <p style="margin:0;">We are a Christ‑centered community serving Eritrean believers and the wider community in Bern — anchored in Scripture, worship, discipleship, and mission.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <h3>What to expect</h3>
+        <ul style="margin:10px 0 0; padding-left:18px; color:var(--muted);">
+          <li>Warm welcome and fellowship</li>
+          <li>Worship and prayer</li>
+          <li>Bible teaching (German & English)</li>
+          <li>Family-friendly atmosphere</li>
+        </ul>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-gold" href="/visit-us/">Plan your visit</a>
+          <a class="btn btn-outline" href="/about/">Our vision & mission</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" data-reveal>
+  <div class="kicker">Pastor</div>
+  <div class="grid" style="grid-template-columns: .9fr 1.1fr; align-items:center;">
+    <div class="card">
+      <div class="card-inner" style="display:flex; gap:14px; align-items:center;">
+        <img src="/assets/img/pastor.svg" alt="Pastor" style="width:84px; height:84px; border-radius:22px; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.18);" />
+        <div>
+          <strong style="display:block; font-size:18px;">Pastor Shalom Samuel</strong>
+          <span style="color:var(--muted);">Lead pastor • EEC Bern</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <h3 style="margin:0 0 6px;">A shepherd after God’s heart</h3>
+        <p style="margin:0;">Share a short biography here (calling, ministry focus, how he serves the church). You can also add a contact link or office hours.</p>
+        <div class="meta" style="margin-top:10px;"><a href="/contact/">Contact the church →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" data-reveal>
   <div class="kicker">Contact & location</div>
   <div class="grid">
     <div class="card">
@@ -160,6 +220,7 @@
       <div class="card-inner">
         <h3>Address</h3>
         <p>Eymattstrasse 2b<br/>3027 Bern<br/>Switzerland</p>
+        <div style="margin-top:10px;" class="yt" data-youtube="" aria-hidden="true" hidden></div>
       </div>
     </div>
     <div class="card">
@@ -167,6 +228,20 @@
         <h3>First time?</h3>
         <p>We’d love to welcome you. See what to expect and how to find the building.</p>
         <div class="meta"><a href="/visit-us/">Visit us →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <div class="card-inner">
+      <h3 style="margin:0 0 10px;">Find us on the map</h3>
+      <div style="border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,.22); box-shadow:var(--shadow-soft);">
+        <iframe
+          title="EEC Bern map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="width:100%; height:360px; border:0;"
+          src="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern&output=embed"></iframe>
       </div>
     </div>
   </div>

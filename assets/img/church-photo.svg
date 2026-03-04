@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b2b23"/>
+      <stop offset="1" stop-color="#0f3a30"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="25%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#c4783b" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#c4783b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g opacity=".9">
+    <rect x="170" y="160" width="1260" height="580" rx="34" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.18)"/>
+    <path d="M350 620 L800 280 L1250 620" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M520 620 V420 H1080 V620" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="800" cy="360" r="46" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.55)" stroke-width="10"/>
+    <path d="M800 230 l22 46 50 7-36 35 9 50-45-24-45 24 9-50-36-35 50-7z" fill="#c4783b" opacity=".92"/>
+  </g>
+  <text x="90" y="830" font-family="ui-sans-serif,system-ui" font-size="34" fill="rgba(255,255,255,.85)">Replace this placeholder with a real church photo</text>
+</svg>

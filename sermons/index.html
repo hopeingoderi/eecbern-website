@@ -48,34 +48,33 @@
 
   <main id="main" class="container">
     
-<section class="section">
+<section class="section" data-reveal>
   <div class="kicker">Sermons</div>
   <h1 class="h1">Messages & teaching</h1>
   <p class="lead">Share sermon recordings, notes, or YouTube links. Keep it simple now — expand later.</p>
 </section>
 
-<section class="section">
+<section class="section" data-reveal>
   <div class="grid">
     <article class="card">
-      <div class="glass-media"></div>
       <div class="card-inner">
         <div class="kicker">Latest</div>
         <h3>Sunday message</h3>
-        <p>Add your YouTube link here.</p>
-        <div class="meta"><a href="#">Watch</a></div>
+        <div class="yt" data-youtube="VIDEO_ID"></div>
+        <p style="margin-top:10px;">Replace <code>VIDEO_ID</code> with your YouTube sermon ID.</p>
+        <div class="meta"><a href="/">Back to Home</a></div>
       </div>
     </article>
     <article class="card">
-      <div class="glass-media"></div>
       <div class="card-inner">
         <div class="kicker">Series</div>
         <h3>Bible teaching</h3>
-        <p>Add a playlist link (YouTube) or audio files.</p>
-        <div class="meta">New series • Coming soon</div>
+        <p>Add your YouTube playlist link, or embed a second video here:</p>
+        <div class="yt" data-youtube="PLAYLIST_VIDEO_ID"></div>
+        <div class="meta" style="margin-top:10px;">New series • Coming soon</div>
       </div>
     </article>
     <article class="card">
-      <div class="glass-media"></div>
       <div class="card-inner">
         <div class="kicker">Notes</div>
         <h3>Sermon notes</h3>
