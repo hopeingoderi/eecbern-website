@@ -554,3 +554,95 @@ footer{
   /* Make sure the menu links are tappable */
   #site-nav a{ touch-action: manipulation; }
 }
+
+
+/* ==========================================================
+   FINAL MOBILE NAV FIX (prevents click-through on iOS/Android)
+   Put at the END of the file so it wins over older rules.
+   ========================================================== */
+
+@media (max-width: 900px){
+  /* show hamburger */
+  .mobile-toggle{ display:inline-flex !important; }
+
+  /* lock scroll when menu open */
+  html.nav-open, html.nav-open body{ overflow:hidden; }
+
+  /* mobile overlay nav */
+  #site-nav{
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483000 !important;
+    display: block !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: none !important;
+    background: transparent !important; /* backdrop lives in ::before */
+  }
+  /* backdrop */
+  #site-nav::before{
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(7, 12, 18, 0.55) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    opacity: 0 !important;
+    transition: opacity .2s ease !important;
+    pointer-events: auto !important; /* blocks taps to page */
+  }
+
+  /* panel */
+  #site-nav > ul{
+    position: absolute !important;
+    inset: 0 0 0 auto !important;
+    width: min(88vw, 380px) !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 92px 18px 18px !important;
+    border-radius: 0 !important;
+    background: rgba(10, 20, 28, 0.86) !important;
+    box-shadow: -24px 0 80px rgba(0,0,0,.35) !important;
+    transform: translateX(110%) !important;
+    transition: transform .24s ease !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* open state */
+  #site-nav.open{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  #site-nav.open::before{ opacity: 1 !important; }
+  #site-nav.open > ul{ transform: translateX(0) !important; }
+
+  /* ensure header buttons don't steal taps behind menu */
+  html.nav-open header{ pointer-events: none; }
+  html.nav-open #site-nav,
+  html.nav-open [data-mobile-toggle]{ pointer-events: auto; }
+}
+
+@media (min-width: 901px){
+  /* desktop nav stays normal */
+  #site-nav{
+    position: static !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: transparent !important;
+  }
+  #site-nav::before{ content:none !important; }
+  #site-nav > ul{
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+}

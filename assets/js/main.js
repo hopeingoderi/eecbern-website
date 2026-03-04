@@ -77,6 +77,18 @@ const closeMenu = () => {
   if (btn) btn.setAttribute("aria-expanded", "false");
 };
 
+
+  // Close when tapping the backdrop (outside the panel)
+  const onBackdrop = (e) => {
+    if (!nav || !nav.classList.contains("open")) return;
+    // If click/tap is directly on the nav overlay (not inside the <ul> panel), close
+    const panel = nav.querySelector("ul");
+    if (panel && !panel.contains(e.target)) closeMenu();
+  };
+  nav.addEventListener("click", onBackdrop);
+  nav.addEventListener("touchstart", onBackdrop, {passive:true});
+
+
 const isClickInsideNav = (e) => {
   const t = e.target;
   if (!t || !t.closest) return false;
