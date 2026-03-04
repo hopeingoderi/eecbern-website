@@ -1,731 +1,451 @@
-/* =========================================================
-   EEC Bern — Swiss Premium Styles (Clean / Calm / Premium)
-   Replace FULL assets/css/styles.css with this file.
-   ========================================================= */
+/* ==========================================================
+   EEC Bern — Swiss Premium Styles (Clean + Robust Mobile Nav)
+   ========================================================== */
 
-/* -----------------------------
-   1) Design tokens
------------------------------ */
+/* ---------------------------
+   Design Tokens
+--------------------------- */
 :root{
-  /* Brand palette (calm green + paper) */
-  --ink: #0d1715;
-  --ink-2: #1f2b28;
-  --muted: rgba(13,23,21,.70);
-  --muted-2: rgba(13,23,21,.52);
+  --bg-dark: #0f2b23;
+  --bg-dark-2:#12362c;
+  --paper: #fbf7ee;
+  --paper-2:#f2ecd8;
 
-  --paper: #f6f2ea;
-  --paper-2: #efe9df;
-  --card: rgba(255,255,255,.78);
-  --card-strong: rgba(255,255,255,.92);
+  --text: #111111;
+  --muted: #555555;
+  --muted-2:#6b6b6b;
 
-  --green: #10322c;     /* deep swiss green */
-  --green-2: #17483f;   /* hover / alt */
-  --olive: #7a8c6b;     /* subtle accents */
+  --card: rgba(255,255,255,.72);
+  --card-2: rgba(255,255,255,.86);
+  --border: rgba(17,17,17,.10);
 
-  --accent: #c57e3a;    /* warm “Swiss premium” accent */
-  --accent-2: rgba(197,126,58,.16);
-
-  --border: rgba(16,50,44,.12);
-  --border-2: rgba(16,50,44,.18);
-
-  --shadow-sm: 0 6px 18px rgba(10,18,16,.08);
-  --shadow-md: 0 14px 40px rgba(10,18,16,.12);
+  --accent: #e28b3b;
+  --accent-2:#c87a33;
 
   --radius: 18px;
-  --radius-sm: 14px;
+  --radius-2: 24px;
 
-  --container: 1120px;
-  --gutter: 18px;
+  --shadow-sm: 0 8px 18px rgba(0,0,0,.08);
+  --shadow-md: 0 16px 36px rgba(0,0,0,.12);
 
-  --h1: clamp(2.05rem, 3.6vw, 3.25rem);
-  --h2: clamp(1.35rem, 2.2vw, 2.0rem);
-  --h3: 1.15rem;
-
-  --line: 1.55;
+  --container: 1100px;
 }
 
-/* -----------------------------
-   2) Reset + base
------------------------------ */
+/* ---------------------------
+   Base
+--------------------------- */
 *{ box-sizing:border-box; }
-html,body{ height:100%; }
-html{ scroll-behavior:smooth; }
+html,body{ margin:0; padding:0; }
 body{
-  margin:0;
-  color:var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
   background:
-    radial-gradient(1200px 600px at 12% 0%, rgba(122,140,107,.14), transparent 60%),
-    radial-gradient(900px 520px at 86% 15%, rgba(197,126,58,.10), transparent 55%),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-  font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Text","Segoe UI", Roboto, Arial;
-  line-height:var(--line);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    radial-gradient(900px 460px at 12% 24%, rgba(226,139,59,.10), transparent 60%),
+    radial-gradient(900px 460px at 88% 30%, rgba(15,43,35,.10), transparent 60%),
+    linear-gradient(180deg, var(--paper), var(--paper-2));
+  line-height: 1.5;
 }
 
-img, svg, video{ max-width:100%; height:auto; display:block; }
 a{ color:inherit; text-decoration:none; }
-p{ margin:0 0 1rem; color:var(--muted); }
-strong{ color:var(--ink); }
-small{ color:var(--muted); }
+img{ max-width:100%; display:block; }
 
 .container{
-  width:min(var(--container), calc(100% - (var(--gutter) * 2)));
-  margin:0 auto;
+  width: min(100% - 32px, var(--container));
+  margin-inline:auto;
 }
 
-.section{
-  padding: 52px 0;
+/* Accessibility */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left: 12px;
+  top: 12px;
+  width:auto;
+  height:auto;
+  padding:10px 12px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius: 12px;
+  z-index: 999999;
 }
 
-.kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  font-weight:700;
-  font-size:.75rem;
-  color: rgba(16,50,44,.62);
-}
-
-h1,h2,h3{
-  margin: 10px 0 10px;
-  color:var(--ink);
-  line-height:1.12;
-}
-h1{ font-size:var(--h1); letter-spacing:-.02em; }
-h2{ font-size:var(--h2); letter-spacing:-.01em; }
-h3{ font-size:var(--h3); }
-
-hr{
-  border:0;
-  border-top:1px solid var(--border);
-  margin: 24px 0;
-}
-
-/* -----------------------------
-   3) Header / Navbar
------------------------------ */
+/* ---------------------------
+   Header / Navbar
+--------------------------- */
 header{
-  position:sticky;
-  top:0;
-  z-index: 200;
-  background: rgba(16,50,44,.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,.10);
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  background: linear-gradient(180deg, rgba(15,43,35,.94), rgba(18,54,44,.90));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .navbar{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
+  gap: 14px;
   padding: 14px 0;
+  position: relative;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap: 10px;
   min-width: 0;
+  flex: 1 1 auto;
   position: relative;
-  z-index: 2;
+  z-index: 1; /* keep under mobile toggle when needed */
 }
-.brand img, .brand svg{
-  width:42px; height:42px;
+
+.brand img{
+  width: 46px;
+  height: 46px;
   border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.20);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
+
 .brand .title{
   display:flex;
   flex-direction:column;
-  min-width:0;
+  gap: 2px;
+  min-width: 0;
 }
-.brand .title strong{
-  color: rgba(255,255,255,.96);
-  font-size:.98rem;
-  line-height:1.1;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.brand strong{
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.brand .title span{
-  color: rgba(255,255,255,.72);
-  font-size:.82rem;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.brand span{
+  color: rgba(255,255,255,.78);
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Desktop nav */
 #site-nav{
   display:flex;
   align-items:center;
   gap: 18px;
+  position: relative;
 }
+
 #site-nav ul{
-  list-style:none;
   display:flex;
-  gap: 18px;
-  padding:0;
-  margin:0;
   align-items:center;
+  gap: 18px;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
+
 #site-nav a{
-  color: rgba(255,255,255,.86);
-  font-weight:600;
-  font-size:.95rem;
-  padding:10px 10px;
+  color: rgba(255,255,255,.88);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 10px;
   border-radius: 12px;
-  transition: background .18s ease, color .18s ease, transform .18s ease;
+  transition: background .18s ease, color .18s ease;
+  outline: none;
 }
 #site-nav a:hover{
   background: rgba(255,255,255,.10);
-  color: rgba(255,255,255,.96);
+  color:#fff;
 }
 #site-nav a.active{
-  background: rgba(197,126,58,.20);
-  color: rgba(255,255,255,.98);
+  background: rgba(255,255,255,.14);
+  color:#fff;
 }
 
+/* Right side actions (Visit us / This week / language) */
 .nav-actions{
   display:flex;
   align-items:center;
-  gap:10px;
-  position:relative;
-  z-index: 2;
+  gap: 10px;
   flex: 0 0 auto;
-  white-space:nowrap;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
 }
 
-/* Buttons */
-.button, .btn{
+.btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  padding: 11px 14px;
+  gap: 8px;
+  padding: 10px 14px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.10);
-  color: rgba(255,255,255,.94);
-  font-weight:700;
-  font-size:.95rem;
-  cursor:pointer;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  user-select:none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  transition: transform .12s ease, background .18s ease, border-color .18s ease;
 }
-.button:hover, .btn:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.14);
-  border-color: rgba(255,255,255,.26);
+.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.14); }
+.btn.primary{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-color: rgba(0,0,0,.08);
+  color: #1b120a;
 }
-.button.primary, .btn.primary{
-  background: var(--accent);
-  border-color: rgba(255,255,255,.12);
-  color: #1b1209;
-  box-shadow: 0 12px 26px rgba(197,126,58,.26);
-}
-.button.primary:hover, .btn.primary:hover{
-  background: #d28a45;
-}
+.btn.primary:hover{ transform: translateY(-1px); }
 
 /* Language pills */
-.pills{
+.lang-pills{
   display:flex;
-  align-items:center;
-  gap:8px;
+  gap: 8px;
 }
-.pills button{
+.lang-pills button{
   appearance:none;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.10);
-  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.90);
+  padding: 8px 10px;
   border-radius: 999px;
-  padding: 9px 12px;
-  font-weight:800;
+  font-weight: 700;
   cursor:pointer;
 }
-.pills button.active{
-  background: rgba(255,255,255,.92);
-  color: var(--green);
+.lang-pills button.active{
+  background: rgba(255,255,255,.16);
+  color:#fff;
 }
 
-/* Mobile toggle button */
+/* Mobile toggle */
 .mobile-toggle{
-  display:none;
+  display:none;              /* shown via media query */
   appearance:none;
   border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.12);
-  color: rgba(255,255,255,.95);
+  color:#fff;
+  font-weight: 800;
+  padding: 10px 14px;
   border-radius: 14px;
-  padding: 11px 14px;
-  font-weight:800;
   cursor:pointer;
   position: relative;
-  z-index: 99999; /* top-most */
+  z-index: 6001;             /* must be above everything */
   pointer-events: auto;
 }
 
-/* -----------------------------
-   4) Hero
------------------------------ */
-.hero{
-  padding: 36px 0 24px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 22px;
-  align-items:stretch;
-}
-.hero h1{ margin-top: 12px; }
-.hero .lead{
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 58ch;
-}
-
-.hero-card{
-  background: rgba(255,255,255,.62);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: 18px;
-  overflow:hidden;
-  position:relative;
-}
-
-/* Premium soft “glass” decor that never blocks clicks */
-.hero::before,
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:auto;
+/* IMPORTANT: if any decorative pseudo elements exist, they must not block taps */
+header::before, header::after,
+.navbar::before, .navbar::after{
   pointer-events:none;
 }
-.hero::before{
-  width: 420px; height: 260px;
-  right: -160px; top: 60px;
-  background: radial-gradient(circle at 30% 30%, rgba(197,126,58,.18), transparent 60%);
-  filter: blur(2px);
+
+/* ---------------------------
+   Sections / Typography
+--------------------------- */
+h1,h2,h3{ margin:0 0 10px; line-height:1.1; letter-spacing:-.2px; }
+p{ margin:0 0 12px; color: var(--muted); }
+
+.page-head{
+  padding: 34px 0 18px;
 }
-.hero::after{
-  width: 380px; height: 240px;
-  left: -170px; top: 220px;
-  background: radial-gradient(circle at 40% 40%, rgba(122,140,107,.18), transparent 60%);
-  filter: blur(2px);
+.page-head .kicker{
+  font-weight: 900;
+  letter-spacing: .18em;
+  font-size: 12px;
+  color: rgba(15,43,35,.55);
+}
+.page-head .lead{
+  max-width: 68ch;
+  font-size: 16px;
 }
 
-.hero-photo{
-  border-radius: 16px;
-  overflow:hidden;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(16,50,44,.10), rgba(197,126,58,.10));
-}
-.hero-photo .placeholder{
-  padding: 26px;
-  color: rgba(16,50,44,.75);
-  font-weight:700;
-}
-
-/* Hero action row */
-.hero-actions{
-  display:flex;
-  gap: 12px;
-  flex-wrap:wrap;
-  margin-top: 16px;
-}
-.hero-actions .button{
-  border-color: rgba(16,50,44,.18);
-  background: rgba(255,255,255,.70);
-  color: var(--ink);
-}
-.hero-actions .button:hover{ background: rgba(255,255,255,.82); }
-.hero-actions .button.primary{
-  background: var(--accent);
-  color: #1b1209;
-  border-color: rgba(197,126,58,.22);
-}
-
-/* Service cards row */
-.card-row{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 16px;
-}
+/* ---------------------------
+   Cards / UI
+--------------------------- */
 .card{
-  background: rgba(255,255,255,.70);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  box-shadow: var(--shadow-sm);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  background: rgba(255,255,255,.82);
-}
-.card .meta{
-  color: rgba(16,50,44,.68);
-  font-weight:800;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  font-size:.72rem;
-}
-.card .title{
-  margin: 6px 0 6px;
-  font-weight:900;
-  color: var(--ink);
-}
-.card .desc{
-  color: var(--muted);
-  font-size:.96rem;
-}
-.card .ref{
-  margin-top: 10px;
-  color: rgba(16,50,44,.72);
-  font-weight:800;
-  font-size:.85rem;
-}
-
-/* -----------------------------
-   5) Verse of the week
------------------------------ */
-.verse{
-  margin-top: 18px;
-  background: rgba(255,255,255,.62);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 16px 18px;
   box-shadow: var(--shadow-sm);
-  display:flex;
-  gap: 12px;
-  align-items:flex-start;
 }
-.verse .badge{
-  width:10px;
-  height: 44px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent), rgba(197,126,58,.28));
-  box-shadow: 0 10px 20px rgba(197,126,58,.22);
-  flex: 0 0 auto;
+
+.card.pad{ padding: 18px; }
+
+.grid{
+  display:grid;
+  gap: 18px;
+}
+
+@media (min-width: 900px){
+  .grid.cols-2{ grid-template-columns: 1fr 1fr; }
+  .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Card links */
+.card-link{ display:block; color:inherit; text-decoration:none; }
+.card-link:focus-visible{
+  outline: 3px solid rgba(226,139,59,.55);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+/* ---------------------------
+   Verse of the week
+--------------------------- */
+.verse{
+  margin-top: 18px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow:hidden;
+}
+.verse::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(500px 240px at 18% 30%, rgba(226,139,59,.12), transparent 60%);
+  pointer-events:none;
 }
 .verse .label{
-  font-weight:900;
-  color: rgba(16,50,44,.72);
-  letter-spacing:.10em;
-  text-transform:uppercase;
-  font-size:.73rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  font-size: 11px;
+  color: rgba(15,43,35,.60);
 }
 .verse .text{
-  margin-top: 4px;
-  font-weight:700;
-  color: rgba(13,23,21,.88);
+  font-weight: 800;
+  color:#202020;
+  margin-top: 8px;
 }
 .verse .ref{
   margin-top: 6px;
-  font-weight:800;
-  color: rgba(16,50,44,.70);
-  font-size:.9rem;
+  color: rgba(0,0,0,.55);
+  font-size: 13px;
 }
-.is-fading{ opacity:.55; transition: opacity .18s ease; }
+.verse.is-fading{ opacity:.55; transition: opacity .18s ease; }
 
-/* -----------------------------
-   6) Page header (inner pages)
------------------------------ */
-.page-head{
-  padding: 34px 0 10px;
-}
-.page-head .lead{
-  max-width: 70ch;
-  color: var(--muted);
-  font-size: 1.02rem;
-}
-
-/* -----------------------------
-   7) Lists / info blocks
------------------------------ */
-.info-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 14px;
-}
-.info{
-  background: rgba(255,255,255,.70);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  box-shadow: var(--shadow-sm);
-}
-.info .k{
-  font-weight:900;
-  color: rgba(16,50,44,.75);
-  letter-spacing:.10em;
-  text-transform:uppercase;
-  font-size:.75rem;
-  margin-bottom: 8px;
-}
-
-/* -----------------------------
-   8) Ministries
------------------------------ */
-.ministry-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 16px;
-}
-
-.card-link{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-}
-
-.card-img{
-  border-radius: 16px;
-  overflow:hidden;
-  border: 1px solid var(--border);
-  background: rgba(16,50,44,.06);
-  margin-bottom: 12px;
-}
-.card-img img{
-  width:100%;
-  height: 220px;
-  object-fit: cover;
-  display:block;
-}
-
-.ministry-hero{
-  margin-top: 14px;
-  border-radius: var(--radius);
-  overflow:hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-.ministry-hero img{
-  width:100%;
-  height: 320px;
-  object-fit: cover;
-  display:block;
-}
-
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(16,50,44,.08);
-  border: 1px solid var(--border);
-  color: rgba(16,50,44,.78);
-  font-weight:800;
-  font-size:.9rem;
-}
-
-/* -----------------------------
-   9) Sermons / Tables / Forms
------------------------------ */
-.table{
-  width:100%;
-  border-collapse: collapse;
-  overflow:hidden;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-sm);
-}
-.table th, .table td{
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
-  text-align:left;
-}
-.table th{
-  background: rgba(16,50,44,.08);
-  color: rgba(16,50,44,.82);
-  font-weight:900;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  font-size:.74rem;
-}
-.table tr:last-child td{ border-bottom:0; }
-
-form{
-  display:grid;
-  gap: 12px;
-}
-input, textarea, select{
-  width:100%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--border-2);
-  background: rgba(255,255,255,.85);
-  color: var(--ink);
-  outline:none;
-  box-shadow: 0 10px 24px rgba(10,18,16,.06);
-}
-input:focus, textarea:focus, select:focus{
-  border-color: rgba(197,126,58,.55);
-  box-shadow: 0 14px 34px rgba(197,126,58,.14);
-}
-
-/* -----------------------------
-   10) Footer
------------------------------ */
+/* ---------------------------
+   Footer
+--------------------------- */
 footer{
-  margin-top: 40px;
-  background: rgba(16,50,44,.95);
-  color: rgba(255,255,255,.80);
-  border-top: 1px solid rgba(255,255,255,.12);
+  margin-top: 44px;
+  background: linear-gradient(180deg, rgba(15,43,35,.96), rgba(15,43,35,.98));
+  color: rgba(255,255,255,.90);
 }
-.footer-inner{
+footer .container{
   padding: 24px 0;
 }
-footer a{ color: rgba(255,255,255,.82); }
-footer a:hover{ color: rgba(255,255,255,.95); }
+footer a{ color: rgba(255,255,255,.88); }
 
-footer .foot-links{
-  display:flex;
-  gap: 16px;
-  flex-wrap:wrap;
-  margin-top: 10px;
-}
-footer .copy{
-  margin-top: 12px;
-  color: rgba(255,255,255,.62);
-  font-size:.92rem;
-}
-
-/* -----------------------------
-   11) Accessibility helpers
------------------------------ */
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:10px;
-  background: #fff;
-  color: #000;
-  padding:10px 12px;
-  border-radius: 10px;
-  z-index: 999999;
-}
-.skip-link:focus{ left: 12px; }
-
-/* =========================================================
-   12) MOBILE NAV (SLIDE-IN) — FINAL FIX (iPhone/Android)
-   This prevents click-through and makes links clickable.
-   ========================================================= */
+/* ==========================================================
+   MOBILE NAVIGATION (THE IMPORTANT PART)
+   Fixes:
+   - Menu must capture taps (pointer-events)
+   - Prevent “Visit us” underlay click while menu open
+   - Works on iPhone + Android + Chrome responsive mode
+   ========================================================== */
 
 @media (max-width: 980px){
-  /* Show hamburger / hide desktop nav list */
-  #site-nav{ display:block; }
-  #site-nav ul{ display:flex; }
+
+  /* show hamburger button */
   .mobile-toggle{ display:inline-flex; }
 
-  /* Turn nav into slide-in panel */
+  /* hide desktop nav layout */
   #site-nav{
+    display:block;
     position: fixed;
-    top: 12px;
-    right: -110%;
-    width: min(86vw, 340px);
-    height: calc(100vh - 24px);
-    padding: 84px 18px 18px;
-    background: rgba(16,50,44,.98);
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+
+    background: rgba(15,43,35,.92);
     border: 1px solid rgba(255,255,255,.14);
-    border-radius: 22px;
-    box-shadow: 0 26px 70px rgba(0,0,0,.35);
-    transition: right .28s ease;
-    z-index: 99999;
+    border-radius: 26px;
+    box-shadow: var(--shadow-md);
 
-    /* CRITICAL: accept taps */
-    pointer-events: auto !important;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+
+    /* THIS is what stops click-through */
+    pointer-events: none;
+
+    z-index: 7000; /* above header actions */
+    backdrop-filter: blur(10px);
+    padding: 84px 18px 18px;
   }
 
-  #site-nav.open{ right: 12px; }
+  /* open state */
+  #site-nav.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto; /* NOW menu receives taps */
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  }
 
+  /* vertical menu list */
   #site-nav ul{
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    height: 100%;
+    overflow:auto;
+    padding: 6px 6px 18px;
   }
+
+  #site-nav li{ width:100%; }
 
   #site-nav a{
-    display:block;
-    padding: 14px 14px;
-    border-radius: 16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding: 18px 14px;
+    border-radius: 18px;
+    font-size: 18px;
     background: rgba(255,255,255,.06);
     border: 1px solid rgba(255,255,255,.10);
-    text-align:center;
-    font-size: 1.02rem;
-    pointer-events: auto !important; /* CRITICAL */
-  }
+    color: rgba(255,255,255,.90);
 
-  #site-nav a:hover{
+    /* make sure link itself is clickable */
+    pointer-events: auto;
+  }
+  #site-nav a:active{
+    transform: scale(.99);
+  }
+  #site-nav a.active{
     background: rgba(255,255,255,.10);
+    border-color: rgba(255,255,255,.18);
+    color:#fff;
   }
 
-  /* Backdrop overlay (tap outside closes menu if you add it in JS later) */
-  html.nav-open::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.28);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    z-index: 9999;
-    pointer-events: none; /* we keep taps for menu itself */
+  /* IMPORTANT: while menu open, prevent CTA row from stealing taps */
+  html.nav-open .nav-actions{
+    pointer-events: none;
+  }
+  html.nav-open .brand{
+    pointer-events: none;
+  }
+  html.nav-open .mobile-toggle{
+    pointer-events: auto; /* keep close button working */
   }
 
-  /* Keep header controls above page */
-  header{ z-index: 100; }
-  .navbar{ z-index: 101; }
-
-  /* Prevent CTA buttons stealing taps behind panel */
-  .nav-actions{
-    position: relative;
-    z-index: 1 !important;
+  /* lock scroll under menu */
+  html.nav-open,
+  html.nav-open body{
+    overflow:hidden;
+    height:100%;
   }
-
-  /* Layout */
-  .hero-grid{ grid-template-columns: 1fr; }
-  .card-row{ grid-template-columns: 1fr; }
-  .ministry-grid{ grid-template-columns: 1fr; }
-  .info-grid{ grid-template-columns: 1fr; }
-
-  /* Brand text shorter on small screens */
-  .brand .title span{ display:none; }
 }
-
-/* =========================================================
-   13) Small screen polish
-   ========================================================= */
-@media (max-width: 520px){
-  .navbar{ gap: 10px; }
-  .button, .btn{ padding: 11px 12px; }
-  .hero-actions{ gap: 10px; }
-}
-
-/* =========================================================
-   14) Safety: decorative layers never block clicks
-   ========================================================= */
-.hero::before,
-.hero::after,
-header::before,
-header::after,
-.navbar::before,
-.navbar::after{
-  pointer-events: none !important;
-}
-
-/* Done. */
