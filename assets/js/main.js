@@ -2,66 +2,102 @@
   'use strict';
 
   // -----------------------------
-  // Mobile menu (robust for iPhone/Android)
-  // -----------------------------
-  // Use the primary nav by id to avoid accidentally selecting a footer <nav>.
-  const btn = document.querySelector('[data-mobile-toggle]');
-  const nav = document.querySelector('#site-nav');
+  // Mobile menu (extra-robust for iPhone/Android)
+// ------------------------------
+const btn = document.querySelector('[data-mobile-toggle]');
+const nav = document.querySelector('#site-nav');
 
-  const toggleMenu = (e) => {
-    // iOS can fire both touchend + click. Handle touchend and prevent the
-    // follow-up click from toggling twice.
-    if (e && e.type === 'touchend') {
+// Some mobile browsers can be picky about click/touch on elements in complex headers.
+// We'll listen to multiple event types (click / touchstart / pointerup) and also
+// use a document-level capture as a fallback.
+let lastToggleAt = 0;
+
+const toggleMenu = (e) => {
+  const now = Date.now();
+  // prevent double-toggle when iOS fires multiple events
+  if (now - lastToggleAt < 250) return;
+  lastToggleAt = now;
+
+  if (e) {
+    // prevent ghost clicks / scrolling side-effects
+    if (e.type === 'touchstart') {
       e.preventDefault();
-      e.stopPropagation();
     }
-
-    if (!nav) return;
-
-    nav.classList.toggle('open');
-    const isOpen = nav.classList.contains('open');
-
-    if (btn) {
-      btn.setAttribute('aria-expanded', String(isOpen));
-    }
-
-    // Lock page scroll behind the menu for better mobile UX
-    document.documentElement.classList.toggle('nav-open', isOpen);
-  };
-
-  if (btn && nav) {
-    btn.addEventListener('click', toggleMenu);
-    btn.addEventListener('touchend', toggleMenu, { passive: false });
-
-    // Close menu after tapping a link (mobile)
-    nav.addEventListener('click', (e) => {
-      const a = e.target.closest('a');
-      if (!a) return;
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.documentElement.classList.remove('nav-open');
-    });
+    e.stopPropagation();
   }
 
-  // -----------------------------
-  // Active link highlight
-  // -----------------------------
-  const path = (location.pathname || '/').replace(/\/$/, '/') || '/';
-  const toPath = (href) => {
-    try {
-      const u = new URL(href, location.origin);
-      return (u.pathname || '/').replace(/\/$/, '/') || '/';
-    } catch {
-      return '';
-    }
-  };
-  document.querySelectorAll('nav a').forEach(a => {
-    const p = toPath(a.getAttribute('href') || '');
-    if(p && (path === p || (p !== '/' && path.startsWith(p)))) a.classList.add('active');
-  });
+  if (!nav) return;
 
-  // -----------------------------
-  // Language switch + i18n
+  nav.classList.toggle('open');
+  const isOpen = nav.classList.contains('open');
+
+  if (btn) btn.setAttribute('aria-expanded', String(isOpen));
+
+  // Lock page scroll behind the menu for better mobile UX
+  document.documentElement.classList.toggle('nav-open', isOpen);
+
+  // Close the menu when navigating
+  if (isOpen) {
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        document.documentElement.classList.remove('nav-open');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }, { once: true });
+    });
+  }
+};
+
+if (btn) {
+  // make sure it is focusable/clickable
+  btn.setAttribute('type', 'button');
+
+  btn.addEventListener('click', toggleMenu, { capture: true });
+  btn.addEventListener('touchstart', toggleMenu, { passive: false, capture: true });
+  btn.addEventListener('pointerup', toggleMenu, { capture: true });
+}
+
+// Fallback: if something sits on top of the button, capture clicks and
+// trigger when the event originated from the toggle button anyway.
+document.addEventListener('click', (e) => {
+  const t = e.target && e.target.closest ? e.target.closest('[data-mobile-toggle]') : null;
+  if (t) toggleMenu(e);
+}, true);
+
+document.addEventListener('touchstart', (e) => {
+  const t = e.target && e.target.closest ? e.target.closest('[data-mobile-toggle]') : null;
+  if (t) toggleMenu(e);
+}, { passive: false, capture: true });
+
+// Close menu when tapping outside (backdrop)
+const closeMenu = () => {
+  if (!nav) return;
+  nav.classList.remove("open");
+  document.documentElement.classList.remove("nav-open");
+  if (btn) btn.setAttribute("aria-expanded", "false");
+};
+
+const isClickInsideNav = (e) => {
+  const t = e.target;
+  if (!t || !t.closest) return false;
+  if (t.closest("#site-nav")) return true;
+  if (t.closest("[data-mobile-toggle]")) return true;
+  return false;
+};
+
+document.addEventListener("click", (e) => {
+  if (!nav || !nav.classList.contains("open")) return;
+  if (isClickInsideNav(e)) return;
+  closeMenu();
+}, true);
+
+document.addEventListener("touchstart", (e) => {
+  if (!nav || !nav.classList.contains("open")) return;
+  if (isClickInsideNav(e)) return;
+  closeMenu();
+}, { passive: true, capture: true });
+
+// Language switch + i18n
   // -----------------------------
   const LANG_KEY = 'eec_lang';
   const getLang = () => localStorage.getItem(LANG_KEY) || 'en';

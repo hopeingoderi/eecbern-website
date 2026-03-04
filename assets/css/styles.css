@@ -482,22 +482,91 @@ footer a:hover{
 }
 
 /* At medium widths, switch to hamburger instead of wrapping */
-@media (max-width: 980px){
-  .mobile-toggle{
-    display:inline-flex;
-  }
-}
 
-/* On large screens, show full menu and hide hamburger */
+/* ==============================
+   Mobile Navigation (OFF-CANVAS)
+   Fixes: iPhone/Android taps + visibility
+   ============================== */
+
+/* Default (desktop): normal inline nav */
 @media (min-width: 981px){
-  #site-nav{
-    display:block;
-  }
-  .mobile-toggle{
-    display:none;
-  }
+  #site-nav{ display:block; position:static; width:auto; height:auto; background:transparent; padding:0; border-radius:0; box-shadow:none; transform:none; right:auto; top:auto; pointer-events:auto; }
+  #site-nav ul{ flex-direction:row; gap:18px; }
+  .mobile-toggle{ display:none; }
+  html.nav-open, html.nav-open body{ overflow:visible; }
 }
 
+/* Mobile: show hamburger, use off-canvas panel */
+@media (max-width: 980px){
+  .mobile-toggle{ display:inline-flex; }
+
+  /* Panel container */
+  #site-nav{
+    display:block;               /* IMPORTANT: keep it in the DOM */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;              /* better on iOS than 100vh */
+    width: min(82vw, 340px);
+    padding: 88px 22px 24px;
+    background: rgba(18,54,44,0.98);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(255,255,255,0.10);
+    transform: translateX(110%);
+    transition: transform 240ms ease;
+    z-index: 4000;
+
+    /* Clickability */
+    pointer-events: none;        /* closed: ignore taps */
+    touch-action: manipulation;
+  }
+
+  #site-nav.open{
+    transform: translateX(0);
+    pointer-events: auto;        /* open: accept taps */
+  }
+
+  /* Make sure links always accept taps */
+  #site-nav a, #site-nav button{ pointer-events:auto; }
+
+  #site-nav ul{
+    display:flex;
+    flex-direction: column;
+    gap: 18px;
+    padding:0;
+    margin:0;
+  }
+
+  #site-nav li{ list-style:none; }
+
+  #site-nav a{
+    display:block;
+    padding: 12px 10px;
+    border-radius: 12px;
+    color: rgba(255,255,255,0.92);
+    font-size: 1.05rem;
+  }
+
+  #site-nav a:active{ background: rgba(255,255,255,0.10); }
+
+  /* Backdrop (click outside closes) */
+  html.nav-open body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 3500;
+  }
+
+  /* Prevent page scroll behind menu */
+  html.nav-open, html.nav-open body{ overflow:hidden; }
+
+  /* Ensure header is above the page, but below the panel */
+  header{ position: sticky; top:0; z-index: 3000; }
+  .navbar{ position: relative; z-index: 3001; }
+  .mobile-toggle{ position: relative; z-index: 5000; }
+}
 /* Ensure language pills remain clickable above decorative shapes */
 .lang-pills{position:relative; z-index:5; pointer-events:auto;}
 .lang-pills a{pointer-events:auto;}
@@ -586,72 +655,38 @@ header,
   .page-head .lead{font-size: 1rem;}
 }
 
-/* ---- iPhone fix: menu button must be above the brand overlay ---- */
-.navbar{ position: relative; }
 
-.brand{
-  position: relative;
-  z-index: 1;
-  flex: 0 0 auto;      /* IMPORTANT: don't stretch across the header */
-  max-width: 75%;
-}
+/* ==========================================================
+   iPhone/Android: Menu button must always be clickable
+   ========================================================== */
 
-.mobile-toggle{
-  position: relative;
-  z-index: 3000;       /* above everything */
-  pointer-events: auto;
-}
-
-/* if any header decoration exists */
+/* Prevent any decorative header layers from blocking taps */
 header::before, header::after,
-.navbar::before, .navbar::after{
+.navbar::before, .navbar::after {
   pointer-events: none;
 }
-/* ==========================================
-   Mobile Navigation (Clean Version)
-   ========================================== */
 
-@media (max-width: 900px) {
+/* Keep stacking contexts predictable */
+header, .navbar { isolation: isolate; }
 
-  #site-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: #123c34; /* your green tone */
-    padding: 80px 24px 24px;
-    transition: right 0.3s ease;
-    z-index: 2000;
-    display: block;
-  }
+/* Ensure the hamburger button sits above everything */
+.mobile-toggle {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  #site-nav.open {
-    right: 0;
-  }
+/* Don't let the brand area stretch and cover the menu button */
+.brand {
+  flex: 0 1 auto;
+  max-width: 78%;
+  position: relative;
+  z-index: 1;
+}
 
-  #site-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  #site-nav a {
-    color: white;
-    font-size: 18px;
-  }
-
-  /* Dark overlay behind menu */
-  html.nav-open::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 1500;
-  }
-
-  .mobile-toggle {
-    z-index: 3000;
-  }
+/* When menu is open, lock scroll behind it */
+html.nav-open, body.nav-open {
+  overflow: hidden;
 }
