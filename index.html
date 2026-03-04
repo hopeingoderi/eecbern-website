@@ -10,8 +10,10 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+  
 <header>
   <div class="container navbar">
+
     <a class="brand" href="/" aria-label="EEC Bern home">
       <img src="assets/img/logo.svg?v=2" alt="EEC Bern logo" />
       <div class="title">
@@ -20,26 +22,37 @@
       </div>
     </a>
 
-    <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav" data-i18n data-en="Menu" data-de="Menü">
-      Menu
-    </button>
-
     <nav id="site-nav" aria-label="Primary">
       <ul>
         <li><a href="/" data-i18n data-en="Home" data-de="Start">Home</a></li>
         <li><a href="/about/" data-i18n data-en="About" data-de="Über uns">About</a></li>
-        <li><a href="/ministries/" data-i18n data-en="Ministries" data-de="Dienste">Ministries</a></li>
+        <li><a href="/ministries/" data-i18n data-en="Ministries" data-de="Dienst">Ministries</a></li>
         <li><a href="/sermons/" data-i18n data-en="Sermons" data-de="Predigten">Sermons</a></li>
-        <li><a href="/events/" data-i18n data-en="Events" data-de="Veranstaltungen">Events</a></li>
-        <li><a href="/service-times/" data-i18n data-en="Service Times" data-de="Gottesdienstzeiten">Service Times</a></li>
+        <li><a href="/events/" data-i18n data-en="Events" data-de="Events">Events</a></li>
+        <li><a href="/service-times/" data-i18n data-en="Service Times" data-de="Gottesdienst">Service Times</a></li>
         <li><a href="/contact/" data-i18n data-en="Contact" data-de="Kontakt">Contact</a></li>
       </ul>
     </nav>
 
     <div class="nav-actions">
-      <a class="button" href="/contact/" data-i18n data-en="Visit us" data-de="Besuchen">Visit us</a>
-      <a class="button primary" href="/service-times/" data-i18n data-en="This week" data-de="Diese Woche">This week</a>
+      <a class="button" href="/contact/">Visit us</a>
+      <a class="button primary" href="/events/">This week</a>
+
+      <div class="pills">
+        <button data-lang="de">Deutsch</button>
+        <button data-lang="en">English</button>
+      </div>
     </div>
+    
+    <button
+      class="mobile-toggle"
+      type="button"
+      data-mobile-toggle
+      aria-expanded="false"
+      aria-controls="site-nav">
+      Menu
+    </button>
+
   </div>
 </header>
 
