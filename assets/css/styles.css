@@ -293,3 +293,33 @@ footer{
 .footer-links{display:flex; flex-wrap:wrap; gap: 10px; margin-top: 12px;}
 .footer-links a{color: rgba(255,255,255,.80); text-decoration:none; padding: 6px 10px; border-radius: 12px; background: rgba(255,255,255,.06);}
 .footer-links a:hover{background: rgba(255,255,255,.10);}
+
+
+/* Language switch */
+.lang-switch{display:flex; gap:6px; align-items:center;}
+.lang-switch a{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px;
+  padding:8px 10px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 900;
+  font-size: 12px;
+  color: rgba(255,255,255,.90);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+}
+.lang-switch a.active{background: rgba(199,138,42,.22); border-color: rgba(199,138,42,.28); color: rgba(255,255,255,.96);}
+.lang-switch a:hover{background: rgba(255,255,255,.12);}
+
+@media (max-width:980px){
+  .lang-switch{margin-right:8px;}
+}
+
+/* Gentle animated scripture glow */
+@keyframes softGlow{
+  0%{filter:saturate(120%) brightness(1.02)}
+  50%{filter:saturate(140%) brightness(1.06)}
+  100%{filter:saturate(120%) brightness(1.02)}
+}
+.verse-rotator, .verse-inline{animation: softGlow 10s ease-in-out infinite;}

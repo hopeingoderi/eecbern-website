@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deacons Ministry | EEC Bern</title>
+  <title>Calendar | EEC Bern</title>
   <meta name="description" content="Eritrean Evangelical Church Bern — worship, prayer, teaching, and fellowship in Bern." />
   <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
@@ -47,43 +47,34 @@
 
 <section class="section">
   <div class="container">
-    <p class="kicker">MINISTRY</p>
-    <h1>Deacons Ministry</h1>
-    <p class="lead">Leader: <b>Angesom Habte</b></p>
+    <p class="kicker" data-i18n data-en="CALENDAR" data-de="KALENDER" data-ti="ካሌንዳር">CALENDAR</p>
+    <h1 data-i18n
+        data-en="Church Calendar"
+        data-de="Gemeindekalender"
+        data-ti="ናይ ቤተ-ክርስቲያን ካሌንዳር">Church Calendar</h1>
+    <p class="lead" data-i18n
+        data-en="When you make a Google Calendar public, this page updates automatically — no weekly coding."
+        data-de="Wenn du einen Google Kalender öffentlich machst, aktualisiert sich diese Seite automatisch — ohne wöchentliches Programmieren."
+        data-ti="Google Calendar ህዝባዊ ምግባር እንተገበርካዮ፣ እዚ ገጽ ብራሱ ይተዓራረይ — ሳምንታዊ ኮድ የለን።">
+      When you make a Google Calendar public, this page updates automatically — no weekly coding.
+    </p>
 
-    <div class="split" style="margin-top:14px;">
-      <div class="photo">
-        <img src="/assets/img/ministry-deacons.svg" alt="Deacons Ministry image" loading="lazy"/>
-      </div>
-      <div class="card glass" style="padding:16px 14px;">
-        <p class="kicker">VISION</p>
-        <h2 style="margin-bottom:6px;">Serving with faith and love</h2>
-        <p>To glorify God through this ministry and strengthen the church in Bern.</p>
-
-        <div class="verse-inline">
-          <span class="vref">Acts 6:3</span>
-          <span class="vtext">“Choose… men… full of the Spirit and wisdom.”</span>
-        </div>
-
-        <div class="card" style="margin-top:14px; padding:14px 12px;">
-          <p class="kicker">MEETING</p>
-          <p class="lead" style="margin:0;">Service support (as needed)</p>
-          <p class="small" style="margin-top:6px;">Location: Eymattstrasse 2b, 3027 Bern</p>
-        </div>
-
-        <div class="btn-row">
-          <a class="btn primary" href="/contact/">Contact</a>
-          <a class="btn ghost" href="/ministries/">Back to ministries</a>
-        </div>
-      </div>
+    <div class="verse-inline">
+      <span class="vref">Ecclesiastes 3:1</span>
+      <span class="vtext">“There is a time for everything…”</span>
     </div>
 
     <div class="card glass" style="padding:16px 14px; margin-top:16px;">
-      <p class="kicker">OBJECTIVES</p>
-      <h2>Goals & objectives</h2>
-      <ul style="margin:10px 0 0 18px; color: rgba(10,18,16,.82); line-height:1.7;">
-        <li>Serve the church with excellence and humility</li><li>Build spiritual growth through prayer and the Word</li><li>Support visitors and members with love and unity</li><li>Equip believers to use their gifts for God’s glory</li>
-      </ul>
+      <div class="video" style="aspect-ratio:16/10;">
+        <iframe data-calendar-embed
+          src=""
+          title="Google Calendar"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p class="small" style="margin-top:10px;">
+        Paste your Google Calendar embed URL into <b>assets/js/config.js</b> (googleCalendarEmbedUrl).
+      </p>
     </div>
   </div>
 </section>

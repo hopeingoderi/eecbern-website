@@ -1,4 +1,3 @@
-
 (function(){
   'use strict';
 
@@ -114,5 +113,114 @@
     lb.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
   }
+
+}
+  // -----------------------------
+  // Language switch (EN / DE / TI)
+  // -----------------------------
+  const LANG_KEY = 'eec_lang_v3';
+  const langBtns = document.querySelectorAll('[data-lang]');
+  const getLang = () => localStorage.getItem(LANG_KEY) || 'en';
+  const setLang = (l) => localStorage.setItem(LANG_KEY, l);
+
+  function applyLang(lang){
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const v = el.getAttribute('data-'+lang);
+      if(v) el.textContent = v;
+    });
+    langBtns.forEach(b=>{
+      const active = b.getAttribute('data-lang') === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  langBtns.forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const l = b.getAttribute('data-lang') || 'en';
+      setLang(l);
+      applyLang(l);
+    });
+  });
+
+  applyLang(getLang());
+
+  // -----------------------------
+  // Auto-load latest sermon (YouTube RSS)
+  // Works if you set EEC_CONFIG.youtubeChannelId
+  // -----------------------------
+  function setYoutubeVideoId(videoId){
+    if(!videoId) return;
+    document.querySelectorAll('[data-youtube-latest]').forEach(frame=>{
+      frame.src = 'https://www.youtube.com/embed/' + videoId;
+    });
+  }
+
+  function tryLoadLatestFromChannel(){
+    const cfg = window.EEC_CONFIG || {};
+    const cid = (cfg.youtubeChannelId || '').trim();
+    if(!cid) return false;
+
+    const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + encodeURIComponent(cid);
+    const proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rss);
+
+    fetch(proxy)
+      .then(res=>res.text())
+      .then(xmlText=>{
+        const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const entry = doc.querySelector('entry link[rel="alternate"]');
+        const href = entry ? entry.getAttribute('href') : '';
+        let vid = '';
+        try{
+          const u = new URL(href);
+          vid = u.searchParams.get('v') || '';
+        }catch{}
+        // Some feeds use yt:videoId
+        if(!vid){
+          const yt = doc.querySelector('entry yt\\:videoId');
+          vid = yt ? yt.textContent.trim() : '';
+        }
+        if(vid) setYoutubeVideoId(vid);
+      })
+      .catch(()=>{/* ignore */});
+    return true;
+  }
+
+  // Fallback video id
+  try{
+    const cfg = window.EEC_CONFIG || {};
+    if(cfg.youtubeFallbackVideoId && cfg.youtubeFallbackVideoId !== 'VIDEO_ID'){
+      setYoutubeVideoId(cfg.youtubeFallbackVideoId);
+    }
+  }catch{}
+
+  tryLoadLatestFromChannel();
+
+  // -----------------------------
+  // Google Calendar embed (optional)
+  // -----------------------------
+  try{
+    const cfg = window.EEC_CONFIG || {};
+    const cal = (cfg.googleCalendarEmbedUrl || '').trim();
+    if(cal){
+      document.querySelectorAll('[data-calendar-embed]').forEach(ifr=>{
+        ifr.src = cal;
+      });
+    }
+  }catch{}
+
+  // -----------------------------
+  // Prayer request form endpoint (optional)
+  // -----------------------------
+  try{
+    const cfg = window.EEC_CONFIG || {};
+    const ep = (cfg.prayerFormEndpoint || '').trim();
+    const form = document.querySelector('[data-prayer-form]');
+    if(form && ep){
+      form.setAttribute('action', ep);
+    }
+  }catch{}
 
 })();
