@@ -1,43 +1,325 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>EEC Bern</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home | EEC Bern</title>
+  <meta name="description" content="Eritrean Evangelical Church Bern — worship, prayer, teaching, and fellowship in Bern." />
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-
 <header>
-<h3>EEC Bern</h3>
-<nav>
-<a href="#">Home</a>
-<a href="#ministries">Ministries</a>
-<a href="#visit">Visit</a>
-</nav>
+  <div class="container navbar">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo.svg" alt="EEC Bern logo" />
+      <div class="title">
+        <strong>EEC Bern</strong>
+        <span>Eritrean Evangelical Church Bern</span>
+      </div>
+    </a>
+
+    <button class="mobile-toggle" type="button" data-mobile-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+    <nav id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/sermons/">Sermons</a></li>
+        <li><a href="/ministries/">Ministries</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/visit-us/">Visit</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/give/" class="nav-cta">Give</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
+<main id="main">
+
 <section class="hero">
-<h1>Eritrean Evangelical Church Bern</h1>
-<p id="verseRef">Matthew 11:28</p>
-<p id="verseText">Come to me all who are weary.</p>
+  <video autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero-poster.svg">
+    <source src="/assets/video/hero.mp4" type="video/mp4" />
+  </video>
+
+  <div class="container hero-inner">
+    <div class="hero-card">
+      <p class="kicker">EEC Bern</p>
+      <h1>Eritrean Evangelical Church Bern</h1>
+      <p class="lead">A Christ‑centered community in Bern — worship, prayer, teaching, and warm fellowship.</p>
+
+      <div class="verse-rotator">
+        <div class="ref" data-verse-ref>Matthew 11:28</div>
+        <div class="text" data-verse-text>“Come to me, all who are weary and burdened, and I will give you rest.”</div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn primary" href="/visit-us/#service-times">Plan a Visit</a>
+        <a class="btn ghost" href="/sermons/">Watch Sermons</a>
+      </div>
+
+      <div class="verse-inline" style="margin-top:14px;">
+        <span class="vref">Matthew 18:20</span>
+        <span class="vtext">“For where two or three gather in my name, there am I with them.”</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="ministries">
-<h2>Church Ministries</h2>
-<div class="cards"><a href="ministries/worship/index.html"><div class="card"><b>Worship</b><br>Leader: Eyob G. Yohannes</div></a><a href="ministries/prayer/index.html"><div class="card"><b>Prayer</b><br>Leader: Yodit Haile</div></a><a href="ministries/biblestudy/index.html"><div class="card"><b>Bible Study</b><br>Leader: Aron Josef</div></a><a href="ministries/gospel/index.html"><div class="card"><b>Gospel</b><br>Leader: Solomon Abraham</div></a><a href="ministries/men/index.html"><div class="card"><b>Men Ministry</b><br>Leader: Yonas Musie</div></a><a href="ministries/women/index.html"><div class="card"><b>Women Ministry</b><br>Leader: Abreht Alem</div></a><a href="ministries/youth/index.html"><div class="card"><b>Youth Ministry</b><br>Leader: Sasse</div></a><a href="ministries/kids/index.html"><div class="card"><b>Kids Ministry</b><br>Leader: Sami</div></a><a href="ministries/media/index.html"><div class="card"><b>Media Ministry</b><br>Leader: Naod Kedawi</div></a><a href="ministries/finance/index.html"><div class="card"><b>Finance Ministry</b><br>Leader: Yemane Brhan</div></a><a href="ministries/deacons/index.html"><div class="card"><b>Deacons</b><br>Leader: Angesom Habte</div></a><a href="ministries/mission/index.html"><div class="card"><b>Mission Ministry</b><br>Leader: TBD</div></a><a href="ministries/counseling/index.html"><div class="card"><b>Counseling Ministry</b><br>Leader: TBD</div></a><a href="ministries/family/index.html"><div class="card"><b>Family Ministry</b><br>Leader: TBD</div></a><a href="ministries/hospitality/index.html"><div class="card"><b>Hospitality Ministry</b><br>Leader: TBD</div></a></div>
+<section class="section">
+  <div class="container split">
+    <div class="photo">
+      <img src="/assets/img/church-photo.svg" alt="Church photo (replace with real photo)" loading="lazy" />
+    </div>
+
+    <div class="card glass" style="padding:18px 16px;">
+      <p class="kicker">WELCOME</p>
+      <h2>You are warmly welcome</h2>
+      <p class="lead">We are a Christ‑centered Eritrean evangelical community in Bern. Our desire is simple: to worship Jesus, grow in the Word, and walk together as one family.</p>
+      <p>Whether you are new to faith, returning to church, or searching for hope — you are welcome to come as you are. We believe God restores, heals, and leads people into new life through Jesus Christ.</p>
+
+      <div class="verse-inline">
+        <span class="vref">Psalm 122:1</span>
+        <span class="vtext">“I rejoiced with those who said to me, ‘Let us go to the house of the LORD.’”</span>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn primary" href="/about/">Who we are</a>
+        <a class="btn ghost" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="visit">
-<h2>Visit Us</h2>
-<p>Eymattstrasse 2b, 3027 Bern</p>
-<iframe src="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern&output=embed" width="100%" height="350"></iframe>
+<section class="section" id="service-times">
+  <div class="container">
+    <p class="kicker">SERVICE TIMES</p>
+    <h2>Join us this week</h2>
+    <p>Come and worship with us — you are welcome.</p>
+    <div class="verse-inline">
+      <span class="vref">Hebrews 10:25</span>
+      <span class="vtext">“Not giving up meeting together… but encouraging one another.”</span>
+    </div>
+
+    <div class="grid-3" style="margin-top:16px;">
+      <div class="feature">
+        <span class="tag">SUNDAY</span>
+        <h3 style="margin-top:10px;">Worship Service</h3>
+        <p class="lead">14:00 – 19:00</p>
+        <p class="small">Eymattstrasse 2b, 3027 Bern</p>
+      </div>
+      <div class="feature">
+        <span class="tag">THURSDAY</span>
+        <h3 style="margin-top:10px;">Prayer Meeting</h3>
+        <p class="lead">Every Thursday</p>
+        <p class="small">Eymattstrasse 2b, 3027 Bern</p>
+      </div>
+      <div class="feature">
+        <span class="tag">THURSDAY</span>
+        <h3 style="margin-top:10px;">Bible Study</h3>
+        <p class="lead">17:30 – 19:30</p>
+        <p class="small">Eymattstrasse 2b, 3027 Bern</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <p class="kicker">LATEST SERMON</p>
+    <h2>Messages & teaching</h2>
+    <p>Faith grows as we hear God’s Word.</p>
+    <div class="verse-inline">
+      <span class="vref">Romans 10:17</span>
+      <span class="vtext">“Faith comes from hearing, and hearing through the word of Christ.”</span>
+    </div>
+
+    <div class="card glass" style="padding:16px 14px; margin-top:14px;">
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="Latest sermon (replace VIDEO_ID)"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <p class="small" style="margin-top:10px;">Replace <b>VIDEO_ID</b> with your real YouTube sermon video ID.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="/sermons/">More sermons</a>
+        <a class="btn ghost" href="/visit-us/">Visit us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="kicker">MINISTRIES</p>
+    <h2>Serving together</h2>
+    <p>God has given gifts for building up the church.</p>
+    <div class="verse-inline">
+      <span class="vref">1 Peter 4:10</span>
+      <span class="vtext">“Each of you should use whatever gift you have received to serve others…”</span>
+    </div>
+
+    <div class="grid-3" style="margin-top:16px;">
+      <a class="feature" href="/ministries/">
+        <span class="tag">EXPLORE</span>
+        <h3 style="margin-top:10px;">All ministries</h3>
+        <p>Vision, objectives, leaders, meeting info, and verses.</p>
+      </a>
+      <a class="feature" href="/ministries/worship/">
+        <span class="tag">MINISTRY</span>
+        <h3 style="margin-top:10px;">Worship</h3>
+        <p class="small">Leader: Eyob G. Yohannes</p>
+      </a>
+      <a class="feature" href="/ministries/prayer/">
+        <span class="tag">MINISTRY</span>
+        <h3 style="margin-top:10px;">Prayer</h3>
+        <p class="small">Leader: Yodit Haile</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="kicker">EVENTS</p>
+    <h2>This week</h2>
+    <p>Simple and clear — Swiss style.</p>
+    <div class="verse-inline">
+      <span class="vref">Ecclesiastes 3:1</span>
+      <span class="vtext">“There is a time for everything…”</span>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-top"><strong>Sunday</strong><span class="small">14:00 – 19:00</span></div>
+          <div>Worship Service</div>
+          <div class="small">Eymattstrasse 2b, 3027 Bern</div>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-top"><strong>Thursday</strong><span class="small">Evening</span></div>
+          <div>Prayer Meeting</div>
+          <div class="small">Eymattstrasse 2b, 3027 Bern</div>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-top"><strong>Thursday</strong><span class="small">17:30 – 19:30</span></div>
+          <div>Bible Study</div>
+          <div class="small">Eymattstrasse 2b, 3027 Bern</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn" href="/events/">See all events</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="kicker">CHURCH LIFE</p>
+    <h2>Moments of fellowship</h2>
+    <p>Replace placeholders with real church photos.</p>
+
+    <div class="gallery" data-gallery>
+      <a href="/assets/img/gallery-1.svg"><img src="/assets/img/gallery-1.svg" alt="Church life 1" loading="lazy"/></a>
+      <a href="/assets/img/gallery-2.svg"><img src="/assets/img/gallery-2.svg" alt="Church life 2" loading="lazy"/></a>
+      <a href="/assets/img/gallery-3.svg"><img src="/assets/img/gallery-3.svg" alt="Church life 3" loading="lazy"/></a>
+      <a href="/assets/img/gallery-4.svg"><img src="/assets/img/gallery-4.svg" alt="Church life 4" loading="lazy"/></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="card glass" style="padding:18px 16px;">
+      <p class="kicker">PASTOR</p>
+      <h2>Pastor Bahta Tekleweyni</h2>
+      <p class="lead">“Our desire is to lead people to Jesus, build a strong community of faith, and share God’s love in Bern and beyond.”</p>
+      <div class="verse-inline">
+        <span class="vref">Jeremiah 3:15</span>
+        <span class="vtext">“I will give you shepherds after my own heart…”</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn primary" href="/about/">Meet our church</a>
+        <a class="btn ghost" href="/contact/">Contact</a>
+      </div>
+    </div>
+
+    <div class="card glass" style="padding:16px 14px;">
+      <p class="kicker">VISIT</p>
+      <h2>Find us in Bern</h2>
+      <p class="lead">Eymattstrasse 2b, 3027 Bern</p>
+      <div class="video" style="aspect-ratio:16/10;">
+        <iframe src="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern&output=embed"
+          title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="btn-row">
+        <a class="btn primary" href="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn ghost" href="/visit-us/">Plan a visit</a>
+      </div>
+      <div class="verse-inline">
+        <span class="vref">Jeremiah 29:13</span>
+        <span class="vtext">“You will seek me and find me when you seek me with all your heart.”</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-<p>Eritrean Evangelical Church Bern</p>
+  <div class="container footer-grid">
+    <div>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <img src="/assets/img/logo.svg" alt="" style="width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.10);padding:6px;" />
+        <div>
+          <strong>EEC Bern</strong><br/>
+          <span style="color:rgba(255,255,255,.72); font-size:13px;">Eymattstrasse 2b, 3027 Bern</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/sermons/">Sermons</a>
+        <a href="/ministries/">Ministries</a>
+        <a href="/events/">Events</a>
+        <a href="/visit-us/">Visit</a>
+        <a href="/contact/">Contact</a>
+        <a href="/give/">Give</a>
+      </div>
+
+      <div style="margin-top:10px;">
+        <span style="color:rgba(255,255,255,.72); font-size:13px;">© <span data-year></span> EEC Bern. All rights reserved.</span>
+      </div>
+    </div>
+
+    <div class="card glass" style="padding:16px 14px; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.90); box-shadow: none;">
+      <strong>Contact</strong>
+      <div class="small" style="color:rgba(255,255,255,.72); margin-top:8px;">
+        info@eecbern.ch<br/>
+        +41 75 222 12 26<br/>
+        German • English
+      </div>
+    </div>
+  </div>
 </footer>
 
+<div class="lightbox" data-lightbox aria-label="Image viewer" role="dialog">
+  <img src="" alt="" />
+</div>
+
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

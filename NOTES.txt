@@ -1,0 +1,18 @@
+EEC Bern Premium Power Website v2
+
+1) Hero video
+   Put your file at: assets/video/hero.mp4
+
+2) Latest sermon
+   Replace VIDEO_ID in:
+   - /index.html
+   - /sermons/index.html
+
+3) Replace placeholder images
+   - assets/img/church-photo.svg
+   - assets/img/gallery-1..4.svg
+   - assets/img/ministry-*.svg
+   You can replace with .jpg/.png and update the HTML src if you change filenames.
+
+4) Leaders
+   Mission/Family/Counseling/Hospitality are set to TBD (you can tell me the names and I’ll update).

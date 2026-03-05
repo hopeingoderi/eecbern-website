@@ -8,6 +8,6 @@
 <rect width="1600" height="900" rx="48" fill="url(#g)"/>
 <circle cx="280" cy="700" r="320" fill="rgba(255,255,255,.14)"/>
 <circle cx="1280" cy="220" r="360" fill="rgba(255,255,255,.12)"/>
-<text x="110" y="160" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="72" fill="rgba(255,255,255,.92)" font-weight="800">Church Photo</text>
+<text x="110" y="160" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="72" fill="rgba(255,255,255,.92)" font-weight="800">Church Life 3</text>
 <text x="110" y="235" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="28" fill="rgba(255,255,255,.86)">Replace this placeholder with a real photo</text>
 </svg>
