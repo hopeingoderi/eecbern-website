@@ -16,3 +16,10 @@ EEC Bern Premium Power Website v2
 
 4) Leaders
    Mission/Family/Counseling/Hospitality are set to TBD (you can tell me the names and I’ll update).
+
+
+v3 upgrades:
+- Language switch EN/DE/TI
+- Auto latest sermon via YouTube channel RSS (set youtubeChannelId)
+- Calendar page /calendar/ with embed URL from config
+- Prayer request form (Formspree endpoint in config)
