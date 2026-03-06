@@ -122,7 +122,12 @@
     const img = $('img', box);
     const closeBtn = $('[data-lightbox-close]', box);
     const zoomBtn = $('[data-lightbox-zoom]', box);
+    const nextBtn = $('[data-lightbox-next]', box);
+    const prevBtn = $('[data-lightbox-prev]', box);
+    const caption = $('[data-lightbox-caption]', box);
     let scale = 1;
+    let gallery = [];
+    let currentIndex = 0;
 
     const resetZoom = () => {
       scale = 1;
@@ -130,10 +135,41 @@
       box.classList.remove('is-zoomed');
       if(zoomBtn) zoomBtn.textContent = 'Zoom';
     };
+    const syncButtons = () => {
+      if(prevBtn) prevBtn.style.visibility = gallery.length > 1 ? 'visible' : 'hidden';
+      if(nextBtn) nextBtn.style.visibility = gallery.length > 1 ? 'visible' : 'hidden';
+    };
+    const renderSlide = () => {
+      const item = gallery[currentIndex];
+      if(!item) return;
+      img.src = item.href;
+      img.alt = item.alt || '';
+      if(caption) caption.textContent = item.title || item.alt || '';
+      syncButtons();
+      resetZoom();
+    };
+    const open = (items, index=0) => {
+      gallery = items;
+      currentIndex = index;
+      renderSlide();
+      box.classList.add('open');
+      document.body.classList.add('menu-open');
+    };
     const close = () => {
       box.classList.remove('open');
+      document.body.classList.remove('menu-open');
       resetZoom();
       img.src = '';
+    };
+    const next = () => {
+      if(!gallery.length) return;
+      currentIndex = (currentIndex + 1) % gallery.length;
+      renderSlide();
+    };
+    const prev = () => {
+      if(!gallery.length) return;
+      currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+      renderSlide();
     };
     const toggleZoom = () => {
       scale = scale === 1 ? 1.9 : 1;
@@ -142,21 +178,33 @@
       if(zoomBtn) zoomBtn.textContent = scale > 1 ? 'Reset' : 'Zoom';
     };
 
-    $$('[data-gallery] a').forEach(a => {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        img.src = a.getAttribute('href');
-        box.classList.add('open');
-        resetZoom();
+    $$('[data-gallery]').forEach(group => {
+      const items = $$('a', group).map(a => ({
+        href: a.getAttribute('href'),
+        alt: $('img', a)?.getAttribute('alt') || '',
+        title: a.getAttribute('data-title') || $('img', a)?.getAttribute('alt') || ''
+      }));
+      $$('a', group).forEach((a, index) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          open(items, index);
+        });
       });
     });
     if(closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); });
     if(zoomBtn) zoomBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleZoom(); });
+    if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+    if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
     img && img.addEventListener('click', (e) => { e.stopPropagation(); toggleZoom(); });
     box.addEventListener('click', () => close());
+    $('.lightbox__stage', box)?.addEventListener('click', (e) => e.stopPropagation());
+    $('.lightbox__toolbar', box)?.addEventListener('click', (e) => e.stopPropagation());
     document.addEventListener('keydown', (e) => {
+      if(!box.classList.contains('open')) return;
       if(e.key === 'Escape') close();
-      if(e.key.toLowerCase() === 'z' && box.classList.contains('open')) toggleZoom();
+      if(e.key === 'ArrowRight') next();
+      if(e.key === 'ArrowLeft') prev();
+      if(e.key.toLowerCase() === 'z') toggleZoom();
     });
   }
 
