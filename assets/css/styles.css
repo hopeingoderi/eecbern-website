@@ -512,3 +512,145 @@ nav#site-nav a.is-active{background: rgba(199,138,42,.18); border:1px solid rgba
 @media (max-width: 980px){
   .about-layout,.ministry-grid--wow,.donate-grid,.faith-mini-list{grid-template-columns:1fr;}
 }
+
+
+/* ===== v11 UI refresh ===== */
+.home-events-grid,
+.events-compact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+.event-card-compact{
+  position:relative;
+  padding:18px 18px 16px;
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.70));
+  border:1px solid rgba(13,24,20,.10);
+  box-shadow:0 18px 48px rgba(13,24,20,.11);
+  overflow:hidden;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.event-card-compact::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:5px;
+  background:linear-gradient(180deg, var(--gold), #e0b26f);
+  opacity:.9;
+}
+.event-card-compact:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:0 30px 72px rgba(13,24,20,.17);
+  border-color:rgba(199,138,42,.34);
+}
+.event-card-compact .event-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+.event-day{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(10,18,16,.56);
+}
+.event-time-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(199,138,42,.16);
+  color:#6d4510;
+  font-size:12px;
+  font-weight:900;
+}
+.event-title-row{display:flex;align-items:center;gap:10px;}
+.event-icon-badge{
+  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(180deg, rgba(199,138,42,.22), rgba(255,255,255,.84));
+  font-size:20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.88);
+}
+.event-card-compact h3{margin:0;font-size:1.12rem;}
+.event-card-compact .small{margin-top:6px;display:block;}
+.event-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.btn.mini{padding:10px 12px;border-radius:14px;font-size:13px;}
+.btn.whatsapp{
+  background:linear-gradient(180deg, #25d366, #18b955);
+  color:white;
+  border-color:rgba(37,211,102,.45);
+}
+.btn.callnow{
+  background:linear-gradient(180deg, rgba(11,43,35,.92), rgba(15,58,48,.92));
+  color:white;
+  border-color:rgba(11,43,35,.32);
+}
+.section-intro-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.section-intro-bar .verse-inline{margin-top:0;}
+
+/* richer gallery */
+.gallery a{position:relative;cursor:zoom-in;}
+.gallery a::after{
+  content:"Preview";
+  position:absolute;right:10px;bottom:10px;
+  padding:7px 10px;border-radius:999px;
+  background:rgba(11,43,35,.76);color:#fff;font-size:12px;font-weight:800;
+  opacity:0;transform:translateY(8px);transition:.2s ease;
+}
+.gallery a:hover::after{opacity:1;transform:translateY(0);}
+.lightbox{
+  flex-direction:column;
+  gap:14px;
+}
+.lightbox__toolbar{
+  display:flex;align-items:center;gap:10px;justify-content:flex-end;width:min(1100px,96vw);
+}
+.lightbox__btn{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+}
+.lightbox__btn:hover{background:rgba(255,255,255,.16);}
+.lightbox__stage{
+  width:min(1100px,96vw);
+  display:flex;align-items:center;justify-content:center;
+  overflow:auto;
+}
+.lightbox img{
+  cursor:zoom-in;
+  transition:transform .18s ease;
+  transform-origin:center center;
+}
+.lightbox.is-zoomed img{cursor:zoom-out;}
+
+/* ministry detail contact buttons */
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.contact-actions .btn{min-width:180px;}
+.contact-actions .btn span{display:inline-flex;align-items:center;gap:8px;}
+
+/* extra animation */
+.reveal-rise{animation:riseIn .55s ease both;}
+.reveal-rise:nth-child(2){animation-delay:.06s}
+.reveal-rise:nth-child(3){animation-delay:.12s}
+.reveal-rise:nth-child(4){animation-delay:.18s}
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media (max-width: 980px){
+  .home-events-grid,.events-compact-grid{grid-template-columns:1fr;}
+  .section-intro-bar{align-items:flex-start;}
+}

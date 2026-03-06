@@ -125,7 +125,13 @@
 <button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
 </div>
 </footer>
-<div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog"><img alt="" src=""/></div>
+<div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
+  <div class="lightbox__toolbar">
+    <button class="lightbox__btn" data-lightbox-zoom type="button">Zoom</button>
+    <button class="lightbox__btn" data-lightbox-close type="button">Close</button>
+  </div>
+  <div class="lightbox__stage"><img alt="" src=""/></div>
+</div>
 <script src="/assets/js/config.js"></script>
 <script src="/lang/en.js"></script><script src="/lang/de.js"></script><script src="/lang/ti.js"></script>
 <script defer="" src="/assets/js/main.js"></script>

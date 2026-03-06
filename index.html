@@ -299,7 +299,11 @@
 </div>
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
-<img alt="" src=""/>
+  <div class="lightbox__toolbar">
+    <button class="lightbox__btn" data-lightbox-zoom type="button">Zoom</button>
+    <button class="lightbox__btn" data-lightbox-close type="button">Close</button>
+  </div>
+  <div class="lightbox__stage"><img alt="" src=""/></div>
 </div>
 <script src="/assets/js/config.js"></script>
 <script src="/lang/en.js"></script>
