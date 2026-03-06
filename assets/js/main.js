@@ -1,4 +1,4 @@
-/* EEC Bern — main interactions (mobile menu + 3 languages + rotating verses) */
+/* EEC Bern — main interactions (mobile menu + languages + gallery) */
 (function(){
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
   const $  = (sel, root=document) => root.querySelector(sel);
@@ -103,8 +103,8 @@
     const lang = html.getAttribute('data-lang') || 'en';
     const index = Math.floor(Date.now() / 7000) % verses.length;
     const verse = verses[index];
-    $$('[data-verse-ref], [data-footer-verse-ref], [data-page-verse-ref]').forEach(el => el.textContent = verse.ref);
-    $$('[data-verse-text], [data-footer-verse-text], [data-page-verse-text]').forEach(el => el.textContent = verse[lang] || verse.en);
+    $$('[data-verse-ref], [data-page-verse-ref]').forEach(el => el.textContent = verse.ref);
+    $$('[data-verse-text], [data-page-verse-text]').forEach(el => el.textContent = verse[lang] || verse.en);
   }
 
   function initVerseRotation(){
@@ -133,7 +133,7 @@
       scale = 1;
       img.style.transform = 'scale(1)';
       box.classList.remove('is-zoomed');
-      if(zoomBtn) zoomBtn.textContent = 'Zoom';
+      if(zoomBtn) zoomBtn.textContent = '＋';
     };
     const syncButtons = () => {
       if(prevBtn) prevBtn.style.visibility = gallery.length > 1 ? 'visible' : 'hidden';
@@ -175,7 +175,7 @@
       scale = scale === 1 ? 1.9 : 1;
       img.style.transform = `scale(${scale})`;
       box.classList.toggle('is-zoomed', scale > 1);
-      if(zoomBtn) zoomBtn.textContent = scale > 1 ? 'Reset' : 'Zoom';
+      if(zoomBtn) zoomBtn.textContent = scale > 1 ? '↺' : '＋';
     };
 
     $$('[data-gallery]').forEach(group => {
@@ -191,7 +191,7 @@
         });
       });
     });
-    if(closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+    if(closeBtn){ closeBtn.innerHTML='✕'; closeBtn.addEventListener('click', (e) => { e.stopPropagation(); close(); }); }
     if(zoomBtn) zoomBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleZoom(); });
     if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
     if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
