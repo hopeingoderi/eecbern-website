@@ -1,0 +1,1 @@
+window.EEC_LANG_FILES = window.EEC_LANG_FILES || {}; window.EEC_LANG_FILES["de"] = {"name": "Deutsch", "menu": ["Home", "Über uns", "Dienste", "Veranstaltungen", "Predigten", "Besuch", "Kalender", "Kontakt", "Spenden"]};

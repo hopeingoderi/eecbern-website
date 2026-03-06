@@ -16,12 +16,25 @@
 <img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
 <div class="title">
 <strong>EEC Bern</strong>
-<span data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
+<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
 </div>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">Menu</button>
+<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
+<span class="mobile-toggle__icon">☰</span>
+<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
+</button>
 <nav aria-label="Primary" id="site-nav">
-<ul><li><a href="/"><span class="lang-en">Home</span><span class="lang-ti">ቤት</span></a></li><li><a href="/ministries/"><span class="lang-en">Ministries</span><span class="lang-ti">ኣገልግሎታት</span></a></li><li><a href="/events/"><span class="lang-en">Events</span><span class="lang-ti">ተግባራት</span></a></li><li><a href="/sermons/"><span class="lang-en">Sermons</span><span class="lang-ti">ስብከታት</span></a></li><li><a href="/visit-us/"><span class="lang-en">Visit</span><span class="lang-ti">ምብጻሕ</span></a></li><li><a href="/calendar/"><span class="lang-en">Calendar</span><span class="lang-ti">ቀንዲ መዝገብ</span></a></li><li><a href="/contact/"><span class="lang-en">Contact</span><span class="lang-ti">ርኸቡና</span></a></li><li><a class="btn btn-small" href="/give/"><span class="lang-en">Donate</span><span class="lang-ti">ምሃብ</span></a></li></ul>
+<ul>
+<li><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
+<li><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
+<li><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
+<li><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
+<li><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
+<li><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
+<li><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
+<li><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
+<li><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+</ul>
 </nav>
 </div>
 </header>
@@ -78,30 +91,35 @@
 <div class="footer-links">
 <a href="/">Home</a>
 <a href="/about/">About</a>
-<a href="/sermons/">Sermons</a>
 <a href="/ministries/">Ministries</a>
 <a href="/events/">Events</a>
-<a href="/calendar/">Calendar</a>
+<a href="/sermons/">Sermons</a>
 <a href="/visit-us/">Visit</a>
+<a href="/calendar/">Calendar</a>
 <a href="/contact/">Contact</a>
-<a href="/give/">Give</a>
+<a href="/give/">Donate</a>
+</div>
+<div class="footer-verse verse-inline verse-inline--footer">
+<span class="vref" data-footer-verse-ref="">Psalm 150:6</span>
+<span class="vtext" data-footer-verse-text="">Let everything that has breath praise the Lord.</span>
 </div>
 <div style="margin-top:10px;">
 <span style="color:rgba(255,255,255,.72); font-size:13px;">© <span data-year=""></span> EEC Bern. All rights reserved.</span>
 </div>
 </div>
-<div class="card glass" style="padding:16px 14px; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.90); box-shadow: none;">
-<strong>Contact</strong>
+<div class="card glass footer-card" style="padding:16px 14px; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.90); box-shadow: none;">
+<strong data-de="Kontakt" data-en="Contact" data-ti="ርክብ">Contact</strong>
 <div class="small" style="color:rgba(255,255,255,.72); margin-top:8px;">
         info@eecbern.ch<br/>
         +41 75 222 12 26<br/>
-        German • English
+        English • Deutsch • ትግርኛ
       </div>
 </div>
 </div>
 <div class="footer-lang">
-<span class="footer-lang__label">Language</span>
+<span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
 <button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
 <button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
 </div>
 </footer>
@@ -109,6 +127,9 @@
 <img alt="" src=""/>
 </div>
 <script src="/assets/js/config.js"></script>
+<script src="/lang/en.js"></script>
+<script src="/lang/de.js"></script>
+<script src="/lang/ti.js"></script>
 <script defer="" src="/assets/js/main.js"></script>
 </body>
 </html>
