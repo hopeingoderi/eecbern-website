@@ -293,3 +293,30 @@
     update();
   }
 })();
+
+
+document.addEventListener("scroll",function(){
+document.querySelectorAll(".section").forEach(el=>{
+const rect = el.getBoundingClientRect()
+if(rect.top < window.innerHeight-80){
+el.classList.add("reveal","show")
+}
+})
+})
+
+// gallery zoom
+
+document.querySelectorAll('.gallery-item').forEach(el=>{
+el.addEventListener('click',()=>{
+const overlay=document.createElement('div')
+overlay.style.position='fixed'
+overlay.style.inset='0'
+overlay.style.background='rgba(0,0,0,.8)'
+overlay.style.display='flex'
+overlay.style.alignItems='center'
+overlay.style.justifyContent='center'
+overlay.innerHTML='<div style="background:white;padding:40px;border-radius:20px">'+el.innerText+'</div>'
+overlay.onclick=()=>overlay.remove()
+document.body.appendChild(overlay)
+})
+})
