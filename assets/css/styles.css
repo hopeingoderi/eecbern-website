@@ -1719,3 +1719,42 @@ nav#site-nav .nav-donate:hover{
     height:auto !important;
   }
 }
+
+
+/* V16 master – ministries stability fix */
+.ministry-page-menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+.ministry-page-menu a{
+  min-height:44px;
+}
+.ministry-group-block{
+  margin-top:34px;
+}
+.ministry-group-head{
+  margin:8px 0 18px;
+}
+.ministry-section-title{
+  margin:0 0 8px;
+  font-size:clamp(1.45rem, 2vw, 1.9rem);
+  letter-spacing:-0.02em;
+}
+.ministry-section-copy{
+  margin:0;
+  max-width:760px;
+  color:var(--muted);
+}
+.ministry-group-block .ministry-grid{
+  margin-top:16px;
+}
+@media (max-width: 760px){
+  .ministry-group-block{
+    margin-top:28px;
+  }
+  .ministry-page-menu a{
+    width:100%;
+  }
+}
