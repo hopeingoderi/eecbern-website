@@ -217,3 +217,24 @@
     initLightbox();
   });
 })();
+
+
+// Safe mobile mega menu toggle
+(function(){
+  const megaLink = document.querySelector('[data-mega-toggle]');
+  const nav = document.getElementById('site-nav');
+  if(!megaLink || !nav) return;
+  megaLink.addEventListener('click', function(e){
+    if(window.innerWidth <= 980 && nav.classList.contains('open')){
+      const item = megaLink.closest('.nav-item--mega');
+      if(item){
+        e.preventDefault();
+        item.classList.toggle('is-open');
+        const menu = item.querySelector('.mega-menu');
+        if(menu){
+          menu.style.display = item.classList.contains('is-open') ? 'block' : 'none';
+        }
+      }
+    }
+  });
+})();
