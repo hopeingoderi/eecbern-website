@@ -1761,95 +1761,15 @@ nav#site-nav .nav-donate:hover{
 
 
 
-/* Ministries premium hover upgrade */
-.ministry-wow-card,
-.ministry-card{
-  transition:
-    transform .28s ease,
-    box-shadow .28s ease,
-    border-color .28s ease,
-    background .28s ease !important;
-}
-
-.ministry-wow-card:hover,
-.ministry-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.16);
-  border-color: rgba(217, 184, 108, 0.55);
-}
-
-.ministry-wow-card .ministry-icon,
-.ministry-card .ministry-icon{
-  width: 70px;
-  height: 70px;
-  font-size: 1.9rem;
-  border-radius: 20px;
-  box-shadow:
-    0 10px 20px rgba(15, 23, 42, 0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.16);
-}
-
-.ministry-title-link,
-.ministry-title-btn,
-.title-btn{
-  position: relative;
-  transition:
-    transform .24s ease,
-    box-shadow .24s ease,
-    background .24s ease,
-    border-color .24s ease,
-    color .24s ease !important;
-}
-
-.ministry-title-link:hover,
-.ministry-title-btn:hover,
-.title-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(201, 154, 69, 0.20);
-  border-color: rgba(201, 154, 69, 0.45);
-}
-
-.ministry-wow-card .btn,
-.ministry-card .btn,
-.ministry-wow-card .primary-btn,
-.ministry-card .primary-btn,
-.ministry-wow-card .secondary-btn,
-.ministry-card .secondary-btn{
-  transition:
-    transform .24s ease,
-    box-shadow .24s ease,
-    filter .24s ease !important;
-}
-
-.ministry-wow-card .btn:hover,
-.ministry-card .btn:hover,
-.ministry-wow-card .primary-btn:hover,
-.ministry-card .primary-btn:hover,
-.ministry-wow-card .secondary-btn:hover,
-.ministry-card .secondary-btn:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.03);
-  box-shadow: 0 14px 28px rgba(201, 154, 69, 0.20);
-}
-
-.ministry-page-menu a{
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    background .22s ease,
-    color .22s ease !important;
-}
-
-.ministry-page-menu a:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(18, 56, 74, 0.14);
-}
-
-@media (max-width: 760px){
-  .ministry-wow-card .ministry-icon,
-  .ministry-card .ministry-icon{
-    width: 64px;
-    height: 64px;
-    font-size: 1.75rem;
-  }
+/* ministries real fix */
+.ministry-group-block{margin-top:34px}
+.ministry-group-head{margin:8px 0 18px}
+.ministry-section-title{margin:0 0 8px;font-size:clamp(1.45rem,2vw,1.9rem);letter-spacing:-0.02em}
+.ministry-section-copy{margin:0;max-width:760px;color:var(--muted)}
+.ministry-group-block .ministry-grid{margin-top:16px}
+.ministry-page-menu{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.ministry-page-menu a{min-height:44px}
+@media (max-width:760px){
+  .ministry-group-block{margin-top:28px}
+  .ministry-page-menu a{width:100%}
 }
