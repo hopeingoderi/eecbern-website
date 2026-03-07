@@ -1847,3 +1847,14 @@ nav#site-nav .nav-donate:hover{
   nav.open .nav-item--mega .mega-menu{display:block}
   .quick-ministry-grid, .sermon-meta-grid, .quick-visit-grid, .calendar-highlight-grid, .testimony-panel{grid-template-columns:1fr}
 }
+
+
+
+/* V20 menu hotfix: restore simple Ministries nav item */
+.nav-item--mega,
+.mega-menu,
+.mega-menu__grid,
+.mega-menu__col,
+.mega-menu__feature{
+  all: unset;
+}
