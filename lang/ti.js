@@ -1,1 +1,1 @@
-window.siteLang = { code: 'ti', label: 'ትግርኛ' };
+window.siteLang={code:'ti',label:'ትግርኛ'};

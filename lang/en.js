@@ -1,1 +1,1 @@
-window.siteLang = { code: 'en', label: 'English' };
+window.siteLang={code:'en',label:'English'};
