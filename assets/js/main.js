@@ -238,3 +238,58 @@
     }
   });
 })();
+
+
+
+// V21 amazing upgrade: verse rotation + gallery slider
+(function(){
+  const rotator = document.querySelector('[data-verse-rotator]');
+  if(rotator){
+    const refEl = rotator.querySelector('[data-verse-ref]');
+    const textEl = rotator.querySelector('[data-verse-text]');
+    const verseSet = [
+      {ref:'Psalm 100:2', text:'“Worship the Lord with gladness; come before him with joyful songs.”'},
+      {ref:'Hebrews 10:25', text:'“Let us not give up meeting together, but encourage one another.”'},
+      {ref:'1 Peter 4:10', text:'“Each of you should use whatever gift you have received to serve others.”'},
+      {ref:'Matthew 18:20', text:'“For where two or three gather in my name, there am I with them.”'}
+    ];
+    let v = 0;
+    setInterval(() => {
+      v = (v + 1) % verseSet.length;
+      textEl.style.opacity = '0';
+      textEl.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        refEl.textContent = verseSet[v].ref;
+        textEl.textContent = verseSet[v].text;
+        textEl.style.opacity = '1';
+        textEl.style.transform = 'translateY(0)';
+      }, 180);
+    }, 4200);
+  }
+
+  const slider = document.querySelector('[data-gallery-slider]');
+  if(slider){
+    const track = slider.querySelector('[data-gallery-track]');
+    const prev = slider.querySelector('.gallery-nav--prev');
+    const next = slider.querySelector('.gallery-nav--next');
+    const slides = Array.from(track.children);
+    let index = 0;
+
+    function slidesPerView(){
+      if(window.innerWidth <= 700) return 1;
+      if(window.innerWidth <= 980) return 2;
+      return 3;
+    }
+    function update(){
+      const perView = slidesPerView();
+      const slideWidth = slides[0].getBoundingClientRect().width + 18;
+      const maxIndex = Math.max(0, slides.length - perView);
+      index = Math.max(0, Math.min(index, maxIndex));
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+    if(prev) prev.addEventListener('click', () => { index -= 1; update(); });
+    if(next) next.addEventListener('click', () => { index += 1; update(); });
+    window.addEventListener('resize', update);
+    update();
+  }
+})();
