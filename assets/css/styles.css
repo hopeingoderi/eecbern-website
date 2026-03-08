@@ -2129,3 +2129,212 @@ margin-top:10px;
 color:#0f2d3a;
 font-weight:600;
 }
+
+
+
+/* V25 fixes: home gallery + ministry photo zoom + objective style */
+
+.fellowship-section .lead,
+.church-gallery-section .lead{max-width:760px}
+
+.fellowship-slider{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+  margin-top:20px;
+}
+.fellowship-slider__viewport{
+  overflow:hidden;
+}
+.fellowship-slider__track{
+  display:flex;
+  transition:transform .32s ease;
+}
+.fellowship-slide{
+  min-width:100%;
+  aspect-ratio:1/1;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  display:block;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow2);
+  background:rgba(255,255,255,.4);
+  cursor:zoom-in;
+}
+.fellowship-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.fellowship-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(11,43,35,.06), rgba(11,43,35,.34));
+  pointer-events:none;
+}
+.fellowship-slide__label{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  z-index:2;
+  color:#fff;
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:900;
+  text-shadow:0 10px 20px rgba(0,0,0,.24);
+}
+.slider-btn{
+  width:54px;
+  height:54px;
+  border-radius:999px;
+  border:1px solid rgba(13,24,20,.12);
+  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.80));
+  box-shadow:0 16px 32px rgba(13,24,20,.12);
+  color:var(--text);
+  font-size:24px;
+  font-weight:900;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.slider-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 22px 38px rgba(13,24,20,.14);
+}
+
+.church-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+.church-gallery-card{
+  position:relative;
+  display:block;
+  aspect-ratio:1/1;
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow2);
+  background:rgba(255,255,255,.5);
+  cursor:zoom-in;
+}
+.church-gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .22s ease;
+}
+.church-gallery-card:hover img{transform:scale(1.04)}
+.church-gallery-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(11,43,35,.06), rgba(11,43,35,.30));
+}
+.church-gallery-card span{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  z-index:2;
+  color:#fff;
+  font-size:1.2rem;
+  font-weight:900;
+  text-shadow:0 8px 18px rgba(0,0,0,.22);
+}
+
+.ministry-photo-link{
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  cursor:zoom-in;
+}
+.ministry-photo-link img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.ministry-photo-preview{
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  z-index:2;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(11,43,35,.76);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.03em;
+}
+
+.objective-pill{
+  position:relative;
+  padding:16px 16px 16px 22px;
+  border-radius:20px;
+  background:rgba(255,255,255,.88);
+  color:var(--text);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 14px 30px rgba(13,24,20,.08);
+}
+.objective-pill::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14px;
+  bottom:14px;
+  width:6px;
+  border-radius:0 999px 999px 0;
+  background:linear-gradient(180deg, #d5a356, #b8781f);
+}
+.objective-pill strong{
+  display:block;
+  margin-bottom:6px;
+  color:#8a6323;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.objectives-premium .objective-pill{
+  line-height:1.55;
+}
+
+.lightbox__toolbar{
+  position:fixed;
+  top:100px;
+  right:16px;
+  z-index:100001;
+}
+.lightbox__stage{
+  width:min(92vw, 620px);
+  aspect-ratio:1/1;
+}
+.lightbox__caption{
+  margin-top:14px;
+  text-align:center;
+  color:#fff;
+  font-weight:800;
+}
+.lightbox__btn--close{
+  min-width:56px;
+}
+@media (max-width: 760px){
+  .fellowship-slider{
+    grid-template-columns:1fr;
+  }
+  .slider-btn{
+    display:inline-flex;
+    justify-self:center;
+  }
+  .church-gallery-grid{
+    grid-template-columns:1fr;
+  }
+  .lightbox__stage{
+    width:min(92vw, 420px);
+  }
+}

@@ -320,3 +320,27 @@ overlay.onclick=()=>overlay.remove()
 document.body.appendChild(overlay)
 })
 })
+
+
+
+// V25: fellowship slider (one square photo at a time)
+(function(){
+  const slider = document.querySelector('[data-fellowship-slider]');
+  if(!slider) return;
+  const track = slider.querySelector('.fellowship-slider__track');
+  const slides = Array.from(track.children);
+  const prev = slider.querySelector('.slider-btn--prev');
+  const next = slider.querySelector('.slider-btn--next');
+  let index = 0;
+
+  function update(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+    if(prev) prev.disabled = index === 0;
+    if(next) next.disabled = index === slides.length - 1;
+    if(prev) prev.style.opacity = index === 0 ? '.45' : '1';
+    if(next) next.style.opacity = index === slides.length - 1 ? '.45' : '1';
+  }
+  if(prev) prev.addEventListener('click', () => { index = Math.max(0, index - 1); update(); });
+  if(next) next.addEventListener('click', () => { index = Math.min(slides.length - 1, index + 1); update(); });
+  update();
+})();
