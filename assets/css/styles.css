@@ -2338,3 +2338,387 @@ font-weight:600;
     width:min(92vw, 420px);
   }
 }
+
+
+
+/* V26 option 3: poster hero + perfected gallery */
+.hero-story-card{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:center;
+  padding:28px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ffffff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:var(--shadow);
+  margin-top:20px;
+}
+.hero-story-card__poster{
+  position:relative;
+  display:block;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:26px;
+  box-shadow:var(--shadow2);
+}
+.hero-story-card__poster img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hero-story-card__play{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  padding:12px 16px;
+  border-radius:999px;
+  background:rgba(11,43,35,.76);
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 12px 24px rgba(0,0,0,.16);
+}
+.hero-story-card__content .lead{max-width:540px}
+
+.fellowship-slider{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+  margin-top:20px;
+}
+.fellowship-slider__viewport{overflow:hidden}
+.fellowship-slider__track{display:flex;transition:transform .32s ease}
+.fellowship-slide{
+  min-width:100%;
+  aspect-ratio:1/1;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  display:block;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow2);
+  background:rgba(255,255,255,.4);
+  cursor:zoom-in;
+}
+.fellowship-slide img,
+.church-gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.fellowship-slide::after,
+.church-gallery-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(11,43,35,.06), rgba(11,43,35,.34));
+  pointer-events:none;
+}
+.fellowship-slide__label,
+.church-gallery-card span{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  z-index:2;
+  color:#fff;
+  font-weight:900;
+  text-shadow:0 10px 20px rgba(0,0,0,.24);
+}
+.fellowship-slide__label{font-size:clamp(1.5rem,3vw,2.2rem)}
+.church-gallery-card span{font-size:1.15rem}
+
+.slider-btn{
+  width:54px;height:54px;border-radius:999px;
+  border:1px solid rgba(13,24,20,.12);
+  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.80));
+  box-shadow:0 16px 32px rgba(13,24,20,.12);
+  color:var(--text);
+  font-size:24px;font-weight:900;cursor:pointer;
+}
+.church-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+.church-gallery-card{
+  position:relative;
+  display:block;
+  aspect-ratio:1/1;
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow2);
+  background:rgba(255,255,255,.5);
+  cursor:zoom-in;
+}
+.church-gallery-card:hover img{transform:scale(1.04)}
+.church-gallery-card img{transition:transform .22s ease}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100000;
+  padding:20px;
+}
+.lightbox.is-open{display:flex}
+.lightbox__inner{max-width:92vw;text-align:center}
+.lightbox__stage{
+  width:min(92vw, 620px);
+  aspect-ratio:1/1;
+  border-radius:24px;
+  overflow:hidden;
+  background:#111;
+  box-shadow:0 24px 48px rgba(0,0,0,.30);
+}
+.lightbox__stage img{width:100%;height:100%;object-fit:cover;display:block}
+.lightbox__toolbar{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.lightbox__btn{
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+.lightbox__caption{margin-top:14px;color:#fff;font-weight:800}
+
+.ministry-photo-link{
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  cursor:zoom-in;
+}
+.ministry-photo-preview{
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  z-index:2;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(11,43,35,.76);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.objective-pill{
+  position:relative;
+  padding:16px 16px 16px 22px;
+  border-radius:20px;
+  background:rgba(255,255,255,.88);
+  color:var(--text);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 14px 30px rgba(13,24,20,.08);
+}
+.objective-pill::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14px;
+  bottom:14px;
+  width:6px;
+  border-radius:0 999px 999px 0;
+  background:linear-gradient(180deg, #d5a356, #b8781f);
+}
+.objective-pill strong{
+  display:block;
+  margin-bottom:6px;
+  color:#8a6323;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+@media (max-width: 900px){
+  .hero-story-card{grid-template-columns:1fr}
+}
+@media (max-width: 760px){
+  .fellowship-slider{grid-template-columns:1fr}
+  .slider-btn{display:inline-flex;justify-self:center}
+  .church-gallery-grid{grid-template-columns:1fr}
+  .lightbox__stage{width:min(92vw, 420px)}
+}
+
+
+
+/* V27: uniform homepage gallery inspired by kirubel.ch */
+.church-life-uniform .lead{
+  max-width:760px;
+}
+.section-head-uniform{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+}
+.uniform-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+  margin-top:22px;
+}
+.uniform-gallery-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:28px;
+  background:#f2ede5;
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 16px 34px rgba(13,24,20,.08);
+  min-height:250px;
+}
+.uniform-gallery-card--large{
+  grid-column:span 1;
+  min-height:360px;
+}
+.uniform-gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .25s ease;
+}
+.uniform-gallery-card:hover img{
+  transform:scale(1.03);
+}
+.uniform-gallery-card__preview{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  background:rgba(19,24,31,.78);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 12px 24px rgba(0,0,0,.16);
+}
+.uniform-gallery-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(12,18,26,.02), rgba(12,18,26,.12));
+  pointer-events:none;
+}
+
+/* Better lightbox controls */
+.lightbox__toolbar{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.lightbox__btn{
+  min-height:46px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+.lightbox__btn:hover{
+  background:rgba(255,255,255,.14);
+}
+.lightbox__stage{
+  width:min(92vw, 760px);
+  aspect-ratio:4/3;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 24px 48px rgba(0,0,0,.28);
+  background:#111;
+}
+.lightbox__stage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.lightbox__caption{
+  margin-top:14px;
+  color:#fff;
+  text-align:center;
+  font-weight:800;
+  font-size:1.1rem;
+}
+
+/* Stronger ministry goals styling */
+.objectives-premium{
+  list-style:none !important;
+  padding:0 !important;
+  margin:0 !important;
+  display:grid;
+  gap:14px;
+}
+.objectives-premium li,
+.objective-pill{
+  position:relative !important;
+  padding:18px 18px 18px 26px !important;
+  border-radius:22px !important;
+  background:rgba(255,255,255,.92) !important;
+  border:1px solid rgba(13,24,20,.08) !important;
+  box-shadow:0 14px 30px rgba(13,24,20,.08) !important;
+  color:var(--text) !important;
+  line-height:1.6 !important;
+  overflow:hidden;
+}
+.objectives-premium li::before,
+.objective-pill::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  top:14px !important;
+  bottom:14px !important;
+  width:6px !important;
+  border-radius:0 999px 999px 0 !important;
+  background:linear-gradient(180deg, #d5a356, #b8781f) !important;
+}
+.objectives-premium li strong,
+.objective-pill strong{
+  display:block !important;
+  margin:0 0 6px 0 !important;
+  color:#8a6323 !important;
+  font-size:11px !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+
+@media (max-width: 980px){
+  .uniform-gallery-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+@media (max-width: 760px){
+  .uniform-gallery-grid{
+    grid-template-columns:1fr;
+  }
+  .uniform-gallery-card,
+  .uniform-gallery-card--large{
+    min-height:260px;
+  }
+  .lightbox__stage{
+    width:min(92vw, 420px);
+    aspect-ratio:1/1;
+  }
+}

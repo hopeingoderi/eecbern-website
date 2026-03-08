@@ -344,3 +344,125 @@ document.body.appendChild(overlay)
   if(next) next.addEventListener('click', () => { index = Math.min(slides.length - 1, index + 1); update(); });
   update();
 })();
+
+
+
+// V26: one-photo-at-a-time fellowship slider
+(function(){
+  const slider = document.querySelector('[data-fellowship-slider]');
+  if(!slider) return;
+  const track = slider.querySelector('.fellowship-slider__track');
+  const slides = Array.from(track.children);
+  const prev = slider.querySelector('.slider-btn--prev');
+  const next = slider.querySelector('.slider-btn--next');
+  let index = 0;
+  function update(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+    if(prev){ prev.disabled = index === 0; prev.style.opacity = index === 0 ? '.45' : '1'; }
+    if(next){ next.disabled = index === slides.length - 1; next.style.opacity = index === slides.length - 1 ? '.45' : '1'; }
+  }
+  if(prev) prev.addEventListener('click', ()=>{ index = Math.max(0, index-1); update(); });
+  if(next) next.addEventListener('click', ()=>{ index = Math.min(slides.length-1, index+1); update(); });
+  update();
+})();
+
+// V26: lightbox with zoom and close
+(function(){
+  if(document.querySelector('.lightbox')) return;
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = `
+    <div class="lightbox__inner">
+      <div class="lightbox__toolbar">
+        <button class="lightbox__btn lightbox__btn--zoom" type="button">Zoom</button>
+        <button class="lightbox__btn lightbox__btn--close" type="button">Close</button>
+      </div>
+      <div class="lightbox__stage"><img alt=""></div>
+      <div class="lightbox__caption"></div>
+    </div>`;
+  document.body.appendChild(box);
+
+  const img = box.querySelector('img');
+  const caption = box.querySelector('.lightbox__caption');
+  const zoomBtn = box.querySelector('.lightbox__btn--zoom');
+  const closeBtn = box.querySelector('.lightbox__btn--close');
+  let zoomed = false;
+
+  function openLightbox(src, title){
+    img.src = src;
+    caption.textContent = title || '';
+    img.style.transform = 'scale(1)';
+    img.style.transition = 'transform .22s ease';
+    zoomed = false;
+    zoomBtn.textContent = 'Zoom';
+    box.classList.add('is-open');
+  }
+  function closeLightbox(){ box.classList.remove('is-open'); }
+
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('[data-gallery] a, a[data-title].fellowship-slide, .church-gallery-card, .ministry-photo-link');
+    if(!link) return;
+    if(link.getAttribute('href')){
+      e.preventDefault();
+      openLightbox(link.getAttribute('href'), link.getAttribute('data-title') || link.textContent.trim());
+    }
+  });
+
+  zoomBtn.addEventListener('click', function(){
+    zoomed = !zoomed;
+    img.style.transform = zoomed ? 'scale(1.35)' : 'scale(1)';
+    zoomBtn.textContent = zoomed ? 'Reset' : 'Zoom';
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  box.addEventListener('click', function(e){ if(e.target === box) closeLightbox(); });
+})();
+
+
+
+// V27: refined lightbox behavior for uniform gallery and ministry photos
+(function(){
+  const box = document.querySelector('.lightbox');
+  if(!box) return;
+  const img = box.querySelector('.lightbox__stage img');
+  const caption = box.querySelector('.lightbox__caption');
+  const zoomBtn = box.querySelector('.lightbox__btn--zoom');
+  const closeBtn = box.querySelector('.lightbox__btn--close');
+  let zoomed = false;
+
+  function openLightbox(src, title){
+    if(!img) return;
+    img.src = src;
+    caption.textContent = title || '';
+    img.style.transform = 'scale(1)';
+    img.style.transition = 'transform .22s ease';
+    zoomed = false;
+    if(zoomBtn) zoomBtn.textContent = 'Zoom';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('.uniform-gallery-card, .ministry-photo-link');
+    if(!link) return;
+    const src = link.getAttribute('href');
+    if(!src) return;
+    e.preventDefault();
+    openLightbox(src, link.getAttribute('data-title') || '');
+  });
+
+  if(zoomBtn){
+    zoomBtn.addEventListener('click', function(){
+      zoomed = !zoomed;
+      if(img) img.style.transform = zoomed ? 'scale(1.22)' : 'scale(1)';
+      zoomBtn.textContent = zoomed ? 'Reset' : 'Zoom';
+    });
+  }
+  if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  box.addEventListener('click', function(e){
+    if(e.target === box) closeLightbox();
+  });
+})();
