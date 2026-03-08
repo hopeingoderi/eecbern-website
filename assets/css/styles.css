@@ -2722,3 +2722,175 @@ font-weight:600;
     aspect-ratio:1/1;
   }
 }
+
+
+
+/* V28 cleanup */
+.church-life-uniform .container,
+.pastor-profile-section .container{
+  max-width:1180px;
+}
+.section-head-uniform{
+  margin-bottom:18px;
+}
+.uniform-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:18px !important;
+  margin-top:22px;
+}
+.uniform-gallery-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:28px;
+  background:#f2ede5;
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 16px 34px rgba(13,24,20,.08);
+  min-height:240px !important;
+  aspect-ratio:1/1;
+}
+.uniform-gallery-card--large{
+  min-height:240px !important;
+  aspect-ratio:1/1;
+}
+.uniform-gallery-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .25s ease;
+}
+.uniform-gallery-card:hover img{transform:scale(1.03)}
+.uniform-gallery-card__preview{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  background:rgba(19,24,31,.78);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 12px 24px rgba(0,0,0,.16);
+}
+.uniform-gallery-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(12,18,26,.02), rgba(12,18,26,.12));
+  pointer-events:none;
+}
+
+.pastor-profile-card{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:24px;
+  align-items:center;
+  padding:24px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#fff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 16px 34px rgba(13,24,20,.08);
+}
+.pastor-photo-link{
+  display:block;
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+  aspect-ratio:1/1;
+  box-shadow:0 16px 34px rgba(13,24,20,.12);
+}
+.pastor-photo-link img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.pastor-profile-content h3{
+  margin:6px 0 10px;
+  font-size:clamp(1.6rem,2.5vw,2.4rem);
+}
+
+.goals-star-list{
+  display:grid;
+  gap:14px;
+  margin-top:12px;
+}
+.goal-star-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:18px 18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 14px 30px rgba(13,24,20,.08);
+}
+.goal-star-icon{
+  color:#d5a356;
+  font-weight:900;
+  font-size:1.05rem;
+  line-height:1.6;
+  flex:none;
+}
+.goal-star-text{
+  color:var(--text);
+  line-height:1.6;
+}
+
+.lightbox__toolbar{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.lightbox__btn{
+  min-height:46px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+.lightbox__stage{
+  width:min(92vw, 760px);
+  aspect-ratio:4/3;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 24px 48px rgba(0,0,0,.28);
+  background:#111;
+}
+.lightbox__stage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.lightbox__caption{
+  margin-top:14px;
+  color:#fff;
+  text-align:center;
+  font-weight:800;
+  font-size:1.1rem;
+}
+
+@media (max-width: 1100px){
+  .uniform-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+}
+@media (max-width: 860px){
+  .pastor-profile-card{grid-template-columns:1fr;}
+  .uniform-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media (max-width: 560px){
+  .uniform-gallery-grid{grid-template-columns:1fr !important;}
+  .lightbox__stage{width:min(92vw, 420px);aspect-ratio:1/1;}
+}

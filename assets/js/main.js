@@ -466,3 +466,25 @@ document.body.appendChild(overlay)
     if(e.target === box) closeLightbox();
   });
 })();
+
+
+
+// V28: pastor photo uses same lightbox
+(function(){
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('.pastor-photo-link');
+    if(!link) return;
+    const box = document.querySelector('.lightbox');
+    const img = box ? box.querySelector('.lightbox__stage img') : null;
+    const caption = box ? box.querySelector('.lightbox__caption') : null;
+    const zoomBtn = box ? box.querySelector('.lightbox__btn--zoom') : null;
+    if(!box || !img) return;
+    e.preventDefault();
+    img.src = link.getAttribute('href');
+    if(caption) caption.textContent = link.getAttribute('data-title') || 'Pastor profile';
+    img.style.transform = 'scale(1)';
+    if(zoomBtn) zoomBtn.textContent = 'Zoom';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+})();
