@@ -1,73 +1,413 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Kirubel Photo & Video 4U offers premium wedding photography and visual storytelling in Switzerland with elegant imagery, refined direction and timeless delivery." />
-<title>Kirubel Photo & Video 4U</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Home | EEC Bern</title>
+<meta content="Eritrean Evangelical Church Bern — worship, prayer, teaching, and fellowship in Bern." name="description"/>
+<link href="/assets/img/logo.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="site-header" id="top">
-  <div class="container nav">
-    <a href="#top" class="brand" aria-label="Kirubel homepage">
-      <span class="brand-logo"><img src="assets/images/logo.jpg" alt="Kirubel Photo & Video 4U logo" /></span>
-      <span class="brand-copy"><strong>Kirubel</strong><span>Photo &amp; Video 4U</span></span>
-    </a>
-    <nav class="desktop-nav">
-      <a href="#about" data-i18n="navAbout">About</a>
-      <a href="#gallery" data-i18n="navGallery">Gallery</a>
-      <a href="#services" data-i18n="navServices">Services</a>
-      <a href="#experience" data-i18n="navExperience">Experience</a>
-      <a href="#pricing" data-i18n="navPricing">Pricing</a>
-      <a href="#contact" class="nav-cta" data-i18n="navContact">Contact</a>
-    </nav>
-    <div class="header-tools">
-      <div class="language-switch"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="de">DE</button><button class="lang-btn" data-lang="ti">TI</button></div>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false"><span></span><span></span></button>
-    </div>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#about" data-i18n="navAbout">About</a>
-    <a href="#gallery" data-i18n="navGallery">Gallery</a>
-    <a href="#services" data-i18n="navServices">Services</a>
-    <a href="#experience" data-i18n="navExperience">Experience</a>
-    <a href="#pricing" data-i18n="navPricing">Pricing</a>
-    <a href="#contact" data-i18n="navContact">Contact</a>
-  </div>
+<header>
+<div class="container navbar">
+<a class="brand" href="/">
+<img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
+<div class="title">
+<strong>EEC Bern</strong>
+<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
+</div>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
+<span class="mobile-toggle__icon">☰</span>
+<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
+</button>
+<nav aria-label="Primary" id="site-nav"><ul>
+<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
+<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
+<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
+<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
+<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
+<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
+<li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
+<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
+<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+</ul></nav>
+</div>
 </header>
-<main>
+<main id="main">
 <section class="hero">
-  <div class="hero-slider">
-    <div class="hero-slide is-active"><img src="assets/images/hero1.jpg" alt="Bride and groom with luxury vintage red car" /></div>
-    <div class="hero-slide"><img src="assets/images/hero2.jpg" alt="Bride and groom by fountain" /></div>
-    <div class="hero-slide"><img src="assets/images/hero3.jpg" alt="Bride and groom near elegant castle" /></div>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="container hero-grid">
-    <div class="hero-copy reveal">
-      <span class="eyebrow" data-i18n="eyebrow">Swiss Premium Wedding Storytelling</span>
-      <h1 data-i18n="heroTitle">Elegant photography for unforgettable celebrations.</h1>
-      <div class="rotating-line"><span data-i18n="impactLabel">Known for</span><strong id="rotatingText">Timeless wedding imagery.</strong></div>
-      <p data-i18n="heroText">Kirubel Photo &amp; Video 4U creates premium wedding and portrait imagery for clients who value beauty, emotion and refined visual storytelling.</p>
-      <div class="hero-actions"><a href="#gallery" class="btn btn-solid" data-i18n="heroCta1">Explore Gallery</a><a href="#contact" class="btn btn-ghost" data-i18n="heroCta2">Book Your Date</a></div>
-    </div>
-    <aside class="hero-card reveal delay-1"><div class="hero-card-top"><strong>Kirubel Photo &amp; Video 4U</strong><span data-i18n="heroCardTag">Luxury wedding photography in Switzerland</span></div><div class="hero-kpis"><div><span data-i18n="kpi1">Email</span><strong>info@kirubel.ch</strong></div><div><span data-i18n="kpi2">Website</span><strong>kirubel.ch</strong></div><div><span data-i18n="kpi3">Focus</span><strong data-i18n="kpi3v">Weddings • Portraits • Events</strong></div></div></aside>
-  </div>
-  <div class="hero-dots"><button class="dot active" data-slide="0"></button><button class="dot" data-slide="1"></button><button class="dot" data-slide="2"></button></div>
+<video autoplay="" loop="" muted="" playsinline="" poster="/assets/img/hero-poster.svg" preload="metadata">
+<source src="/assets/video/hero.mp4" type="video/mp4"/>
+</video>
+<div class="container hero-inner">
+<div class="hero-card hero-card--worldclass">
+<div class="hero-badge">
+<span class="hero-badge__icon">✦</span>
+<span>Welcome to EEC Bern</span>
+</div>
+<p class="kicker">EEC Bern · Swiss Premium Church Design</p>
+<h1>Eritrean Evangelical Church Bern</h1>
+<p class="lead"><span data-de="Eine christuszentrierte Gemeinde in Bern — Anbetung, Gebet, Lehre und herzliche Gemeinschaft mit einer klaren, modernen und einladenden Präsenz." data-en="A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting." data-i18n="" data-ti="ኣብ በርን ዘላ ብክርስቶስ ዝተመስረተት ቤተ ክርስቲያን — ኣምልኾ፣ ጸሎት፣ መጽሓፍ ቅዱሳዊ ትምህርቲን ሞቕ ሕብረትን ብዘመናዊ እና ዝተኸፍተ ኣቀራርባ ንቕርብ።">A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting.</span></p>
+<div class="hero-verse-card">
+<div class="hero-verse-card__label">Today’s scripture</div>
+<div class="verse-rotator">
+<div class="ref" data-verse-ref="">Matthew 11:28</div>
+<div class="text" data-verse-text="">“Come to me, all who are weary and burdened, and I will give you rest.”</div>
+</div>
+</div>
+<div class="hero-metrics">
+<div><strong>Christ-centered</strong><span>Worship &amp; prayer</span></div>
+<div><strong>Family friendly</strong><span>Bern community</span></div>
+<div><strong>3 Languages</strong><span>EN · DE · TI</span></div>
+</div>
+<div class="btn-row hero-actions">
+<a class="btn primary" href="/visit-us/#service-times">Plan a Visit</a>
+<a class="btn ghost" href="/sermons/">Watch Message</a>
+<a class="btn highlight" href="/ministries/">Explore Ministries</a>
+</div>
+</div>
+</div>
 </section>
-<section class="section" id="about"><div class="container about-grid"><div class="about-copy reveal"><span class="section-tag" data-i18n="aboutTag">About</span><h2 data-i18n="aboutTitle">A premium photography brand built around elegance, trust and emotional storytelling.</h2><p data-i18n="aboutText1">Kirubel Photo &amp; Video 4U captures weddings and celebrations with a calm creative eye, refined composition and genuine respect for your most meaningful moments.</p><p data-i18n="aboutText2">Every gallery is crafted to feel polished, beautiful and timeless — from luxury couple portraits to vibrant family celebrations.</p></div><div class="about-visual reveal delay-1"><div class="about-image"><img src="assets/images/about.jpg" alt="Bride and groom by classic car" /></div></div></div></section>
-<section class="section gallery-section" id="gallery"><div class="container"><div class="section-head reveal"><span class="section-tag" data-i18n="galleryTag">Gallery</span><h2 data-i18n="galleryTitle">A stronger gallery experience designed to showcase your best work beautifully.</h2><p data-i18n="galleryText">Open any image for a larger preview. This gallery focuses only on clean, intentional photography selected to reflect the beauty and value of your brand.</p></div><div class="gallery-masonry"><button class="gallery-card tall reveal" data-image="assets/images/gallery1.jpg" data-caption="Bride and groom by fountain"><img src="assets/images/gallery1.jpg" alt="Bride and groom by fountain" /></button><button class="gallery-card reveal delay-1" data-image="assets/images/gallery2.jpg" data-caption="Traditional couple portrait"><img src="assets/images/gallery2.jpg" alt="Traditional couple portrait" /></button><button class="gallery-card reveal delay-2" data-image="assets/images/gallery3.jpg" data-caption="Bride and groom with black classic car"><img src="assets/images/gallery3.jpg" alt="Bride and groom with black classic car" /></button><button class="gallery-card wide reveal" data-image="assets/images/gallery4.jpg" data-caption="Romantic close wedding portrait"><img src="assets/images/gallery4.jpg" alt="Romantic close wedding portrait" /></button><button class="gallery-card tall reveal delay-1" data-image="assets/images/gallery5.jpg" data-caption="Bride celebrating with bridesmaids"><img src="assets/images/gallery5.jpg" alt="Bride celebrating with bridesmaids" /></button><button class="gallery-card reveal delay-2" data-image="assets/images/gallery6.jpg" data-caption="Bride and groom bouquet portrait"><img src="assets/images/gallery6.jpg" alt="Bride and groom bouquet portrait" /></button><button class="gallery-card reveal" data-image="assets/images/gallery7.jpg" data-caption="Elegant groom portrait"><img src="assets/images/gallery7.jpg" alt="Elegant groom portrait" /></button><button class="gallery-card reveal delay-1" data-image="assets/images/gallery8.jpg" data-caption="Romantic detail portrait"><img src="assets/images/gallery8.jpg" alt="Romantic detail portrait" /></button></div></div></section>
-<section class="section section-dark" id="services"><div class="container"><div class="section-head reveal"><span class="section-tag light" data-i18n="servicesTag">Services</span><h2 data-i18n="servicesTitle">Professional coverage designed for real weddings and real business value.</h2></div><div class="services-grid"><article class="service-card reveal"><span class="service-number">01</span><h3 data-i18n="service1Title">Wedding Photography</h3><p data-i18n="service1Text">Full-day or tailored wedding coverage with elegant portraits, emotional storytelling and a premium final gallery.</p></article><article class="service-card reveal delay-1"><span class="service-number">02</span><h3 data-i18n="service2Title">Photo + Video</h3><p data-i18n="service2Text">A complete creative experience for couples who want both photography and cinematic memories from one trusted brand.</p></article><article class="service-card reveal delay-2"><span class="service-number">03</span><h3 data-i18n="service3Title">Engagement & Portraits</h3><p data-i18n="service3Text">Refined portrait sessions that celebrate personality, connection and style with a clean luxury aesthetic.</p></article><article class="service-card reveal"><span class="service-number">04</span><h3 data-i18n="service4Title">Cultural Celebrations</h3><p data-i18n="service4Text">Beautiful storytelling for traditional weddings, family events and meaningful celebrations handled with sensitivity and excellence.</p></article></div></div></section>
-<section class="section" id="experience"><div class="container experience-grid"><div class="experience-image reveal"><img src="assets/images/feature.jpg" alt="Romantic bride and groom bouquet portrait" /></div><div class="experience-copy reveal delay-1"><span class="section-tag" data-i18n="experienceTag">Experience</span><h2 data-i18n="experienceTitle">Clear communication. Calm direction. Premium delivery.</h2><div class="steps"><div class="step"><strong data-i18n="step1Title">01 — Discovery</strong><p data-i18n="step1Text">We discuss your event, priorities, locations and the visual style you want your story to reflect.</p></div><div class="step"><strong data-i18n="step2Title">02 — Planning</strong><p data-i18n="step2Text">A clean photo plan is built around your timeline so every important moment is captured beautifully.</p></div><div class="step"><strong data-i18n="step3Title">03 — Direction</strong><p data-i18n="step3Text">You receive natural guidance in front of the camera — never forced, always elegant and comfortable.</p></div><div class="step"><strong data-i18n="step4Title">04 — Delivery</strong><p data-i18n="step4Text">Your final gallery is curated, refined and delivered with a premium visual standard ready to keep and share.</p></div></div></div></div></section>
-<section class="section pricing" id="pricing"><div class="container"><div class="section-head reveal"><span class="section-tag" data-i18n="pricingTag">Pricing</span><h2 data-i18n="pricingTitle">Flexible collections for portraits, weddings and full celebrations.</h2></div><div class="pricing-grid"><article class="pricing-card reveal"><span class="plan-label" data-i18n="plan1">Essential</span><h3 data-i18n="plan1Title">Portrait Session</h3><p class="price" data-i18n="plan1Price">From CHF 790</p><ul><li data-i18n="plan1f1">Portrait or engagement session</li><li data-i18n="plan1f2">Premium edited final gallery</li><li data-i18n="plan1f3">Ideal for couples and pre-wedding sessions</li></ul></article><article class="pricing-card featured reveal delay-1"><span class="plan-label" data-i18n="plan2">Signature</span><h3 data-i18n="plan2Title">Wedding Story</h3><p class="price" data-i18n="plan2Price">Custom Quote</p><ul><li data-i18n="plan2f1">Wedding day photography coverage</li><li data-i18n="plan2f2">Couple portraits and emotional moments</li><li data-i18n="plan2f3">Luxury curated storytelling gallery</li></ul></article><article class="pricing-card reveal delay-2"><span class="plan-label" data-i18n="plan3">Bespoke</span><h3 data-i18n="plan3Title">Photo + Video Collection</h3><p class="price" data-i18n="plan3Price">Tailored</p><ul><li data-i18n="plan3f1">Flexible custom timeline</li><li data-i18n="plan3f2">Photo and video coverage</li><li data-i18n="plan3f3">Ideal for premium full celebrations</li></ul></article></div></div></section>
-<section class="section section-dark" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="section-tag light" data-i18n="contactTag">Contact</span><h2 data-i18n="contactTitle">Let’s create beautiful memories for your most important day.</h2><p data-i18n="contactText">This contact section is structured for real business use and can be connected later to Formspree, Netlify Forms or your own backend.</p><div class="contact-meta"><div><span data-i18n="contactMeta1">Email</span><strong>info@kirubel.ch</strong></div><div><span data-i18n="contactMeta2">Phone</span><strong>0041765221262</strong></div><div><span data-i18n="contactMeta3">Website</span><strong>kirubel.ch</strong></div></div></div><form class="booking-form reveal delay-1" id="bookingForm" novalidate><div class="form-grid"><div class="field"><label for="name" data-i18n="formName">Full Name</label><input id="name" name="name" type="text" placeholder="Your full name" required /></div><div class="field"><label for="email" data-i18n="formEmail">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required /></div><div class="field"><label for="service" data-i18n="formService">Service</label><select id="service" name="service" required><option value="" data-i18n="formSelect">Select</option><option data-i18n="eventWedding">Wedding</option><option data-i18n="eventPortrait">Portrait</option><option data-i18n="eventVideo">Photo + Video</option><option data-i18n="eventCultural">Cultural Event</option></select></div><div class="field"><label for="date" data-i18n="formDate">Event Date</label><input id="date" name="date" type="date" required /></div></div><div class="form-grid"><div class="field"><label for="location" data-i18n="formLocation">Location</label><input id="location" name="location" type="text" placeholder="Zurich, Bern, Basel..." required /></div><div class="field"><label for="budget" data-i18n="formBudget">Budget Range</label><select id="budget" name="budget" required><option value="" data-i18n="formSelect">Select</option><option>CHF 500 – 1,000</option><option>CHF 1,000 – 2,500</option><option>CHF 2,500 – 5,000</option><option>CHF 5,000+</option></select></div></div><div class="field"><label for="message" data-i18n="formMessage">Tell me about your event</label><textarea id="message" name="message" rows="5" placeholder="Share your date, venue, traditions and desired coverage..." required></textarea></div><button type="submit" class="btn btn-solid wide" data-i18n="formSubmit">Send Inquiry</button><p class="form-status" id="formStatus"></p></form></div></section>
+<section class="section">
+<div class="container">
+<div class="hero-story-card">
+<div class="hero-story-card__media">
+<a class="hero-story-card__poster" href="https://www.youtube.com/" rel="noopener" target="_blank">
+<img alt="EEC Bern welcome poster" loading="eager" src="/assets/img/hero-story-poster.svg"/>
+<span class="hero-story-card__play">▶ Watch Our Story</span>
+</a>
+</div>
+<div class="hero-story-card__content">
+<p class="kicker">OUR STORY</p>
+<h2>Welcome to EEC Bern</h2>
+<p class="lead">This hero poster replaces the heavy background video, keeps the homepage fast, and gives visitors a clear invitation to watch the church story.</p>
+<div class="card-actions">
+<a class="btn btn-small nav-donate" href="/visit-us/">Plan Your Visit</a>
+<a class="btn btn-outline btn-small" href="https://www.youtube.com/" rel="noopener" target="_blank">Watch Video</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section church-life-uniform">
+<div class="container">
+<div class="section-head-uniform">
+<div>
+<p class="kicker">CHURCH LIFE</p>
+<h2>Moments of Fellowship</h2>
+<p class="lead">A clean, uniform gallery style inspired by kirubel.ch — elegant cards, consistent proportions, and authentic preview buttons.</p>
+</div>
+</div>
+<div class="uniform-gallery-grid" data-gallery="">
+<a class="uniform-gallery-card uniform-gallery-card--large" data-title="Worship" href="/assets/img/ministry-worship.svg">
+<img alt="Worship" loading="lazy" src="/assets/img/ministry-worship.svg"/>
+<span class="uniform-gallery-card__preview">Preview</span>
+</a>
+<a class="uniform-gallery-card" data-title="Fellowship" href="/assets/img/ministry-hospitality.svg">
+<img alt="Fellowship" loading="lazy" src="/assets/img/ministry-hospitality.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Youth" href="/assets/img/ministry-youth.svg">
+<img alt="Youth" loading="lazy" src="/assets/img/ministry-youth.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Prayer" href="/assets/img/ministry-prayer.svg">
+<img alt="Prayer" loading="lazy" src="/assets/img/ministry-prayer.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Kids" href="/assets/img/ministry-kids.svg">
+<img alt="Kids" loading="lazy" src="/assets/img/ministry-kids.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Church Media" href="/assets/img/ministry-media.svg">
+<img alt="Church Media" loading="lazy" src="/assets/img/ministry-media.svg"/>
+</a>
+</div>
+</div>
+</section>
+
+<section class="section church-life-uniform">
+<div class="container">
+<div class="section-head-uniform">
+<div>
+<p class="kicker">CHURCH LIFE</p>
+<h2>Moments of Fellowship</h2>
+<p class="lead">A cleaner, uniform gallery style inspired by kirubel.ch — elegant cards, consistent proportions, and authentic preview buttons.</p>
+</div>
+</div>
+<div class="uniform-gallery-grid" data-gallery="">
+<a class="uniform-gallery-card uniform-gallery-card--large" data-title="Worship" href="/assets/img/ministry-worship.svg">
+<img alt="Worship" loading="lazy" src="/assets/img/ministry-worship.svg"/>
+<span class="uniform-gallery-card__preview">Preview</span>
+</a>
+<a class="uniform-gallery-card" data-title="Fellowship" href="/assets/img/ministry-hospitality.svg">
+<img alt="Fellowship" loading="lazy" src="/assets/img/ministry-hospitality.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Youth" href="/assets/img/ministry-youth.svg">
+<img alt="Youth" loading="lazy" src="/assets/img/ministry-youth.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Prayer" href="/assets/img/ministry-prayer.svg">
+<img alt="Prayer" loading="lazy" src="/assets/img/ministry-prayer.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Kids" href="/assets/img/ministry-kids.svg">
+<img alt="Kids" loading="lazy" src="/assets/img/ministry-kids.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Church Media" href="/assets/img/ministry-media.svg">
+<img alt="Church Media" loading="lazy" src="/assets/img/ministry-media.svg"/>
+</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container split">
+<div class="photo photo-clickable" data-gallery="">
+<a data-title="Welcome to EEC Bern" href="/assets/img/church-photo.svg"><img alt="Welcome to EEC Bern" loading="lazy" src="/assets/img/church-photo.svg"/></a>
+</div>
+<div class="card glass welcome-card welcome-card--premium">
+<div class="welcome-card__icon">🤍</div>
+<p class="kicker">WELCOME</p>
+<h2>You are warmly welcome</h2>
+<p class="lead">We are a Christ‑centered Eritrean evangelical community in Bern. Our desire is simple: to worship Jesus, grow in the Word, and walk together as one family.</p>
+<p>Whether you are new to faith, returning to church, or searching for hope — you are welcome to come as you are. We believe God restores, heals, and leads people into new life through Jesus Christ.</p>
+<div class="verse-inline welcome-card__verse">
+<span class="vref">Psalm 122:1</span>
+<span class="vtext">“I rejoiced with those who said to me, ‘Let us go to the house of the LORD.’”</span>
+</div>
+<div class="btn-row">
+<a class="btn primary" href="/about/">Who we are</a>
+<a class="btn ghost" href="/contact/">Contact us</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="service-times">
+<div class="container">
+<p class="kicker">SERVICE TIMES</p>
+<h2>Join us this week</h2>
+<p>Come and worship with us — you are welcome.</p>
+<div class="verse-inline">
+<span class="vref">Hebrews 10:25</span>
+<span class="vtext">“Not giving up meeting together… but encouraging one another.”</span>
+</div>
+<div class="grid-3" style="margin-top:16px;">
+<div class="feature">
+<span class="tag">SUNDAY</span>
+<h3 style="margin-top:10px;">Worship Service</h3>
+<p class="lead">14:00 – 19:00</p>
+<p class="small">Eymattstrasse 2b, 3027 Bern</p>
+</div>
+<div class="feature">
+<span class="tag">THURSDAY</span>
+<h3 style="margin-top:10px;">Prayer Meeting</h3>
+<p class="lead">Every Thursday</p>
+<p class="small">Eymattstrasse 2b, 3027 Bern</p>
+</div>
+<div class="feature">
+<span class="tag">THURSDAY</span>
+<h3 style="margin-top:10px;">Bible Study</h3>
+<p class="lead">17:30 – 19:30</p>
+<p class="small">Eymattstrasse 2b, 3027 Bern</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<p class="kicker">LATEST SERMON</p>
+<h2>Messages &amp; teaching</h2>
+<p>Faith grows as we hear God’s Word.</p>
+<div class="verse-inline">
+<span class="vref">Romans 10:17</span>
+<span class="vtext">“Faith comes from hearing, and hearing through the word of Christ.”</span>
+</div>
+<div class="card glass" style="padding:16px 14px; margin-top:14px;">
+<div class="video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-youtube-latest="" src="https://www.youtube.com/embed/VIDEO_ID" title="Latest sermon (replace VIDEO_ID)"></iframe>
+</div>
+<p class="small" style="margin-top:10px;">Replace <b>VIDEO_ID</b> with your real YouTube sermon video ID.</p>
+<div class="btn-row">
+<a class="btn primary" href="/sermons/">More sermons</a>
+<a class="btn ghost" href="/visit-us/">Visit us</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<p class="kicker">MINISTRIES</p>
+<div class="verse-inline"><span class="vref" data-page-verse-ref="">1 Peter 4:10</span><span class="vtext" data-page-verse-text="">Each of you should use whatever gift you have received to serve others.</span></div>
+<h2>Serving together</h2>
+<p>God has given gifts for building up the church.</p>
+<div class="verse-inline">
+<span class="vref">1 Peter 4:10</span>
+<span class="vtext">“Each of you should use whatever gift you have received to serve others…”</span>
+</div>
+<div class="grid-3" style="margin-top:16px;">
+<a class="feature" href="/ministries/">
+<span class="tag">EXPLORE</span>
+<h3 style="margin-top:10px;">All ministries</h3>
+<p>Vision, objectives, leaders, meeting info, and verses.</p>
+</a>
+<a class="feature" href="/ministries/worship/">
+<span class="tag">MINISTRY</span>
+<h3 style="margin-top:10px;">Worship</h3>
+<p class="small">Leader: Eyob G. Yohannes</p>
+</a>
+<a class="feature" href="/ministries/prayer/">
+<span class="tag">MINISTRY</span>
+<h3 style="margin-top:10px;">Prayer</h3>
+<p class="small">Leader: Yodit Haile</p>
+</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<p class="kicker">EVENTS</p>
+<h2>This week</h2>
+<p>Simple and clear — Swiss style.</p>
+<div class="verse-inline">
+<span class="vref">Ecclesiastes 3:1</span>
+<span class="vtext">“There is a time for everything…”</span>
+</div>
+<div class="home-events-grid">
+<div class="event-card-compact reveal-rise">
+<div class="event-meta"><span class="event-day">Sunday</span><span class="event-time-pill">14:00 – 19:00</span></div>
+<div class="event-title-row"><span class="event-icon-badge">⛪</span><h3>Worship Service</h3></div>
+<span class="small">Eymattstrasse 2b, 3027 Bern</span>
+<div class="event-actions"><a class="btn mini" href="/visit-us/">Visit us</a><a class="btn mini primary" href="/contact/">Contact</a></div>
+</div>
+<div class="event-card-compact reveal-rise">
+<div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">Evening</span></div>
+<div class="event-title-row"><span class="event-icon-badge">🙏</span><h3>Prayer Meeting</h3></div>
+<span class="small">Eymattstrasse 2b, 3027 Bern</span>
+<div class="event-actions"><a class="btn mini" href="/events/">Details</a><a class="btn mini whatsapp" href="https://wa.me/41752221226" rel="noopener" target="_blank">WhatsApp</a></div>
+</div>
+<div class="event-card-compact reveal-rise">
+<div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">17:30 – 19:30</span></div>
+<div class="event-title-row"><span class="event-icon-badge">📖</span><h3>Bible Study</h3></div>
+<span class="small">Eymattstrasse 2b, 3027 Bern</span>
+<div class="event-actions"><a class="btn mini" href="/events/">More</a><a class="btn mini callnow" href="tel:+41752221226">Call</a></div>
+</div>
+</div>
+<div class="btn-row">
+<a class="btn" href="/events/">See all events</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container split">
+<div class="card glass" style="padding:18px 16px;">
+<p class="kicker">PASTOR</p>
+<h2>Pastor Bahta Tekleweyni</h2>
+<p class="lead">“Our desire is to lead people to Jesus, build a strong community of faith, and share God’s love in Bern and beyond.”</p>
+<div class="verse-inline">
+<span class="vref">Jeremiah 3:15</span>
+<span class="vtext">“I will give you shepherds after my own heart…”</span>
+</div>
+<div class="btn-row">
+<a class="btn primary" href="/about/">Meet our church</a>
+<a class="btn ghost" href="/contact/"><span class="lang-en">Contact</span><span class="lang-ti">ንኽትሓትቱ</span></a>
+</div>
+</div>
+<div class="card glass" style="padding:16px 14px;">
+<p class="kicker">VISIT</p>
+<h2>Find us in Bern</h2>
+<p class="lead">Eymattstrasse 2b, 3027 Bern</p>
+<div class="video" style="aspect-ratio:16/10;">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern&amp;output=embed" title="Google Map"></iframe>
+</div>
+<div class="btn-row">
+<a class="btn primary" href="https://www.google.com/maps?q=Eymattstrasse%202b%2C%203027%20Bern" rel="noopener" target="_blank">Open in Maps</a>
+<a class="btn ghost" href="/visit-us/">Plan a visit</a>
+</div>
+<div class="verse-inline">
+<span class="vref">Jeremiah 29:13</span>
+<span class="vtext">“You will seek me and find me when you seek me with all your heart.”</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="pastor-panel">
+<h2>Pastor Message</h2>
+<p>Welcome to EEC Bern. Our prayer is that you encounter Jesus, grow in faith, and find a church family where you belong.</p>
+<p>We believe God is doing something beautiful in Bern and we invite you to grow with us.</p>
+<a class="btn btn-small nav-donate" href="/visit-us/">Plan Your Visit</a>
+</div>
+</div>
+</section>
+
+<section class="section pastor-profile-section">
+<div class="container">
+<div class="section-head-uniform">
+<div>
+<p class="kicker">PASTOR</p>
+<h2>Pastor Profile</h2>
+<p class="lead">A clean pastor card with preview, zoom, and close support.</p>
+</div>
+</div>
+<div class="pastor-profile-card">
+<a class="pastor-photo-link" data-title="Pastor Bahta Tekleweyni" href="/assets/img/pastor-profile.svg">
+<img alt="Pastor Bahta Tekleweyni" loading="lazy" src="/assets/img/pastor-profile.svg"/>
+<span class="uniform-gallery-card__preview">Preview</span>
+</a>
+<div class="pastor-profile-content">
+<p class="kicker">PASTOR</p>
+<h3>Pastor Bahta Tekleweyni</h3>
+<p class="lead">Serving with prayer, biblical teaching, and a shepherd’s heart for the church family in Bern.</p>
+<div class="card-actions">
+<a class="btn btn-small nav-donate" href="/contact/">Contact</a>
+<a class="btn btn-outline btn-small" href="/sermons/">Watch Message</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
-<div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button><img class="lightbox-image" id="lightboxImage" alt="" /><p class="lightbox-caption" id="lightboxCaption"></p></div>
-<footer class="site-footer"><div class="container footer-grid"><div class="footer-column brand-column"><div class="footer-brand"><span class="footer-brand-logo"><img src="assets/images/logo.jpg" alt="Kirubel logo" /></span><span class="footer-brand-copy"><strong>Kirubel</strong><span>Photo &amp; Video 4U</span></span></div><p data-i18n="footerText">Kirubel Photo &amp; Video 4U delivers elegant visual storytelling for weddings, portraits and meaningful celebrations across Switzerland.</p></div><div class="footer-column"><h4 data-i18n="footerTitle1">Navigation</h4><div class="footer-links"><a href="#about" data-i18n="navAbout">About</a><a href="#gallery" data-i18n="navGallery">Gallery</a><a href="#services" data-i18n="navServices">Services</a><a href="#pricing" data-i18n="navPricing">Pricing</a></div></div><div class="footer-column"><h4 data-i18n="footerTitle2">Contact</h4><div class="footer-contact"><span>info@kirubel.ch</span><span>0041765221262</span><span>kirubel.ch</span></div></div></div></footer>
-<a class="floating-contact" href="mailto:info@kirubel.ch" aria-label="Email Kirubel">Mail</a>
-<script src="script.js"></script>
-</body></html>
+<footer>
+<div class="container footer-grid footer-grid--simple">
+<div class="footer-brandline">
+<div class="footer-brand">
+<img alt="" src="/assets/img/logo.svg"/>
+<div>
+<strong>EEC Bern</strong><br/>
+<span>Eymattstrasse 2b, 3027 Bern</span>
+</div>
+</div>
+<div class="footer-links">
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/ministries/">Ministries</a>
+<a href="/events/">Events</a>
+<a href="/sermons/">Sermons</a>
+<a href="/visit-us/">Visit</a>
+<a href="/calendar/">Calendar</a>
+<a href="/contact/">Contact</a>
+<a href="/give/">Donate</a>
+</div>
+<div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
+</div>
+</div>
+<div class="footer-lang">
+<span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
+</footer>
+<div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
+<div class="lightbox__toolbar">
+<button aria-label="Previous image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-prev="" type="button">←</button>
+<button aria-label="Zoom image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-zoom="" type="button">＋</button>
+<button aria-label="Next image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-next="" type="button">→</button>
+<button aria-label="Close viewer" class="lightbox__btn lightbox__btn--close" data-lightbox-close="" type="button">✕</button>
+</div>
+<div class="lightbox__stage"><img alt="" src=""/></div>
+<div class="lightbox__caption" data-lightbox-caption=""></div>
+</div>
+<script src="/assets/js/config.js"></script>
+<script src="/lang/en.js"></script><script src="/lang/de.js"></script><script src="/lang/ti.js"></script>
+<script defer="" src="/assets/js/main.js"></script>
+</body>
+</html>
