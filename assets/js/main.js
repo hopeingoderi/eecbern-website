@@ -52,7 +52,15 @@
     $$('.lang-btn').forEach(btn => btn.addEventListener('click', (e) => {
       e.preventDefault();
       applyLang(btn.getAttribute('data-lang'));
+      const details = btn.closest('details');
+      if(details) details.removeAttribute('open');
     }));
+
+    document.addEventListener('click', (e) => {
+      $$('.lang-dropdown[open]').forEach(drop => {
+        if(!drop.contains(e.target)) drop.removeAttribute('open');
+      });
+    });
   }
 
   function initMobileNav(){
