@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Worship Ministry | EEC Bern</title>
@@ -10,30 +10,29 @@
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header>
-<div class="container navbar">
-<a class="brand" href="/">
-<img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
-<div class="title">
-<strong>EEC Bern</strong>
-<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
-</div>
+<header class="site-header premium-header">
+<div class="container nav-wrap">
+<a aria-label="EEC Bern home" class="brand premium-brand" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="EEC Bern logo" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
-<span class="mobile-toggle__icon">☰</span>
-<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
-</button>
-<nav aria-label="Primary" id="site-nav"><ul>
-<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
-<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
-<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
-<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
-<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
-<li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle mobile-toggle" data-mobile-toggle="" id="menuToggle" type="button">☰ <span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span></button>
+<nav aria-label="Primary navigation" class="main-nav" id="site-nav"><ul>
+<li><a data-de="Home" data-en="Home" data-ti="ቤት" href="/">Home</a></li>
+<li><a data-de="Über uns" data-en="About" data-ti="ብዛዕባና" href="/about/">About</a></li>
+<li><a data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት" href="/ministries/">Ministries</a></li>
+<li><a data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት" href="/events/">Events</a></li>
+<li><a data-de="Predigten" data-en="Sermons" data-ti="ስብከታት" href="/sermons/">Sermons</a></li>
+<li><a data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ" href="/visit-us/">Visit</a></li>
+<li><a data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ" href="/calendar/">Calendar</a></li>
+<li><a data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና" href="/contact/">Contact</a></li>
+<li><a class="nav-donate" data-de="Spenden" data-en="Donate" data-ti="ምሃብ" href="/give/">Donate</a></li>
 </ul></nav>
+<div class="lang-switch premium-lang-switch">
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">EN</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">DE</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">TI</button>
+</div>
 </div>
 </header>
 <main id="main">
@@ -76,17 +75,16 @@
 </div>
 </section>
 </main>
-<footer>
-<div class="container footer-grid footer-grid--simple">
-<div class="footer-brandline">
-<div class="footer-brand">
-<img alt="" src="/assets/img/logo.svg"/>
+<footer class="premium-footer">
+<div class="container footer__grid premium-footer__grid">
 <div>
-<strong>EEC Bern</strong><br/>
-<span>Eymattstrasse 2b, 3027 Bern</span>
+<a aria-label="EEC Bern home" class="brand premium-brand premium-brand--footer" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
+</a>
+<p class="footer-copy" data-de="Eine warme, mehrsprachige Kirche in Bern zum Anbeten, Wachsen und Dienen." data-en="A warm multilingual church in Bern for worship, growth and service." data-ti="ኣብ በርን ንኣምልኾ፣ ንዕብየትን ንኣገልግሎትን ዘላ ሞቕ ብዙሕ ቋንቋ ቤተ ክርስቲያን።">A warm multilingual church in Bern for worship, growth and service.</p>
 </div>
-</div>
-<div class="footer-links">
+<div class="footer__links premium-footer__links">
 <a href="/">Home</a>
 <a href="/about/">About</a>
 <a href="/ministries/">Ministries</a>
@@ -97,14 +95,15 @@
 <a href="/contact/">Contact</a>
 <a href="/give/">Donate</a>
 </div>
-<div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
 </div>
-</div>
-<div class="footer-lang">
+<div class="container footer__bottom premium-footer__bottom">
+<p>© <span data-year=""></span> EEC Bern. <span data-de="Alle Rechte vorbehalten." data-en="All rights reserved." data-ti="ኩሉ መሰል ዝተሓለወ።">All rights reserved.</span></p>
+<div class="footer-lang footer-lang--inline">
 <span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
 <button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
 <button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
 <button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
 </div>
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
@@ -120,5 +119,5 @@
 <script src="/assets/js/config.js"></script>
 <script src="/lang/en.js"></script><script src="/lang/de.js"></script><script src="/lang/ti.js"></script>
 <script defer="" src="/assets/js/main.js"></script>
-</body>
+<script defer="True" src="/assets/js/premium.js"></script></body>
 </html>

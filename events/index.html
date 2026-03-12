@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Events | EEC Bern</title>
@@ -10,138 +10,114 @@
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header>
-<div class="container navbar">
-<a class="brand" href="/">
-<img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
-<div class="title">
-<strong>EEC Bern</strong>
-<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
-</div>
+<header class="site-header premium-header">
+<div class="container nav-wrap">
+<a aria-label="EEC Bern home" class="brand premium-brand" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="EEC Bern logo" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
-<span class="mobile-toggle__icon">☰</span>
-<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
-</button>
-<nav aria-label="Primary" id="site-nav"><ul>
-<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
-<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
-
-<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-
-<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
-<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
-<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
-<li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle mobile-toggle" data-mobile-toggle="" id="menuToggle" type="button">☰ <span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span></button>
+<nav aria-label="Primary navigation" class="main-nav" id="site-nav"><ul>
+<li><a data-de="Home" data-en="Home" data-ti="ቤት" href="/">Home</a></li>
+<li><a data-de="Über uns" data-en="About" data-ti="ብዛዕባና" href="/about/">About</a></li>
+<li><a data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት" href="/ministries/">Ministries</a></li>
+<li><a data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት" href="/events/">Events</a></li>
+<li><a data-de="Predigten" data-en="Sermons" data-ti="ስብከታት" href="/sermons/">Sermons</a></li>
+<li><a data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ" href="/visit-us/">Visit</a></li>
+<li><a data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ" href="/calendar/">Calendar</a></li>
+<li><a data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና" href="/contact/">Contact</a></li>
+<li><a class="nav-donate" data-de="Spenden" data-en="Donate" data-ti="ምሃብ" href="/give/">Donate</a></li>
 </ul></nav>
+<div class="lang-switch premium-lang-switch">
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">EN</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">DE</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">TI</button>
+</div>
 </div>
 </header>
 <main id="main">
-<section class="section">
+<section class="section section--events-hero">
 <div class="container">
-<div class="section-intro-bar">
+<div class="section-intro-bar premium-events-intro">
 <div>
 <p class="kicker">EVENTS</p>
-<h1><span class="lang-en">Events</span><span class="lang-ti">ፍጻመታት</span></h1>
-<p class="lead"><span class="lang-en">Weekly gatherings and special meetings — now cleaner, shorter, and easier to click.</span><span class="lang-ti">ሳምንታዊ ምእካባትን ፍሉይ ርእሳትን — ንጹህ፣ ንኡስ፣ ቀሊል ንምጥቃም።</span></p>
+<h1>Events &amp; Church Calendar</h1>
+<p class="lead">Weekly gatherings and special meetings — now cleaner, more premium and easier to use on mobile.</p>
 </div>
-<div class="verse-inline">
-<span class="vref">Psalm 90:12</span>
-<span class="vtext">“Teach us to number our days, that we may gain a heart of wisdom.”</span>
+<div class="verse-inline"><span class="vref">Psalm 90:12</span><span class="vtext">“Teach us to number our days, that we may gain a heart of wisdom.”</span></div>
 </div>
-</div>
-<div class="events-compact-grid">
-  <article class="event-card-compact reveal-rise">
-    <div class="event-meta"><span class="event-day">Sunday</span><span class="event-time-pill">14:00 – 19:00</span></div>
-    <div class="event-title-row"><div class="event-icon-badge">⛪</div><div><h3>Worship Service</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div>
-    <p class="small" style="margin-top:12px;">A joyful Sunday gathering with worship, biblical preaching, prayer, and fellowship.</p>
-    <div class="event-actions"><a class="btn mini ghost" href="/visit-us/">Visit us</a><a class="btn mini primary" href="/contact/">Contact</a></div>
-  </article>
-  <article class="event-card-compact reveal-rise">
-    <div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">Evening</span></div>
-    <div class="event-title-row"><div class="event-icon-badge">🙏</div><div><h3>Prayer Meeting</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div>
-    <p class="small" style="margin-top:12px;">A calm evening of corporate prayer, worship, and intercession for church and community.</p>
-    <div class="event-actions"><a class="btn mini ghost" href="/contact/">Prayer request</a><a class="btn mini primary" href="/visit-us/">Come along</a></div>
-  </article>
-  <article class="event-card-compact reveal-rise">
-    <div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">17:30 – 19:30</span></div>
-    <div class="event-title-row"><div class="event-icon-badge">📖</div><div><h3>Bible Study</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div>
-    <p class="small" style="margin-top:12px;">Grow deeper in Scripture through teaching, dialogue, and discipleship together.</p>
-    <div class="event-actions"><a class="btn mini ghost" href="/sermons/">Watch message</a><a class="btn mini primary" href="/contact/">Join</a></div>
-  </article>
-</div>
-<div class="card glass" style="padding:18px 16px; margin-top:20px;">
-  <p class="kicker">EVENT NOTES</p>
-  <p class="lead" style="margin-bottom:6px;">All gatherings are held in a welcoming, family-friendly setting.</p>
-  <p>For first-time visitors, you can contact the church before coming or simply visit during service time.</p>
+<div class="events-compact-grid premium-events-grid">
+<article class="event-card-compact reveal-rise"><div class="event-meta"><span class="event-day">Sunday</span><span class="event-time-pill">14:00 – 19:00</span></div><div class="event-title-row"><div class="event-icon-badge">⛪</div><div><h3>Worship Service</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div><p class="small" style="margin-top:12px;">A joyful Sunday gathering with worship, biblical preaching, prayer and fellowship.</p><div class="event-actions"><a class="btn mini ghost" href="/visit-us/">Visit us</a><a class="btn mini primary" href="/contact/">Contact</a></div></article>
+<article class="event-card-compact reveal-rise"><div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">Evening</span></div><div class="event-title-row"><div class="event-icon-badge">🙏</div><div><h3>Prayer Meeting</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div><p class="small" style="margin-top:12px;">A calm evening of corporate prayer, worship and intercession for church and community.</p><div class="event-actions"><a class="btn mini ghost" href="/contact/">Prayer request</a><a class="btn mini primary" href="/visit-us/">Come along</a></div></article>
+<article class="event-card-compact reveal-rise"><div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">17:30 – 19:30</span></div><div class="event-title-row"><div class="event-icon-badge">📖</div><div><h3>Bible Study</h3><span class="small">Eymattstrasse 2b, 3027 Bern</span></div></div><p class="small" style="margin-top:12px;">Grow deeper in Scripture through teaching, dialogue and discipleship together.</p><div class="event-actions"><a class="btn mini ghost" href="/sermons/">Watch message</a><a class="btn mini primary" href="/contact/">Join</a></div></article>
 </div>
 </div>
 </section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-intro-bar">
-      <div>
-        <p class="kicker">CALENDAR HIGHLIGHTS</p>
-        <h2>Church rhythm at a glance</h2>
-        <p class="lead">A simple calendar overview helps members and visitors see that the church is active and organized.</p>
-      </div>
-    </div>
-    <div class="calendar-highlight-grid">
-      <div class="calendar-day-card"><strong>Sunday</strong><span>Worship Service</span><small>14:00 – 19:00</small></div>
-      <div class="calendar-day-card"><strong>Thursday</strong><span>Prayer Meeting</span><small>Evening</small></div>
-      <div class="calendar-day-card"><strong>Thursday</strong><span>Bible Study</span><small>17:30 – 19:30</small></div>
-      <div class="calendar-day-card"><strong>Special</strong><span>Youth / Family Events</span><small>Announced monthly</small></div>
-    </div>
-  </div>
+<section class="section section--events-calendar-page">
+<div class="container grid grid--2 gap-lg align-start">
+<div class="calendar-card reveal">
+<div class="calendar-head"><button aria-label="Previous month" class="calendar-btn" id="prevMonth">‹</button><h3 id="calendarMonth">Month</h3><button aria-label="Next month" class="calendar-btn" id="nextMonth">›</button></div>
+<div class="calendar-grid" id="calendar"></div>
+</div>
+<div class="card glass premium-events-note reveal reveal-delay-1">
+<p class="kicker">EVENT NOTES</p>
+<h2>Church rhythm at a glance</h2>
+<p class="lead">All gatherings are held in a welcoming, family-friendly setting.</p>
+<p>For first-time visitors, you can contact the church before coming or simply visit during service time.</p>
+<div class="calendar-highlight-grid">
+<div class="calendar-day-card"><strong>Sunday</strong><span>Worship Service</span><small>14:00 – 19:00</small></div>
+<div class="calendar-day-card"><strong>Thursday</strong><span>Prayer Meeting</span><small>Evening</small></div>
+<div class="calendar-day-card"><strong>Thursday</strong><span>Bible Study</span><small>17:30 – 19:30</small></div>
+<div class="calendar-day-card"><strong>Special</strong><span>Youth / Family Events</span><small>Announced monthly</small></div>
+</div>
+<div class="btn-row" style="margin-top:18px;"><a class="btn btn--primary" href="/calendar/">Open Calendar Page</a><a class="btn btn--ghost" href="/contact/">Ask a Question</a></div>
+</div>
+</div>
 </section>
-
 </main>
-<footer>
-  <div class="container footer-grid footer-grid--simple">
-    <div class="footer-brandline">
-      <div class="footer-brand">
-        <img alt="" src="/assets/img/logo.svg"/>
-        <div>
-          <strong>EEC Bern</strong><br/>
-          <span>Eymattstrasse 2b, 3027 Bern</span>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/ministries/">Ministries</a>
-        <a href="/events/">Events</a>
-        <a href="/sermons/">Sermons</a>
-        <a href="/visit-us/">Visit</a>
-        <a href="/calendar/">Calendar</a>
-        <a href="/contact/">Contact</a>
-        <a href="/give/">Donate</a>
-      </div>
-      <div class="footer-copy">© <span data-year></span> EEC Bern. All rights reserved.</div>
-    </div>
-  </div>
-  <div class="footer-lang">
-    <span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
-    <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">English</button>
-    <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">Deutsch</button>
-    <button type="button" class="lang-btn" data-lang="ti" aria-pressed="false">ትግርኛ</button>
-  </div>
+<footer class="premium-footer">
+<div class="container footer__grid premium-footer__grid">
+<div>
+<a aria-label="EEC Bern home" class="brand premium-brand premium-brand--footer" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
+</a>
+<p class="footer-copy" data-de="Eine warme, mehrsprachige Kirche in Bern zum Anbeten, Wachsen und Dienen." data-en="A warm multilingual church in Bern for worship, growth and service." data-ti="ኣብ በርን ንኣምልኾ፣ ንዕብየትን ንኣገልግሎትን ዘላ ሞቕ ብዙሕ ቋንቋ ቤተ ክርስቲያን።">A warm multilingual church in Bern for worship, growth and service.</p>
+</div>
+<div class="footer__links premium-footer__links">
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/ministries/">Ministries</a>
+<a href="/events/">Events</a>
+<a href="/sermons/">Sermons</a>
+<a href="/visit-us/">Visit</a>
+<a href="/calendar/">Calendar</a>
+<a href="/contact/">Contact</a>
+<a href="/give/">Donate</a>
+</div>
+</div>
+<div class="container footer__bottom premium-footer__bottom">
+<p>© <span data-year=""></span> EEC Bern. <span data-de="Alle Rechte vorbehalten." data-en="All rights reserved." data-ti="ኩሉ መሰል ዝተሓለወ።">All rights reserved.</span></p>
+<div class="footer-lang footer-lang--inline">
+<span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
+</div>
 </footer>
-<div class="lightbox" data-lightbox role="dialog" aria-label="Image viewer">
-  <div class="lightbox__toolbar">
-    <button type="button" class="lightbox__btn lightbox__btn--ghost" data-lightbox-prev aria-label="Previous image">←</button>
-    <button type="button" class="lightbox__btn lightbox__btn--ghost" data-lightbox-zoom aria-label="Zoom image">＋</button>
-    <button type="button" class="lightbox__btn lightbox__btn--ghost" data-lightbox-next aria-label="Next image">→</button>
-    <button type="button" class="lightbox__btn lightbox__btn--close" data-lightbox-close aria-label="Close viewer">✕</button>
-  </div>
-  <div class="lightbox__stage"><img alt="" src=""/></div>
-  <div class="lightbox__caption" data-lightbox-caption></div>
+<div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
+<div class="lightbox__toolbar">
+<button aria-label="Previous image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-prev="" type="button">←</button>
+<button aria-label="Zoom image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-zoom="" type="button">＋</button>
+<button aria-label="Next image" class="lightbox__btn lightbox__btn--ghost" data-lightbox-next="" type="button">→</button>
+<button aria-label="Close viewer" class="lightbox__btn lightbox__btn--close" data-lightbox-close="" type="button">✕</button>
+</div>
+<div class="lightbox__stage"><img alt="" src=""/></div>
+<div class="lightbox__caption" data-lightbox-caption=""></div>
 </div>
 <script src="/assets/js/config.js"></script>
 <script src="/lang/en.js"></script><script src="/lang/de.js"></script><script src="/lang/ti.js"></script>
-<script defer src="/assets/js/main.js"></script>
-</body>
+<script defer="" src="/assets/js/main.js"></script>
+<script defer="True" src="/assets/js/premium.js"></script></body>
 </html>
