@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Home | EEC Bern</title>
@@ -10,330 +10,157 @@
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header>
-<div class="container navbar">
-<a class="brand" href="/">
-<img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
-<div class="title">
-<strong>EEC Bern</strong>
-<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
-</div>
+<header class="site-header premium-header">
+<div class="container nav-wrap">
+<a aria-label="EEC Bern home" class="brand premium-brand" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="EEC Bern logo" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
 </a>
-<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
-<span class="mobile-toggle__icon">☰</span>
-<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
-</button>
-<nav aria-label="Primary" id="site-nav"><ul>
-<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
-<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
-<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
-<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
-<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
-<li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle mobile-toggle" data-mobile-toggle="" id="menuToggle" type="button">☰ <span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span></button>
+<nav aria-label="Primary navigation" class="main-nav" id="site-nav"><ul>
+<li><a data-de="Home" data-en="Home" data-ti="ቤት" href="/">Home</a></li>
+<li><a data-de="Über uns" data-en="About" data-ti="ብዛዕባና" href="/about/">About</a></li>
+<li><a data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት" href="/ministries/">Ministries</a></li>
+<li><a data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት" href="/events/">Events</a></li>
+<li><a data-de="Predigten" data-en="Sermons" data-ti="ስብከታት" href="/sermons/">Sermons</a></li>
+<li><a data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ" href="/visit-us/">Visit</a></li>
+<li><a data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ" href="/calendar/">Calendar</a></li>
+<li><a data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና" href="/contact/">Contact</a></li>
+<li><a class="nav-donate" data-de="Spenden" data-en="Donate" data-ti="ምሃብ" href="/give/">Donate</a></li>
 </ul></nav>
+<div class="lang-switch premium-lang-switch">
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">EN</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">DE</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">TI</button>
+</div>
 </div>
 </header>
 <main id="main">
-<section class="hero">
-<video autoplay="" loop="" muted="" playsinline="" poster="/assets/img/hero-poster.svg" preload="metadata">
+<section class="hero hero--premium hero--homepage">
+<video autoplay="" loop="" muted="" playsinline="" poster="/assets/img/hero-poster.svg">
 <source src="/assets/video/hero.mp4" type="video/mp4"/>
 </video>
-<div class="container hero-inner">
-<div class="hero-card hero-card--worldclass">
-<div class="hero-badge">
-<span class="hero-badge__icon">✦</span>
-<span>Welcome to EEC Bern</span>
+<div class="hero__overlay"></div>
+<div class="container hero__content premium-hero__content">
+<p class="eyebrow" data-de="Willkommen bei EEC Bern" data-en="Welcome to EEC Bern" data-ti="እንቋዕ ናብ EEC Bern ብደሓን መጻእኩም">Welcome to EEC Bern</p>
+<h1 data-de="Eine geistliche Heimat in Bern zum Anbeten, Wachsen und gemeinsamen Gehen mit Christus." data-en="A spiritual home in Bern to worship, grow and walk with Christ together." data-ti="ኣብ በርን ንምምላኽ፣ ንምዕባይን ምስ ክርስቶስ ብሓባር ንምጓዓዝን ዝርከብ መንፈሳዊ ቤት።">A spiritual home in Bern to worship, grow and walk with Christ together.</h1>
+<p class="hero__lead" data-de="Warm, klar, mehrsprachig und christuszentriert — mit einer eleganten Schweizer Ausstrahlung für Gemeinde und Besucher." data-en="Warm, clear, multilingual and Christ-centered — with an elegant Swiss visual style for members and visitors." data-ti="ሞቕ፣ ንጹር፣ ብዙሕ ቋንቋን ብክርስቶስ ዝተመስረተን — ንኣባላትን ንበጻሕቲን ብኽቡር ስዊስ ራእይ።">Warm, clear, multilingual and Christ-centered — with an elegant Swiss visual style for members and visitors.</p>
+<div class="hero__actions">
+<a class="btn btn--primary" href="/visit-us/">Plan Your Visit</a>
+<a class="btn btn--ghost" href="/sermons/">Watch Sermons</a>
 </div>
-<p class="kicker">EEC Bern · Swiss Premium Church Design</p>
-<h1>Eritrean Evangelical Church Bern</h1>
-<p class="lead"><span data-de="Eine christuszentrierte Gemeinde in Bern — Anbetung, Gebet, Lehre und herzliche Gemeinschaft mit einer klaren, modernen und einladenden Präsenz." data-en="A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting." data-i18n="" data-ti="ኣብ በርን ዘላ ብክርስቶስ ዝተመስረተት ቤተ ክርስቲያን — ኣምልኾ፣ ጸሎት፣ መጽሓፍ ቅዱሳዊ ትምህርቲን ሞቕ ሕብረትን ብዘመናዊ እና ዝተኸፍተ ኣቀራርባ ንቕርብ።">A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting.</span></p>
-<div class="hero-verse-card">
-<div class="hero-verse-card__label">Today’s scripture</div>
-<div class="verse-rotator">
-<div class="ref" data-verse-ref="">Matthew 11:28</div>
-<div class="text" data-verse-text="">“Come to me, all who are weary and burdened, and I will give you rest.”</div>
-</div>
-</div>
-<div class="hero-metrics">
-<div><strong>Christ-centered</strong><span>Worship &amp; prayer</span></div>
-<div><strong>Family friendly</strong><span>Bern community</span></div>
-<div><strong>3 Languages</strong><span>EN · DE · TI</span></div>
-</div>
-<div class="btn-row hero-actions">
-<a class="btn primary" href="/visit-us/#service-times">Plan a Visit</a>
-<a class="btn ghost" href="/sermons/">Watch Message</a>
-<a class="btn highlight" href="/ministries/">Explore Ministries</a>
+<div class="hero__cards premium-hero__cards">
+<article class="glass-card reveal"><span class="glass-card__label">Sunday Worship</span><strong>14:00 – 19:00</strong><p>Eymattstrasse 2b, 3027 Bern</p></article>
+<article class="glass-card reveal reveal-delay-1"><span class="glass-card__label">Midweek</span><strong>Prayer &amp; Bible Study</strong><p>Thursday fellowship, worship and biblical encouragement.</p></article>
+<article class="glass-card reveal reveal-delay-2"><span class="glass-card__label">Languages</span><strong>EN · DE · TI</strong><p>English, German and Tigrinya support for the church family.</p></article>
 </div>
 </div>
+</section>
+<section class="verse-band">
+<div class="container verse-band__inner">
+<div><span class="section-kicker section-kicker--dark">Verse of Hope</span><h2>Scripture that guides our church life.</h2></div>
+<div class="verse-slider"><article class="verse-slide is-active"><p data-verse-text="">“For where two or three gather in my name, there am I with them.”</p><footer data-verse-ref="">Matthew 18:20</footer></article></div>
+</div>
+</section>
+<section class="section section--about-preview">
+<div class="container two-col">
+<div class="section-copy reveal">
+<span class="section-kicker section-kicker--dark">About EEC Bern</span>
+<h2>A welcoming church family with elegant simplicity and deep spiritual focus.</h2>
+<p>EEC Bern exists to glorify God, preach the Gospel, disciple believers and serve the community through worship, prayer and fellowship.</p>
+<p>This homepage now combines the strongest menu, footer, events and homepage features into one clearer experience.</p>
+<div class="pill-grid">
+<span class="pill">Mission-centered</span><span class="pill">Multilingual</span><span class="pill">Family-friendly</span><span class="pill">Prayerful community</span>
+</div>
+<div class="btn-row"><a class="btn btn--primary" href="/about/">Read More</a></div>
+</div>
+<aside class="feature-panel reveal reveal-delay-1">
+<h3>Statement of Faith</h3>
+<ul class="faith-list">
+<li>We believe the Bible is God’s Word and our final authority.</li>
+<li>We believe in God: Father, Son and Holy Spirit.</li>
+<li>We believe Jesus Christ is Lord and Savior, fully God and fully man.</li>
+<li>We believe salvation is by grace through faith in Jesus Christ.</li>
+<li>We believe the Church is called to worship, disciple and serve.</li>
+</ul>
+</aside>
+</div>
+</section>
+<section class="section section--soft">
+<div class="container">
+<div class="section-head center reveal"><span class="section-kicker section-kicker--dark">Ministries</span><h2>Spaces for every generation to grow in faith.</h2></div>
+<div class="card-grid card-grid--four">
+<article class="info-card reveal"><div class="icon">✦</div><h3>Kids Ministry</h3><p>Helping children discover God’s love in a joyful and safe environment.</p></article>
+<article class="info-card reveal reveal-delay-1"><div class="icon">✦</div><h3>Youth Ministry</h3><p>Encouraging young believers with fellowship, worship and biblical truth.</p></article>
+<article class="info-card reveal reveal-delay-2"><div class="icon">✦</div><h3>Worship Ministry</h3><p>Leading the church into reverent and heartfelt praise.</p></article>
+<article class="info-card reveal reveal-delay-3"><div class="icon">✦</div><h3>Prayer Ministry</h3><p>Standing together in intercession for the church, city and families.</p></article>
+</div>
+<div class="btn-row center" style="margin-top:20px;"><a class="btn btn--ghost" href="/ministries/">Explore Ministries</a></div>
 </div>
 </section>
 <section class="section">
 <div class="container">
-<div class="hero-story-card">
-<div class="hero-story-card__media">
-<a class="hero-story-card__poster" href="https://www.youtube.com/" rel="noopener" target="_blank">
-<img alt="EEC Bern welcome poster" loading="eager" src="/assets/img/hero-story-poster.svg"/>
-<span class="hero-story-card__play">▶ Watch Our Story</span>
-</a>
-</div>
-<div class="hero-story-card__content">
-<p class="kicker">OUR STORY</p>
-<h2>Welcome to EEC Bern</h2>
-<p class="lead">This hero poster replaces the heavy background video, keeps the homepage fast, and gives visitors a clear invitation to watch the church story.</p>
-<div class="card-actions">
-<a class="btn btn-small nav-donate" href="/visit-us/">Plan Your Visit</a>
-<a class="btn btn-outline btn-small" href="https://www.youtube.com/" rel="noopener" target="_blank">Watch Video</a>
-</div>
-</div>
+<div class="section-head reveal"><span class="section-kicker section-kicker--dark">Sermons</span><h2>Messages that strengthen faith and deepen daily walk with Christ.</h2></div>
+<div class="card-grid card-grid--three">
+<article class="media-card reveal"><div class="video-frame"><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" title="Latest sermon"></iframe></div><div class="media-card__body"><h3>Latest Message</h3><p>Replace VIDEO_ID with your real YouTube sermon video ID.</p></div></article>
+<article class="media-card reveal reveal-delay-1"><div class="video-frame"><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Sermon video 2"></iframe></div><div class="media-card__body"><h3>The Power of Prayer</h3><p>Growing in confidence and intimacy through prayer.</p></div></article>
+<article class="media-card reveal reveal-delay-2"><div class="video-frame"><iframe allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/ysz5S6PUM-U" title="Sermon video 3"></iframe></div><div class="media-card__body"><h3>Walking with Christ</h3><p>Living a daily life of faith, obedience and grace.</p></div></article>
 </div>
 </div>
 </section>
-<section class="section church-life-uniform">
+<section class="section section--events-premium">
+<div class="container grid grid--2 gap-lg align-start">
+<div class="reveal">
+<span class="section-kicker section-kicker--dark">Upcoming Gatherings</span>
+<h2>Upcoming gatherings and fellowship with a premium live calendar.</h2>
+<div class="event-list premium-event-list">
+<article class="event-item premium-event-item"><div class="event-date"><strong>Sun</strong><span>14:00</span></div><div><h3>Sunday Worship Service</h3><p>Corporate worship, preaching and fellowship.</p></div></article>
+<article class="event-item premium-event-item"><div class="event-date"><strong>Thu</strong><span>Evening</span></div><div><h3>Prayer Meeting</h3><p>Midweek prayer and spiritual encouragement.</p></div></article>
+<article class="event-item premium-event-item"><div class="event-date"><strong>Thu</strong><span>17:30</span></div><div><h3>Bible Study</h3><p>Learning together through Scripture and discussion.</p></div></article>
+</div>
+<div class="btn-row" style="margin-top:18px;"><a class="btn btn--primary" href="/events/">See All Events</a><a class="btn btn--ghost" href="/calendar/">Open Calendar</a></div>
+</div>
+<div class="calendar-card reveal reveal-delay-1">
+<div class="calendar-head"><button aria-label="Previous month" class="calendar-btn" id="prevMonth">‹</button><h3 id="calendarMonth">Month</h3><button aria-label="Next month" class="calendar-btn" id="nextMonth">›</button></div>
+<div class="calendar-grid" id="calendar"></div>
+</div>
+</div>
+</section>
+<section class="section section--pastor">
+<div class="container pastor-layout">
+<div class="pastor-photo reveal"><img alt="Pastor profile" src="/assets/img/pastor-profile.svg"/></div>
+<div class="section-copy reveal reveal-delay-1"><span class="section-kicker section-kicker--dark">Pastor</span><h2>One unified pastor section — simple, warm and clear.</h2><p>“Our desire is to lead people to Jesus, build a strong community of faith, and share God’s love in Bern and beyond.”</p><p>Serving with prayer, biblical teaching and a shepherd’s heart for the church family in Bern.</p><div class="btn-row"><a class="btn btn--primary" href="/about/">Meet Our Church</a><a class="btn btn--ghost" href="/contact/">Contact</a></div></div>
+</div>
+</section>
+<section class="section section--gallery" id="gallery">
 <div class="container">
-<div class="section-head-uniform">
-<div>
-<p class="kicker">CHURCH LIFE</p>
-<h2>Moments of Fellowship</h2>
-<p class="lead">A clean, uniform gallery style inspired by kirubel.ch — elegant cards, consistent proportions, and authentic preview buttons.</p>
-</div>
-</div>
-<div class="uniform-gallery-grid" data-gallery="">
-<a class="uniform-gallery-card uniform-gallery-card--large" data-title="Worship" href="/assets/img/ministry-worship.svg">
-<img alt="Worship" loading="lazy" src="/assets/img/ministry-worship.svg"/>
-<span class="uniform-gallery-card__preview">Preview</span>
-</a>
-<a class="uniform-gallery-card" data-title="Fellowship" href="/assets/img/ministry-hospitality.svg">
-<img alt="Fellowship" loading="lazy" src="/assets/img/ministry-hospitality.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Youth" href="/assets/img/ministry-youth.svg">
-<img alt="Youth" loading="lazy" src="/assets/img/ministry-youth.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Prayer" href="/assets/img/ministry-prayer.svg">
-<img alt="Prayer" loading="lazy" src="/assets/img/ministry-prayer.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Kids" href="/assets/img/ministry-kids.svg">
-<img alt="Kids" loading="lazy" src="/assets/img/ministry-kids.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Church Media" href="/assets/img/ministry-media.svg">
-<img alt="Church Media" loading="lazy" src="/assets/img/ministry-media.svg"/>
-</a>
+<div class="section-head reveal"><span class="section-kicker section-kicker--dark">Moments of Fellowship</span><h2>A stronger gallery animation with elegant hover movement and layered composition.</h2></div>
+<div class="gallery-masonry" data-gallery="">
+<a class="gallery-item gallery-item--lg reveal" data-title="Sunday Worship" href="/assets/img/gallery-1.svg"><img alt="Sunday worship" src="/assets/img/gallery-1.svg"/><figcaption>Sunday Worship</figcaption></a>
+<a class="gallery-item reveal reveal-delay-1" data-title="Bible Study" href="/assets/img/gallery-2.svg"><img alt="Bible study" src="/assets/img/gallery-2.svg"/><figcaption>Bible Study</figcaption></a>
+<a class="gallery-item reveal reveal-delay-2" data-title="Prayer Gathering" href="/assets/img/gallery-3.svg"><img alt="Prayer gathering" src="/assets/img/gallery-3.svg"/><figcaption>Prayer Gathering</figcaption></a>
+<a class="gallery-item gallery-item--wide reveal reveal-delay-3" data-title="Special Service" href="/assets/img/gallery-4.svg"><img alt="Special service" src="/assets/img/gallery-4.svg"/><figcaption>Special Service</figcaption></a>
 </div>
 </div>
 </section>
-<section class="section pastor-unified-section">
-<div class="container">
-<div class="pastor-unified-card">
-<a class="pastor-unified-photo" data-title="Pastor Bahta Tekleweyni" href="/assets/img/pastor-profile.svg">
-<img alt="Pastor Bahta Tekleweyni" loading="lazy" src="/assets/img/pastor-profile.svg"/>
-<span class="uniform-gallery-card__preview">Preview</span>
-</a>
-<div class="pastor-unified-content">
-<p class="kicker">PASTOR</p>
-<h2>Pastor Bahta Tekleweyni</h2>
-<p class="lead">“Our desire is to lead people to Jesus, build a strong community of faith, and share God’s love in Bern and beyond.”</p>
-<div class="verse-compact">
-<span class="verse-compact__star">✦</span>
-<strong>Jeremiah 3:15</strong>
-<span>“I will give you shepherds after my own heart...”</span>
-</div>
-<p class="pastor-unified-text">Serving with prayer, biblical teaching, and a shepherd’s heart for the church family in Bern. This section combines the pastor message, profile photo, and actions in one clean place to avoid repetition.</p>
-<div class="card-actions">
-<a class="btn btn-small nav-donate" href="/about/">Meet our church</a>
-<a class="btn btn-outline btn-small" href="/contact/">Contact</a>
-<a class="btn btn-outline btn-small" href="/sermons/">Watch Message</a>
-</div>
-</div>
-</div>
+<section class="section section--visit">
+<div class="container two-col">
+<div class="section-copy reveal"><span class="section-kicker section-kicker--dark">Visit Us</span><h2>Simple information for first-time visitors.</h2><p><strong>EEC Bern</strong><br/>Eymattstrasse 2b, 3027 Bern</p><p>Join us for worship, prayer and warm community.</p><div class="visit-meta"><div><span>Sunday Worship</span><strong>14:00 – 19:00</strong></div><div><span>Prayer Meeting</span><strong>Thursday</strong></div></div><div class="btn-row"><a class="btn btn--primary" href="/visit-us/">Plan Your Visit</a></div></div>
+<div class="map-card reveal reveal-delay-1"><div class="map-placeholder"><span>Bern</span><p>Map placeholder — replace with your exact church location.</p></div></div>
 </div>
 </section>
-
-<section class="section church-life-uniform">
-<div class="container">
-<div class="section-head-uniform">
-<div>
-<p class="kicker">CHURCH LIFE</p>
-<h2>Moments of Fellowship</h2>
-<p class="lead">A cleaner, uniform gallery style inspired by kirubel.ch — elegant cards, consistent proportions, and authentic preview buttons.</p>
-</div>
-</div>
-<div class="uniform-gallery-grid" data-gallery="">
-<a class="uniform-gallery-card uniform-gallery-card--large" data-title="Worship" href="/assets/img/ministry-worship.svg">
-<img alt="Worship" loading="lazy" src="/assets/img/ministry-worship.svg"/>
-<span class="uniform-gallery-card__preview">Preview</span>
-</a>
-<a class="uniform-gallery-card" data-title="Fellowship" href="/assets/img/ministry-hospitality.svg">
-<img alt="Fellowship" loading="lazy" src="/assets/img/ministry-hospitality.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Youth" href="/assets/img/ministry-youth.svg">
-<img alt="Youth" loading="lazy" src="/assets/img/ministry-youth.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Prayer" href="/assets/img/ministry-prayer.svg">
-<img alt="Prayer" loading="lazy" src="/assets/img/ministry-prayer.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Kids" href="/assets/img/ministry-kids.svg">
-<img alt="Kids" loading="lazy" src="/assets/img/ministry-kids.svg"/>
-</a>
-<a class="uniform-gallery-card" data-title="Church Media" href="/assets/img/ministry-media.svg">
-<img alt="Church Media" loading="lazy" src="/assets/img/ministry-media.svg"/>
-</a>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container split">
-<div class="photo photo-clickable" data-gallery="">
-<a data-title="Welcome to EEC Bern" href="/assets/img/church-photo.svg"><img alt="Welcome to EEC Bern" loading="lazy" src="/assets/img/church-photo.svg"/></a>
-</div>
-<div class="card glass welcome-card welcome-card--premium">
-<div class="welcome-card__icon">🤍</div>
-<p class="kicker">WELCOME</p>
-<h2>You are warmly welcome</h2>
-<p class="lead">We are a Christ‑centered Eritrean evangelical community in Bern. Our desire is simple: to worship Jesus, grow in the Word, and walk together as one family.</p>
-<p>Whether you are new to faith, returning to church, or searching for hope — you are welcome to come as you are. We believe God restores, heals, and leads people into new life through Jesus Christ.</p>
-<div class="verse-inline welcome-card__verse">
-<span class="vref">Psalm 122:1</span>
-<span class="vtext">“I rejoiced with those who said to me, ‘Let us go to the house of the LORD.’”</span>
-</div>
-<div class="btn-row">
-<a class="btn primary" href="/about/">Who we are</a>
-<a class="btn ghost" href="/contact/">Contact us</a>
-</div>
-</div>
-</div>
-</section>
-<section class="section" id="service-times">
-<div class="container">
-<p class="kicker">SERVICE TIMES</p>
-<h2>Join us this week</h2>
-<p>Come and worship with us — you are welcome.</p>
-<div class="verse-inline">
-<span class="vref">Hebrews 10:25</span>
-<span class="vtext">“Not giving up meeting together… but encouraging one another.”</span>
-</div>
-<div class="grid-3" style="margin-top:16px;">
-<div class="feature">
-<span class="tag">SUNDAY</span>
-<h3 style="margin-top:10px;">Worship Service</h3>
-<p class="lead">14:00 – 19:00</p>
-<p class="small">Eymattstrasse 2b, 3027 Bern</p>
-</div>
-<div class="feature">
-<span class="tag">THURSDAY</span>
-<h3 style="margin-top:10px;">Prayer Meeting</h3>
-<p class="lead">Every Thursday</p>
-<p class="small">Eymattstrasse 2b, 3027 Bern</p>
-</div>
-<div class="feature">
-<span class="tag">THURSDAY</span>
-<h3 style="margin-top:10px;">Bible Study</h3>
-<p class="lead">17:30 – 19:30</p>
-<p class="small">Eymattstrasse 2b, 3027 Bern</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<p class="kicker">LATEST SERMON</p>
-<h2>Messages &amp; teaching</h2>
-<p>Faith grows as we hear God’s Word.</p>
-<div class="verse-inline">
-<span class="vref">Romans 10:17</span>
-<span class="vtext">“Faith comes from hearing, and hearing through the word of Christ.”</span>
-</div>
-<div class="card glass" style="padding:16px 14px; margin-top:14px;">
-<div class="video">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-youtube-latest="" src="https://www.youtube.com/embed/VIDEO_ID" title="Latest sermon (replace VIDEO_ID)"></iframe>
-</div>
-<p class="small" style="margin-top:10px;">Replace <b>VIDEO_ID</b> with your real YouTube sermon video ID.</p>
-<div class="btn-row">
-<a class="btn primary" href="/sermons/">More sermons</a>
-<a class="btn ghost" href="/visit-us/">Visit us</a>
-</div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<p class="kicker">MINISTRIES</p>
-<div class="verse-inline"><span class="vref" data-page-verse-ref="">1 Peter 4:10</span><span class="vtext" data-page-verse-text="">Each of you should use whatever gift you have received to serve others.</span></div>
-<h2>Serving together</h2>
-<p>God has given gifts for building up the church.</p>
-<div class="verse-inline">
-<span class="vref">1 Peter 4:10</span>
-<span class="vtext">“Each of you should use whatever gift you have received to serve others…”</span>
-</div>
-<div class="grid-3" style="margin-top:16px;">
-<a class="feature" href="/ministries/">
-<span class="tag">EXPLORE</span>
-<h3 style="margin-top:10px;">All ministries</h3>
-<p>Vision, objectives, leaders, meeting info, and verses.</p>
-</a>
-<a class="feature" href="/ministries/worship/">
-<span class="tag">MINISTRY</span>
-<h3 style="margin-top:10px;">Worship</h3>
-<p class="small">Leader: Eyob G. Yohannes</p>
-</a>
-<a class="feature" href="/ministries/prayer/">
-<span class="tag">MINISTRY</span>
-<h3 style="margin-top:10px;">Prayer</h3>
-<p class="small">Leader: Yodit Haile</p>
-</a>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<p class="kicker">EVENTS</p>
-<h2>This week</h2>
-<p>Simple and clear — Swiss style.</p>
-<div class="verse-inline">
-<span class="vref">Ecclesiastes 3:1</span>
-<span class="vtext">“There is a time for everything…”</span>
-</div>
-<div class="home-events-grid">
-<div class="event-card-compact reveal-rise">
-<div class="event-meta"><span class="event-day">Sunday</span><span class="event-time-pill">14:00 – 19:00</span></div>
-<div class="event-title-row"><span class="event-icon-badge">⛪</span><h3>Worship Service</h3></div>
-<span class="small">Eymattstrasse 2b, 3027 Bern</span>
-<div class="event-actions"><a class="btn mini" href="/visit-us/">Visit us</a><a class="btn mini primary" href="/contact/">Contact</a></div>
-</div>
-<div class="event-card-compact reveal-rise">
-<div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">Evening</span></div>
-<div class="event-title-row"><span class="event-icon-badge">🙏</span><h3>Prayer Meeting</h3></div>
-<span class="small">Eymattstrasse 2b, 3027 Bern</span>
-<div class="event-actions"><a class="btn mini" href="/events/">Details</a><a class="btn mini whatsapp" href="https://wa.me/41752221226" rel="noopener" target="_blank">WhatsApp</a></div>
-</div>
-<div class="event-card-compact reveal-rise">
-<div class="event-meta"><span class="event-day">Thursday</span><span class="event-time-pill">17:30 – 19:30</span></div>
-<div class="event-title-row"><span class="event-icon-badge">📖</span><h3>Bible Study</h3></div>
-<span class="small">Eymattstrasse 2b, 3027 Bern</span>
-<div class="event-actions"><a class="btn mini" href="/events/">More</a><a class="btn mini callnow" href="tel:+41752221226">Call</a></div>
-</div>
-</div>
-<div class="btn-row">
-<a class="btn" href="/events/">See all events</a>
-</div>
-</div>
-</section>
-
-
-
+<section class="section section--donate"><div class="container donate-panel reveal"><div><span class="section-kicker section-kicker--dark">Support the Ministry</span><h2>A calm and trustworthy donation section with premium visual balance.</h2><p>Your generosity helps EEC Bern continue serving families, discipleship, worship and outreach.</p></div><a class="btn btn--primary" href="/give/">Give / Donate</a></div></section>
 </main>
-<footer>
-<div class="container footer-grid footer-grid--simple">
-<div class="footer-brandline">
-<div class="footer-brand">
-<img alt="" src="/assets/img/logo.svg"/>
+<footer class="premium-footer">
+<div class="container footer__grid premium-footer__grid">
 <div>
-<strong>EEC Bern</strong><br/>
-<span>Eymattstrasse 2b, 3027 Bern</span>
+<a aria-label="EEC Bern home" class="brand premium-brand premium-brand--footer" href="/">
+<span aria-hidden="true" class="brand__mark"><img alt="" class="brand__logo" src="/assets/img/logo.svg"/></span>
+<span class="brand__text"><strong>EEC Bern</strong><small data-de="Glaube. Gemeinschaft. Hoffnung." data-en="Faith. Fellowship. Hope." data-ti="እምነት። ሕብረት። ተስፋ።">Faith. Fellowship. Hope.</small></span>
+</a>
+<p class="footer-copy" data-de="Eine warme, mehrsprachige Kirche in Bern zum Anbeten, Wachsen und Dienen." data-en="A warm multilingual church in Bern for worship, growth and service." data-ti="ኣብ በርን ንኣምልኾ፣ ንዕብየትን ንኣገልግሎትን ዘላ ሞቕ ብዙሕ ቋንቋ ቤተ ክርስቲያን።">A warm multilingual church in Bern for worship, growth and service.</p>
 </div>
-</div>
-<div class="footer-links">
+<div class="footer__links premium-footer__links">
 <a href="/">Home</a>
 <a href="/about/">About</a>
 <a href="/ministries/">Ministries</a>
@@ -344,14 +171,15 @@
 <a href="/contact/">Contact</a>
 <a href="/give/">Donate</a>
 </div>
-<div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
 </div>
-</div>
-<div class="footer-lang">
+<div class="container footer__bottom premium-footer__bottom">
+<p>© <span data-year=""></span> EEC Bern. <span data-de="Alle Rechte vorbehalten." data-en="All rights reserved." data-ti="ኩሉ መሰል ዝተሓለወ።">All rights reserved.</span></p>
+<div class="footer-lang footer-lang--inline">
 <span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
 <button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
 <button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
 <button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
 </div>
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
@@ -367,5 +195,5 @@
 <script src="/assets/js/config.js"></script>
 <script src="/lang/en.js"></script><script src="/lang/de.js"></script><script src="/lang/ti.js"></script>
 <script defer="" src="/assets/js/main.js"></script>
-</body>
+<script defer="True" src="/assets/js/premium.js"></script></body>
 </html>
