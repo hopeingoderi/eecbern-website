@@ -578,3 +578,89 @@ document.body.appendChild(overlay)
     document.body.style.overflow = 'hidden';
   });
 })();
+
+
+// V35 working header language dropdown
+(function(){
+  const wrap = document.querySelector('.header-lang');
+  const toggle = wrap ? wrap.querySelector('.header-lang__toggle') : null;
+  if(toggle && wrap){
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      wrap.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', wrap.classList.contains('is-open') ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(e){
+      if(!wrap.contains(e.target)){
+        wrap.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+    wrap.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        wrap.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+        const lang = this.getAttribute('data-lang');
+        localStorage.setItem('lang', lang);
+        if(typeof window.setLang === 'function'){
+          window.setLang(lang);
+        } else {
+          document.documentElement.setAttribute('lang', lang);
+          location.reload();
+        }
+      });
+    });
+    const current = localStorage.getItem('lang') || 'en';
+    const active = wrap.querySelector('.lang-btn[data-lang="' + current + '"]');
+    if(active) active.classList.add('is-active');
+  }
+})();
+
+// V35 rotating verse
+(function(){
+  const card = document.querySelector('[data-rotating-verse]');
+  if(!card) return;
+  const refEl = card.querySelector('[data-verse-ref]');
+  const textEl = card.querySelector('[data-verse-text]');
+  const verses = [
+    {ref:'Psalm 34:18', text:'The Lord is close to the brokenhearted and saves those who are crushed in spirit.'},
+    {ref:'Matthew 11:28', text:'Come to me, all you who are weary and burdened, and I will give you rest.'},
+    {ref:'John 14:27', text:'Peace I leave with you; my peace I give you.'},
+    {ref:'Romans 15:13', text:'May the God of hope fill you with all joy and peace as you trust in him.'},
+    {ref:'Isaiah 41:10', text:'Do not fear, for I am with you; do not be dismayed, for I am your God.'}
+  ];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % verses.length;
+    textEl.style.opacity = '0';
+    textEl.style.transform = 'translateY(6px)';
+    setTimeout(() => {
+      refEl.textContent = verses[i].ref;
+      textEl.textContent = '“' + verses[i].text + '”';
+      textEl.style.opacity = '1';
+      textEl.style.transform = 'translateY(0)';
+    }, 180);
+  }, 4200);
+})();
+
+// V35 pastor photo preview uses existing lightbox
+(function(){
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('.premium-pastor-photo');
+    if(!link) return;
+    const box = document.querySelector('[data-lightbox], .lightbox');
+    const img = box ? box.querySelector('.lightbox__stage img, img') : null;
+    const caption = box ? box.querySelector('.lightbox__caption') : null;
+    const zoomBtn = box ? box.querySelector('.lightbox__btn--zoom, [data-lightbox-zoom]') : null;
+    if(!box || !img) return;
+    e.preventDefault();
+    img.src = link.getAttribute('href');
+    if(caption) caption.textContent = link.getAttribute('data-title') || 'Pastor profile';
+    img.style.transform = 'scale(1)';
+    if(zoomBtn) zoomBtn.textContent = 'Zoom';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+})();

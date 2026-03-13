@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#071820"/>
+    <stop offset="45%" stop-color="#12384a"/>
+    <stop offset="100%" stop-color="#c89541"/>
+  </linearGradient>
+  <radialGradient id="g1" cx="80%" cy="20%" r="42%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".28"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g2" cx="18%" cy="78%" r="40%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".12"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1800" height="1200" fill="url(#bg)"/>
+<rect width="1800" height="1200" fill="url(#g1)"/>
+<rect width="1800" height="1200" fill="url(#g2)"/>
+<circle cx="1475" cy="170" r="150" fill="#ffffff" opacity=".11"/>
+<circle cx="1260" cy="440" r="80" fill="#ffffff" opacity=".07"/>
+<circle cx="260" cy="960" r="220" fill="#ffffff" opacity=".07"/>
+<path d="M0 960 C 260 850, 480 850, 700 930 C 860 990, 1015 1030, 1200 1005 C 1390 980, 1560 900, 1800 950 L1800 1200 L0 1200 Z" fill="#ffffff" opacity=".08"/>
+<path d="M950 720c-35-108-118-180-229-180-114 0-199 74-236 191 43-38 96-59 160-59 86 0 165 39 218 103 45-66 114-108 194-108 60 0 118 23 163 62-28-117-114-201-223-201-20 0-31 1-47 5z" fill="#ffffff" opacity=".14"/>
+<path d="M955 625l44 92 101 15-73 72 18 102-90-48-91 48 18-102-73-72 101-15z" fill="#ffffff" opacity=".85"/>
+<text x="120" y="170" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="8" fill="#f3d7a1">EEC BERN · HOME OF HOPE</text>
+<text x="120" y="300" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#ffffff">A place of grace,</text>
+<text x="120" y="395" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#ffffff">peace, and</text>
+<text x="120" y="490" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" fill="#ffffff">spiritual renewal</text>
+<text x="120" y="595" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#eef4f7">A church home in Bern where the weary find rest,</text>
+<text x="120" y="642" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#eef4f7">the burdened discover hope, and hearts are lifted toward Christ.</text>
+</svg>
