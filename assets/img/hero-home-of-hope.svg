@@ -1,31 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#12384a"/><stop offset="55%" stop-color="#0f2d3a"/><stop offset="100%" stop-color="#c3923e"/>
+    <stop offset="0%" stop-color="#12384a"/>
+    <stop offset="50%" stop-color="#0f2d3a"/>
+    <stop offset="100%" stop-color="#c69440"/>
   </linearGradient>
-  <radialGradient id="light" cx="78%" cy="18%" r="50%">
-    <stop offset="0%" stop-color="#fff" stop-opacity=".24"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+  <radialGradient id="g1" cx="78%" cy="20%" r="48%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".22"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="soft" cx="22%" cy="80%" r="55%">
-    <stop offset="0%" stop-color="#fff" stop-opacity=".14"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+  <radialGradient id="g2" cx="18%" cy="76%" r="44%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".16"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
   </radialGradient>
 </defs>
 <rect width="1600" height="1100" fill="url(#bg)"/>
-<rect width="1600" height="1100" fill="url(#light)"/>
-<rect width="1600" height="1100" fill="url(#soft)"/>
-<circle cx="1330" cy="210" r="200" fill="#fff" opacity=".10"/>
-<circle cx="270" cy="860" r="250" fill="#fff" opacity=".08"/>
-<path d="M0 855 C 160 795, 260 775, 380 810 C 520 850, 640 940, 810 925 C 1010 905, 1140 790, 1320 810 C 1440 825, 1540 880, 1600 920 L1600 1100 L0 1100 Z" fill="#ffffff" opacity=".10"/>
-<path d="M0 905 C 180 860, 320 885, 490 945 C 650 1000, 820 1010, 990 965 C 1120 930, 1320 860, 1600 940 L1600 1100 L0 1100 Z" fill="#ffffff" opacity=".07"/>
-<text x="120" y="170" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f0d49e" letter-spacing="7">HOME OF HOPE</text>
-<text x="120" y="280" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" fill="#ffffff">Grace</text>
-<text x="120" y="372" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" fill="#ffffff">Mercy</text>
-<text x="120" y="464" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" fill="#ffffff">Endless Love</text>
-<text x="120" y="560" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef3f6">A peaceful church home where burden meets comfort,</text>
-<text x="120" y="605" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef3f6">and weary hearts find rest in Christ.</text>
-<g transform="translate(1110 545)">
-  <circle cx="0" cy="0" r="92" fill="rgba(255,255,255,.14)"/>
-  <circle cx="0" cy="0" r="72" fill="rgba(255,255,255,.10)"/>
-  <polygon points="-18,-34 -18,34 42,0" fill="#ffffff"/>
+<rect width="1600" height="1100" fill="url(#g1)"/>
+<rect width="1600" height="1100" fill="url(#g2)"/>
+<circle cx="1290" cy="210" r="200" fill="#ffffff" opacity=".10"/>
+<circle cx="260" cy="860" r="230" fill="#ffffff" opacity=".08"/>
+<path d="M0 870 C 160 815, 290 800, 420 835 C 550 870, 650 950, 800 940 C 980 927, 1100 822, 1290 835 C 1420 844, 1510 885, 1600 930 L1600 1100 L0 1100 Z" fill="#ffffff" opacity=".11"/>
+<path d="M0 930 C 190 885, 360 900, 540 968 C 710 1030, 880 1032, 1060 980 C 1210 936, 1390 888, 1600 955 L1600 1100 L0 1100 Z" fill="#ffffff" opacity=".07"/>
+<text x="120" y="170" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f2d59f" letter-spacing="7">HOME OF HOPE</text>
+<text x="120" y="278" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" fill="#ffffff">Grace</text>
+<text x="120" y="366" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" fill="#ffffff">Mercy</text>
+<text x="120" y="454" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" fill="#ffffff">Endless Love</text>
+<text x="120" y="548" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef4f7">A peaceful church home where burden meets comfort,</text>
+<text x="120" y="592" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef4f7">and weary hearts find rest in Christ.</text>
+<g transform="translate(1115 520)">
+  <circle cx="0" cy="0" r="96" fill="rgba(255,255,255,.14)"/>
+  <circle cx="0" cy="0" r="74" fill="rgba(255,255,255,.10)"/>
+  <polygon points="-18,-36 -18,36 44,0" fill="#ffffff"/>
 </g>
 </svg>

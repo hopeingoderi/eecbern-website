@@ -3116,45 +3116,124 @@ font-weight:600;
 
 
 
-/* V33 rotating verse + improved hero + pastor + hidden lang dropdown */
-.nav-item--lang{position:relative}
-.lang-toggle{
-  display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;
-  border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
-  color:#fff;text-decoration:none;font-size:18px;
+/* V34 wow homepage + working header language dropdown */
+header .navbar{position:relative}
+.header-lang{
+  position:relative;
+  margin-left:6px;
+  flex:none;
 }
-.lang-menu{
-  position:absolute;top:calc(100% + 10px);right:0;display:none;gap:8px;flex-direction:column;
-  padding:10px;min-width:84px;border-radius:16px;background:rgba(18,24,31,.96);
-  border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 36px rgba(0,0,0,.18);z-index:50;
+.header-lang__toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08);color:#fff;font-size:18px;
 }
-.nav-item--lang:hover .lang-menu,.nav-item--lang.is-open .lang-menu{display:flex}
-.lang-menu button{
-  min-height:38px;border-radius:12px;border:none;cursor:pointer;font-weight:800;background:rgba(255,255,255,.08);color:#fff;
+.header-lang__menu{
+  position:absolute;top:calc(100% + 10px);right:0;
+  display:none;flex-direction:column;gap:8px;
+  min-width:86px;padding:10px;border-radius:16px;
+  background:rgba(18,24,31,.96);border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 36px rgba(0,0,0,.18);z-index:60;
 }
-.lang-menu button:hover{background:rgba(212,163,86,.95);color:#111}
+.header-lang.is-open .header-lang__menu{display:flex}
+.header-lang__menu .lang-btn{
+  min-height:38px;border:none;border-radius:12px;cursor:pointer;
+  font-weight:800;background:rgba(255,255,255,.08);color:#fff;
+}
+.header-lang__menu .lang-btn.is-active,
+.header-lang__menu .lang-btn:hover{background:rgba(212,163,86,.95);color:#111}
+
+.home-hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:26px;
+  align-items:center;
+  padding:34px;
+  border-radius:34px;
+  background:
+    radial-gradient(circle at top right, rgba(212,163,86,.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(18,56,74,.12), transparent 34%),
+    linear-gradient(180deg, #fff, #fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 18px 36px rgba(13,24,20,.08);
+}
+.home-hero__content h1{
+  margin:8px 0 12px;
+  font-size:clamp(2.8rem, 5.2vw, 5rem);
+  line-height:1.02;
+}
+.home-hero__content .lead{max-width:760px;font-size:1.08rem}
+.home-hero__visual{
+  border-radius:30px;overflow:hidden;box-shadow:0 18px 36px rgba(13,24,20,.10);
+}
+.home-hero__visual img{
+  width:100%;height:100%;min-height:580px;object-fit:cover;display:block;
+}
+
+.spiritual-verse{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:16px 18px;margin:22px 0 20px;border-radius:18px;color:#fff;
+  background:linear-gradient(135deg,#1b140f 0%, #12384a 55%, #0d2835 100%);
+  box-shadow:0 14px 28px rgba(13,24,20,.16);
+}
+.spiritual-verse__star{color:#f0d49e;font-weight:900}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.hero-pill-grid,
+.home-tools-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+}
+.hero-pill-grid{margin-top:24px}
+.hero-pill{
+  padding:18px;border-radius:20px;background:rgba(255,255,255,.82);
+  border:1px solid rgba(13,24,20,.06);box-shadow:0 10px 20px rgba(13,24,20,.05);
+}
+.hero-pill strong{display:block;margin-bottom:6px}
+.hero-pill span{color:var(--muted)}
+
+.flow-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:22px;
+}
+.flow-card{
+  padding:30px;border-radius:28px;background:#fff;
+  border:1px solid rgba(13,24,20,.08);box-shadow:0 16px 32px rgba(13,24,20,.06);
+}
+.flow-card--soft{background:linear-gradient(180deg,#fff,#fbf7f0)}
+.expect-list{display:grid;gap:14px;margin-top:12px}
+.expect-item{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:flex-start}
+.expect-item span{color:#d5a356;font-weight:900}
+.expect-item p{margin:4px 0 0;color:var(--muted)}
 
 .rotating-verse-card{
-  padding:26px 28px;border-radius:28px;background:linear-gradient(135deg,#1b140f 0%, #12384a 55%, #0d2835 100%);color:#fff;
-  box-shadow:0 18px 36px rgba(13,24,20,.16);
+  padding:28px 30px;border-radius:30px;
+  background:linear-gradient(135deg,#1b140f 0%, #12384a 55%, #0d2835 100%);
+  color:#fff;box-shadow:0 18px 36px rgba(13,24,20,.16);
 }
 .rotating-verse-ref{color:#f0d49e;font-weight:900;letter-spacing:.04em;margin-bottom:10px}
 .rotating-verse-text{
-  font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.6;max-width:920px;transition:opacity .28s ease, transform .28s ease;
+  font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.6;max-width:920px;
+  transition:opacity .28s ease, transform .28s ease;
 }
 
-.spiritual-hero--split{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
-.spiritual-hero__visual{border-radius:30px;overflow:hidden;box-shadow:0 18px 36px rgba(13,24,20,.10);min-height:100%}
-.spiritual-hero__visual img{width:100%;height:100%;min-height:560px;object-fit:cover;display:block}
+.soft-card{
+  padding:24px;border-radius:24px;background:linear-gradient(180deg,#fff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);box-shadow:0 14px 28px rgba(13,24,20,.06);
+}
+.text-link{display:inline-block;margin-top:12px;font-weight:800;text-decoration:none}
 
+.pastor-home-card{
+  padding:30px;border-radius:30px;background:linear-gradient(180deg,#fff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);box-shadow:0 16px 32px rgba(13,24,20,.06);
+}
 .pastor-home-card--photo{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center}
 .pastor-home-photo{
-  position:relative;display:block;aspect-ratio:1/1;overflow:hidden;border-radius:28px;box-shadow:0 16px 34px rgba(13,24,20,.12);
+  position:relative;display:block;aspect-ratio:1/1;overflow:hidden;border-radius:28px;
+  box-shadow:0 16px 34px rgba(13,24,20,.12);
 }
 .pastor-home-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .pastor-home-photo__preview{
-  position:absolute;left:16px;bottom:16px;min-height:42px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
-  background:rgba(19,24,31,.78);color:#fff;font-size:14px;font-weight:800;border:1px solid rgba(255,255,255,.14);
+  position:absolute;left:16px;bottom:16px;min-height:42px;padding:0 14px;border-radius:999px;
+  display:inline-flex;align-items:center;justify-content:center;background:rgba(19,24,31,.78);color:#fff;font-size:14px;font-weight:800;border:1px solid rgba(255,255,255,.14);
 }
 .pastor-contact-grid{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 8px}
 .pastor-contact-chip{
@@ -3162,10 +3241,31 @@ font-weight:600;
   background:rgba(255,255,255,.82);border:1px solid rgba(13,24,20,.08);text-decoration:none;font-weight:800;color:var(--text);
   box-shadow:0 10px 20px rgba(13,24,20,.06);
 }
-.lightbox__stage{width:min(88vw, 560px) !important;aspect-ratio:1/1 !important}
+.muted-copy{color:var(--muted);line-height:1.7}
 
+.prayer-banner{
+  padding:32px;border-radius:30px;background:linear-gradient(135deg,#12384a,#0f2d3a 62%, #7f5b27 140%);
+  color:#fff;box-shadow:0 18px 36px rgba(13,24,20,.16);
+}
+.prayer-banner h2{color:#fff;margin:8px 0 12px}
+.prayer-banner .lead{color:rgba(255,255,255,.9);max-width:760px}
+
+.lightbox__stage{width:min(88vw,560px)!important;aspect-ratio:1/1!important}
+
+@media (max-width: 1100px){
+  .home-hero,
+  .flow-grid{grid-template-columns:1fr}
+  .home-hero__visual img{min-height:420px}
+}
 @media (max-width: 980px){
-  .spiritual-hero--split{grid-template-columns:1fr}
-  .spiritual-hero__visual img{min-height:380px}
+  .hero-pill-grid,.home-tools-grid{grid-template-columns:1fr}
   .pastor-home-card--photo{grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .home-hero,.flow-card,.soft-card,.pastor-home-card,.prayer-banner,.rotating-verse-card{
+    padding:24px;border-radius:24px;
+  }
+  .home-hero__content h1{font-size:clamp(2.25rem, 10vw, 3.2rem)}
+  .home-hero__visual img{min-height:300px}
+  .header-lang{order:3}
 }
