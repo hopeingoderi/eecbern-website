@@ -664,3 +664,102 @@ document.body.appendChild(overlay)
     document.body.style.overflow = 'hidden';
   });
 })();
+
+
+// V36 language dropdown
+(function(){
+  const wrap = document.querySelector('.header-lang');
+  const toggle = wrap ? wrap.querySelector('.header-lang__toggle') : null;
+  if(!wrap || !toggle) return;
+  toggle.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    wrap.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', wrap.classList.contains('is-open') ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if(!wrap.contains(e.target)){
+      wrap.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+  wrap.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      wrap.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('is-active'));
+      this.classList.add('is-active');
+      const lang = this.getAttribute('data-lang');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+      if (typeof window.setLang === 'function') {
+        window.setLang(lang);
+      } else if (typeof setLang === 'function') {
+        setLang(lang);
+      } else {
+        document.documentElement.setAttribute('lang', lang);
+      }
+      wrap.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+  try {
+    const current = localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'en';
+    const active = wrap.querySelector('.lang-btn[data-lang="' + current + '"]');
+    if(active) active.classList.add('is-active');
+  } catch(e) {}
+})();
+
+// V36 rotating verse
+(function(){
+  const card = document.querySelector('[data-rotating-verse]');
+  if(!card) return;
+  const refEl = card.querySelector('[data-verse-ref]');
+  const textEl = card.querySelector('[data-verse-text]');
+  const verses = [
+    {ref:'Psalm 34:18', text:'The Lord is close to the brokenhearted and saves those who are crushed in spirit.'},
+    {ref:'Matthew 11:28', text:'Come to me, all you who are weary and burdened, and I will give you rest.'},
+    {ref:'John 14:27', text:'Peace I leave with you; my peace I give you.'},
+    {ref:'Romans 15:13', text:'May the God of hope fill you with all joy and peace as you trust in him.'},
+    {ref:'Isaiah 41:10', text:'Do not fear, for I am with you; do not be dismayed, for I am your God.'}
+  ];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % verses.length;
+    textEl.style.opacity = '0';
+    textEl.style.transform = 'translateY(6px)';
+    setTimeout(() => {
+      refEl.textContent = verses[i].ref;
+      textEl.textContent = '“' + verses[i].text + '”';
+      textEl.style.opacity = '1';
+      textEl.style.transform = 'translateY(0)';
+    }, 180);
+  }, 4200);
+})();
+
+// V36 custom pastor modal
+(function(){
+  const box = document.getElementById('v36Lightbox');
+  const img = document.getElementById('v36LightboxImg');
+  const cap = document.getElementById('v36LightboxCaption');
+  if(!box || !img || !cap) return;
+  function closeBox(){
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function(e){
+    const opener = e.target.closest('[data-lightbox-open]');
+    if(opener){
+      e.preventDefault();
+      img.src = opener.getAttribute('data-lightbox-open');
+      cap.textContent = opener.getAttribute('data-lightbox-title') || '';
+      box.classList.add('is-open');
+      box.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    if(e.target.closest('[data-lightbox-close]')) closeBox();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeBox();
+  });
+})();

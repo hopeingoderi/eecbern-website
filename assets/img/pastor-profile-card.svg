@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1820"/><stop offset="55%" stop-color="#12384a"/><stop offset="100%" stop-color="#c99743"/></linearGradient></defs>
+<rect width="1200" height="1200" rx="60" fill="url(#bg)"/>
+<circle cx="600" cy="390" r="170" fill="rgba(255,255,255,.17)"/>
+<path d="M300 940c58-192 182-295 300-295s242 103 300 295" fill="rgba(255,255,255,.19)"/>
+<text x="600" y="1060" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="56" font-weight="700" fill="#ffffff">Pastor Bahta Tekleweyni</text>
+</svg>

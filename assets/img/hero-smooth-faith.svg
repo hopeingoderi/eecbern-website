@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#08141b"/><stop offset="38%" stop-color="#103445"/><stop offset="72%" stop-color="#15485c"/><stop offset="100%" stop-color="#c99743"/>
+  </linearGradient>
+  <radialGradient id="glow1" cx="78%" cy="18%" r="40%"><stop offset="0%" stop-color="#ffffff" stop-opacity=".28"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glow2" cx="18%" cy="82%" r="38%"><stop offset="0%" stop-color="#ffffff" stop-opacity=".12"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1800" height="1200" fill="url(#bg)"/>
+<rect width="1800" height="1200" fill="url(#glow1)"/>
+<rect width="1800" height="1200" fill="url(#glow2)"/>
+<ellipse cx="1420" cy="170" rx="180" ry="140" fill="#ffffff" opacity=".10"/>
+<ellipse cx="1180" cy="520" rx="120" ry="88" fill="#ffffff" opacity=".08"/>
+<path d="M0 870 C 220 790, 420 790, 620 860 C 850 942, 1040 955, 1250 908 C 1420 870, 1585 822, 1800 880 L1800 1200 L0 1200 Z" fill="#ffffff" opacity=".08"/>
+<path d="M0 930 C 250 885, 440 910, 630 978 C 820 1045, 1010 1038, 1200 985 C 1380 935, 1560 900, 1800 952 L1800 1200 L0 1200 Z" fill="#ffffff" opacity=".05"/>
+<text x="120" y="165" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="8" fill="#f2d7a4">EEC BERN · HOME OF HOPE</text>
+<text x="120" y="300" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="700" fill="#ffffff">Grace for the weary.</text>
+<text x="120" y="395" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="700" fill="#ffffff">Peace for the heart.</text>
+<text x="120" y="490" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="700" fill="#ffffff">Hope in Jesus Christ.</text>
+<text x="120" y="590" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#eef5f7">A welcoming church in Bern where people are loved, restored,</text>
+<text x="120" y="636" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#eef5f7">strengthened in prayer, and renewed by the Word of God.</text>
+<g transform="translate(1225 520)">
+  <circle cx="0" cy="0" r="120" fill="rgba(255,255,255,.10)"/>
+  <circle cx="0" cy="0" r="84" fill="rgba(255,255,255,.08)"/>
+  <circle cx="0" cy="0" r="46" fill="rgba(255,255,255,.10)"/>
+  <polygon points="-10,-24 -10,24 28,0" fill="#ffffff"/>
+</g>
+</svg>
