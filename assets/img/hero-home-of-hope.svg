@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#12384a"/>
+    <stop offset="52%" stop-color="#0f2d3a"/>
+    <stop offset="100%" stop-color="#b88939"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="75%" cy="20%" r="60%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".22"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="soft" cx="20%" cy="75%" r="50%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity=".16"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1600" height="1100" fill="url(#bg)"/>
+<rect width="1600" height="1100" fill="url(#glow)"/>
+<rect width="1600" height="1100" fill="url(#soft)"/>
+<circle cx="1320" cy="230" r="210" fill="#ffffff" opacity=".10"/>
+<circle cx="260" cy="860" r="240" fill="#ffffff" opacity=".10"/>
+<path d="M820 760c-66-104-165-162-250-162-111 0-190 71-220 194 42-43 104-70 179-70 76 0 150 31 206 82 46-76 119-124 205-124 65 0 129 27 176 74-35-122-115-194-222-194-28 0-50 4-74 11z" fill="#ffffff" opacity=".13"/>
+<path d="M820 650c-80-113-172-173-274-173-121 0-213 84-245 214 48-50 114-78 191-78 96 0 180 40 245 105 56-94 138-145 232-145 74 0 144 29 201 83-38-131-127-217-252-217-36 0-67 5-98 11z" fill="#ffffff" opacity=".09"/>
+<text x="120" y="180" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#f0d49e" letter-spacing="7">HOME OF HOPE</text>
+<text x="120" y="285" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Grace</text>
+<text x="120" y="370" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Mercy</text>
+<text x="120" y="455" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Endless Love</text>
+<text x="120" y="550" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef3f6">A peaceful place where burden meets comfort</text>
+<text x="120" y="595" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#eef3f6">and weary hearts find rest in Christ.</text>
+</svg>
