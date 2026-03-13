@@ -33,7 +33,14 @@
 <li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
 <li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
 <li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
-</ul></nav>
+<li class="nav-item nav-item--lang">
+<a aria-label="Languages" class="lang-toggle" href="#">🌐</a>
+<div class="lang-menu">
+<button data-set-lang="en" type="button">EN</button>
+<button data-set-lang="de" type="button">DE</button>
+<button data-set-lang="ti" type="button">TI</button>
+</div>
+</li></ul></nav>
 </div>
 </header>
 <main id="main">
@@ -88,6 +95,16 @@
 </div>
 </div>
 </section>
+<section class="section rotating-verse-section">
+<div class="container">
+<div class="rotating-verse-card" data-rotating-verse="">
+<p class="kicker">LIVING WORD</p>
+<div class="rotating-verse-ref" data-verse-ref="">Psalm 34:18</div>
+<div class="rotating-verse-text" data-verse-text="">“The Lord is close to the brokenhearted and saves those who are crushed in spirit.”</div>
+</div>
+</div>
+</section>
+
 <section class="section section-soft">
 <div class="container">
 <div class="three-cards">
@@ -112,9 +129,15 @@
 </div>
 </div>
 </section>
+
+
 <section class="section pastor-home-section">
 <div class="container">
-<div class="pastor-home-card">
+<div class="pastor-home-card pastor-home-card--photo">
+<a class="pastor-home-photo" data-title="Pastor Bahta Tekleweyni" href="/assets/img/pastor-profile.svg">
+<img alt="Pastor Bahta Tekleweyni" loading="lazy" src="/assets/img/pastor-profile.svg"/>
+<span class="pastor-home-photo__preview">Preview</span>
+</a>
 <div class="pastor-home-content">
 <p class="kicker">PASTOR MESSAGE</p>
 <h2>Pastor Bahta Tekleweyni</h2>
@@ -125,6 +148,10 @@
 <span>“I will give you shepherds after my own heart...”</span>
 </div>
 <p class="muted-copy">Serving with prayer, biblical teaching, and a shepherd’s heart for the church family in Bern.</p>
+<div class="pastor-contact-grid">
+<a class="pastor-contact-chip" href="https://wa.me/41752221226" rel="noopener" target="_blank">WhatsApp</a>
+<a class="pastor-contact-chip" href="mailto:info@eecbern.ch">Email: info@eecbern.ch</a>
+</div>
 <div class="hero-actions">
 <a class="btn btn-small nav-donate" href="/about/">Meet our church</a>
 <a class="btn btn-outline btn-small" href="/contact/">Contact</a>

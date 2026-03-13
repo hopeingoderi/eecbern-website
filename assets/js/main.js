@@ -510,3 +510,74 @@ document.body.appendChild(overlay)
     document.body.style.overflow = 'hidden';
   });
 })();
+
+
+
+// V33 rotating verse
+(function(){
+  const card = document.querySelector('[data-rotating-verse]');
+  if(!card) return;
+  const refEl = card.querySelector('[data-verse-ref]');
+  const textEl = card.querySelector('[data-verse-text]');
+  const verses = [
+    {ref:'Psalm 34:18', text:'“The Lord is close to the brokenhearted and saves those who are crushed in spirit.”'},
+    {ref:'Matthew 11:28', text:'“Come to me, all you who are weary and burdened, and I will give you rest.”'},
+    {ref:'John 14:27', text:'“Peace I leave with you; my peace I give you.”'},
+    {ref:'Romans 15:13', text:'“May the God of hope fill you with all joy and peace as you trust in him.”'}
+  ];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % verses.length;
+    textEl.style.opacity = '0';
+    textEl.style.transform = 'translateY(6px)';
+    setTimeout(() => {
+      refEl.textContent = verses[i].ref;
+      textEl.textContent = verses[i].text;
+      textEl.style.opacity = '1';
+      textEl.style.transform = 'translateY(0)';
+    }, 180);
+  }, 4200);
+})();
+
+// V33 hidden language dropdown
+(function(){
+  document.querySelectorAll('.nav-item--lang .lang-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      const item = this.closest('.nav-item--lang');
+      item.classList.toggle('is-open');
+    });
+  });
+  document.querySelectorAll('.lang-menu [data-set-lang]').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const lang = this.getAttribute('data-set-lang');
+      localStorage.setItem('lang', lang);
+      if (typeof window.setLang === 'function') {
+        window.setLang(lang);
+      } else {
+        document.documentElement.setAttribute('lang', lang);
+        location.reload();
+      }
+    });
+  });
+})();
+
+// V33 pastor photo lightbox
+(function(){
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('.pastor-home-photo');
+    if(!link) return;
+    const box = document.querySelector('.lightbox');
+    const img = box ? box.querySelector('.lightbox__stage img') : null;
+    const caption = box ? box.querySelector('.lightbox__caption') : null;
+    const zoomBtn = box ? box.querySelector('.lightbox__btn--zoom') : null;
+    if(!box || !img) return;
+    e.preventDefault();
+    img.src = link.getAttribute('href');
+    if(caption) caption.textContent = link.getAttribute('data-title') || 'Pastor profile';
+    img.style.transform = 'scale(1)';
+    if(zoomBtn) zoomBtn.textContent = 'Zoom';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+})();

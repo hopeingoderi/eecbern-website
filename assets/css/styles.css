@@ -3113,3 +3113,59 @@ font-weight:600;
   .spiritual-hero--split{grid-template-columns:1fr;}
   .spiritual-hero__visual img{min-height:380px;}
 }
+
+
+
+/* V33 rotating verse + improved hero + pastor + hidden lang dropdown */
+.nav-item--lang{position:relative}
+.lang-toggle{
+  display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;
+  border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  color:#fff;text-decoration:none;font-size:18px;
+}
+.lang-menu{
+  position:absolute;top:calc(100% + 10px);right:0;display:none;gap:8px;flex-direction:column;
+  padding:10px;min-width:84px;border-radius:16px;background:rgba(18,24,31,.96);
+  border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 36px rgba(0,0,0,.18);z-index:50;
+}
+.nav-item--lang:hover .lang-menu,.nav-item--lang.is-open .lang-menu{display:flex}
+.lang-menu button{
+  min-height:38px;border-radius:12px;border:none;cursor:pointer;font-weight:800;background:rgba(255,255,255,.08);color:#fff;
+}
+.lang-menu button:hover{background:rgba(212,163,86,.95);color:#111}
+
+.rotating-verse-card{
+  padding:26px 28px;border-radius:28px;background:linear-gradient(135deg,#1b140f 0%, #12384a 55%, #0d2835 100%);color:#fff;
+  box-shadow:0 18px 36px rgba(13,24,20,.16);
+}
+.rotating-verse-ref{color:#f0d49e;font-weight:900;letter-spacing:.04em;margin-bottom:10px}
+.rotating-verse-text{
+  font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.6;max-width:920px;transition:opacity .28s ease, transform .28s ease;
+}
+
+.spiritual-hero--split{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+.spiritual-hero__visual{border-radius:30px;overflow:hidden;box-shadow:0 18px 36px rgba(13,24,20,.10);min-height:100%}
+.spiritual-hero__visual img{width:100%;height:100%;min-height:560px;object-fit:cover;display:block}
+
+.pastor-home-card--photo{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center}
+.pastor-home-photo{
+  position:relative;display:block;aspect-ratio:1/1;overflow:hidden;border-radius:28px;box-shadow:0 16px 34px rgba(13,24,20,.12);
+}
+.pastor-home-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pastor-home-photo__preview{
+  position:absolute;left:16px;bottom:16px;min-height:42px;padding:0 14px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(19,24,31,.78);color:#fff;font-size:14px;font-weight:800;border:1px solid rgba(255,255,255,.14);
+}
+.pastor-contact-grid{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 8px}
+.pastor-contact-chip{
+  display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;
+  background:rgba(255,255,255,.82);border:1px solid rgba(13,24,20,.08);text-decoration:none;font-weight:800;color:var(--text);
+  box-shadow:0 10px 20px rgba(13,24,20,.06);
+}
+.lightbox__stage{width:min(88vw, 560px) !important;aspect-ratio:1/1 !important}
+
+@media (max-width: 980px){
+  .spiritual-hero--split{grid-template-columns:1fr}
+  .spiritual-hero__visual img{min-height:380px}
+  .pastor-home-card--photo{grid-template-columns:1fr}
+}
