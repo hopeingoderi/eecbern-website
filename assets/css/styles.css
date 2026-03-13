@@ -2960,71 +2960,129 @@ font-weight:600;
 
 
 
-/* V30 hero slider + header language dropdown */
-.nav-item--lang{position:relative}
-.lang-toggle{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-width:44px;min-height:44px;border-radius:999px;
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
-  color:#fff;text-decoration:none;font-size:18px;
+/* V31 spiritual homepage rebuild */
+.spiritual-home .container{max-width:1100px}
+.spiritual-hero{
+  padding:42px;
+  border-radius:34px;
+  background:
+    radial-gradient(circle at top right, rgba(212,163,86,.18), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(18,56,74,.12), transparent 34%),
+    linear-gradient(180deg, #fff, #fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 18px 36px rgba(13,24,20,.08);
 }
-.lang-menu{
-  position:absolute;top:calc(100% + 10px);right:0;display:none;gap:8px;flex-direction:column;
-  padding:10px;min-width:84px;border-radius:16px;background:rgba(18,24,31,.96);
-  border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 36px rgba(0,0,0,.18);z-index:50;
+.spiritual-hero h1{
+  margin:8px 0 12px;
+  font-size:clamp(2.6rem, 5vw, 4.8rem);
+  line-height:1.02;
 }
-.nav-item--lang:hover .lang-menu,.nav-item--lang.is-open .lang-menu{display:flex}
-.lang-menu button{
-  min-height:38px;border-radius:12px;border:none;cursor:pointer;font-weight:800;
-  background:rgba(255,255,255,.08);color:#fff;
+.spiritual-hero .lead{max-width:760px;font-size:1.08rem}
+.spiritual-verse{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:16px 18px;
+  margin:22px 0 20px;
+  border-radius:18px;
+  color:#fff;
+  background:linear-gradient(135deg,#1b140f 0%, #12384a 55%, #0d2835 100%);
+  box-shadow:0 14px 28px rgba(13,24,20,.16);
 }
-.lang-menu button:hover{background:rgba(212,163,86,.95);color:#111}
+.spiritual-verse__star{color:#f0d49e;font-weight:900}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.hero-pill-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:24px;
+}
+.hero-pill{
+  padding:18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(13,24,20,.06);
+  box-shadow:0 10px 20px rgba(13,24,20,.05);
+}
+.hero-pill strong{display:block;margin-bottom:6px}
+.hero-pill span{color:var(--muted)}
 
-.hero-slider-home .container{max-width:1180px}
-.hero-slider{
-  position:relative;overflow:hidden;border-radius:34px;background:#111;
-  box-shadow:0 24px 48px rgba(13,24,20,.14);
+.content-grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
-.hero-slider__track{position:relative;min-height:620px}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
-.hero-slide.is-active{opacity:1;z-index:2}
-.hero-slide img{width:100%;height:100%;min-height:620px;object-fit:cover;display:block}
-.hero-slide::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg, rgba(8,16,22,.66) 0%, rgba(8,16,22,.24) 48%, rgba(8,16,22,.16) 100%);
+.peace-card{
+  padding:28px;
+  border-radius:28px;
+  background:#fff;
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 16px 32px rgba(13,24,20,.06);
 }
-.hero-slide__overlay{
-  position:absolute;left:54px;bottom:52px;z-index:3;max-width:660px;color:#fff;
+.expect-list{display:grid;gap:14px;margin-top:12px}
+.expect-item{
+  display:grid;
+  grid-template-columns:20px 1fr;
+  gap:12px;
+  align-items:flex-start;
 }
-.hero-slide__overlay h1,.hero-slide__overlay h2{
-  margin:6px 0 12px;font-size:clamp(2.4rem,4vw,4.6rem);line-height:1.05;color:#fff;
+.expect-item span{color:#d5a356;font-weight:900}
+.expect-item p{margin:4px 0 0;color:var(--muted)}
+
+.section-soft .three-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
 }
-.hero-slide__overlay .lead{color:rgba(255,255,255,.92);font-size:1.08rem;max-width:640px}
-.hero-slide__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-.hero-slider__btn{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:52px;height:52px;
-  border-radius:999px;border:none;cursor:pointer;background:rgba(255,255,255,.16);color:#fff;
-  font-size:32px;line-height:1;backdrop-filter:blur(6px);
+.soft-card{
+  padding:24px;
+  border-radius:24px;
+  background:linear-gradient(180deg,#fff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 14px 28px rgba(13,24,20,.06);
 }
-.hero-slider__btn--prev{left:20px}
-.hero-slider__btn--next{right:20px}
-.hero-slider__dots{
-  position:absolute;left:50%;transform:translateX(-50%);bottom:18px;z-index:4;display:flex;gap:10px;
+.text-link{
+  display:inline-block;
+  margin-top:12px;
+  font-weight:800;
+  text-decoration:none;
 }
-.hero-slider__dots button{
-  width:10px;height:10px;border-radius:999px;border:none;cursor:pointer;background:rgba(255,255,255,.42);
+
+.pastor-home-card{
+  padding:30px;
+  border-radius:30px;
+  background:linear-gradient(180deg,#fff,#fbf7f0);
+  border:1px solid rgba(13,24,20,.08);
+  box-shadow:0 16px 32px rgba(13,24,20,.06);
 }
-.hero-slider__dots button.is-active{background:#fff}
+.pastor-home-content{max-width:860px}
+.muted-copy{color:var(--muted);line-height:1.7}
+
+.prayer-banner{
+  padding:32px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#12384a,#0f2d3a 62%, #7f5b27 140%);
+  color:#fff;
+  box-shadow:0 18px 36px rgba(13,24,20,.16);
+}
+.prayer-banner h2{color:#fff;margin:8px 0 12px}
+.prayer-banner .lead{color:rgba(255,255,255,.9);max-width:760px}
 
 @media (max-width: 900px){
-  .hero-slider__track{min-height:540px}
-  .hero-slide img{min-height:540px}
-  .hero-slide__overlay{left:26px;right:26px;bottom:40px;max-width:none}
+  .hero-pill-grid,
+  .content-grid-2,
+  .section-soft .three-cards{
+    grid-template-columns:1fr;
+  }
 }
 @media (max-width: 640px){
-  .hero-slider{border-radius:24px}
-  .hero-slider__track{min-height:470px}
-  .hero-slide img{min-height:470px}
-  .hero-slide__overlay h1,.hero-slide__overlay h2{font-size:clamp(2rem,8vw,2.9rem)}
-  .hero-slider__btn{width:44px;height:44px;font-size:28px}
+  .spiritual-hero,
+  .peace-card,
+  .soft-card,
+  .pastor-home-card,
+  .prayer-banner{
+    padding:24px;
+    border-radius:24px;
+  }
 }
