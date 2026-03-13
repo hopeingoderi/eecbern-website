@@ -32,57 +32,65 @@
 <li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
 <li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
 <li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li><li class="nav-item nav-lang-item">
-<details class="lang-dropdown">
-<summary>
-<span data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
-<svg aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" fill-rule="evenodd"></path></svg>
-</summary>
-<div class="lang-dropdown__menu">
-<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
-<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
-<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+<li class="nav-item nav-item--lang">
+<a aria-label="Languages" class="lang-toggle" href="#">🌐</a>
+<div class="lang-menu">
+<button data-set-lang="en" type="button">EN</button>
+<button data-set-lang="de" type="button">DE</button>
+<button data-set-lang="ti" type="button">TI</button>
 </div>
-</details>
-</li>
-</ul></nav>
+</li></ul></nav>
 </div>
 </header>
 <main id="main">
-<section class="hero">
-<video autoplay="" loop="" muted="" playsinline="" poster="/assets/img/hero-poster.svg" preload="metadata">
-<source src="/assets/video/hero.mp4" type="video/mp4"/>
-</video>
-<div class="container hero-inner">
-<div class="hero-card hero-card--worldclass">
-<div class="hero-badge">
-<span class="hero-badge__icon">✦</span>
-<span>Sunday Worship • Bern</span>
-</div>
-<p class="kicker">EEC Bern · Worship · Prayer · Fellowship</p>
+
+
+
+<section class="section hero-slider-home">
+<div class="container">
+<div class="hero-slider" data-hero-slider="">
+<div class="hero-slider__track">
+<article class="hero-slide is-active">
+<img alt="Church life hero slide 1" loading="eager" src="/assets/img/hero-slide-1.jpeg"/>
+<div class="hero-slide__overlay">
+<p class="kicker">WELCOME TO EEC BERN</p>
 <h1>Eritrean Evangelical Church Bern</h1>
-<p class="lead"><span data-de="Eine christuszentrierte Gemeinde in Bern — Anbetung, Gebet, Lehre und herzliche Gemeinschaft mit einer klaren, modernen und einladenden Präsenz." data-en="A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting." data-i18n="" data-ti="ኣብ በርን ዘላ ብክርስቶስ ዝተመስረተት ቤተ ክርስቲያን — ኣምልኾ፣ ጸሎት፣ መጽሓፍ ቅዱሳዊ ትምህርቲን ሞቕ ሕብረትን ብዘመናዊ እና ዝተኸፍተ ኣቀራርባ ንቕርብ።">A Christ‑centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting.</span></p>
-<div class="hero-verse-card">
-<div class="hero-verse-card__label">Today’s scripture</div>
-<div class="verse-rotator">
-<div class="ref" data-verse-ref="">Matthew 11:28</div>
-<div class="text" data-verse-text="">“Come to me, all who are weary and burdened, and I will give you rest.”</div>
+<p class="lead">A Christ-centered church family in Bern — worship, prayer, biblical teaching, and warm fellowship in a modern and welcoming setting.</p>
+<div class="hero-slide__actions">
+<a class="btn btn-small nav-donate" href="/visit/">Plan a Visit</a>
+<a class="btn btn-outline btn-small" href="/sermons/">Watch Message</a>
+<a class="btn btn-outline btn-small" href="/ministries/">Explore Ministries</a>
 </div>
 </div>
-<div class="hero-metrics">
-<div><strong>Christ-centered</strong><span>Worship &amp; prayer</span></div>
-<div><strong>Family friendly</strong><span>Bern community</span></div>
-<div><strong>3 Languages</strong><span>EN · DE · TI</span></div>
+</article>
+<article class="hero-slide">
+<img alt="Church life hero slide 2" loading="lazy" src="/assets/img/hero-slide-2.jpeg"/>
+<div class="hero-slide__overlay">
+<p class="kicker">COMMUNITY</p>
+<h2>Family, fellowship, and faith</h2>
+<p class="lead">We gather to grow together, encourage one another, and serve with joy across generations.</p>
 </div>
-<div class="btn-row hero-actions">
-<a class="btn primary" href="/visit-us/#service-times">Plan a Visit</a>
-<a class="btn ghost" href="/sermons/">Watch Message</a>
-<a class="btn highlight" href="/ministries/">Explore Ministries</a>
+</article>
+<article class="hero-slide">
+<img alt="Church life hero slide 3" loading="lazy" src="/assets/img/hero-slide-3.jpeg"/>
+<div class="hero-slide__overlay">
+<p class="kicker">HOPE</p>
+<h2>A welcoming church home in Bern</h2>
+<p class="lead">Discover ministries, sermons, events, and a church family walking together in Christ.</p>
+</div>
+</article>
+</div>
+<button aria-label="Previous slide" class="hero-slider__btn hero-slider__btn--prev" type="button">‹</button>
+<button aria-label="Next slide" class="hero-slider__btn hero-slider__btn--next" type="button">›</button>
+<div class="hero-slider__dots">
+<button aria-label="Go to slide 1" class="is-active" type="button"></button>
+<button aria-label="Go to slide 2" type="button"></button>
+<button aria-label="Go to slide 3" type="button"></button>
 </div>
 </div>
 </div>
 </section>
-
 <section class="section church-life-uniform">
 <div class="container">
 <div class="section-head-uniform">
@@ -141,7 +149,38 @@
 </div>
 </div>
 </section>
-
+<section class="section church-life-uniform">
+<div class="container">
+<div class="section-head-uniform">
+<div>
+<p class="kicker">CHURCH LIFE</p>
+<h2>Moments of Fellowship</h2>
+<p class="lead">A cleaner, uniform gallery style inspired by kirubel.ch — elegant cards, consistent proportions, and authentic preview buttons.</p>
+</div>
+</div>
+<div class="uniform-gallery-grid" data-gallery="">
+<a class="uniform-gallery-card uniform-gallery-card--large" data-title="Worship" href="/assets/img/ministry-worship.svg">
+<img alt="Worship" loading="lazy" src="/assets/img/ministry-worship.svg"/>
+<span class="uniform-gallery-card__preview">Preview</span>
+</a>
+<a class="uniform-gallery-card" data-title="Fellowship" href="/assets/img/ministry-hospitality.svg">
+<img alt="Fellowship" loading="lazy" src="/assets/img/ministry-hospitality.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Youth" href="/assets/img/ministry-youth.svg">
+<img alt="Youth" loading="lazy" src="/assets/img/ministry-youth.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Prayer" href="/assets/img/ministry-prayer.svg">
+<img alt="Prayer" loading="lazy" src="/assets/img/ministry-prayer.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Kids" href="/assets/img/ministry-kids.svg">
+<img alt="Kids" loading="lazy" src="/assets/img/ministry-kids.svg"/>
+</a>
+<a class="uniform-gallery-card" data-title="Church Media" href="/assets/img/ministry-media.svg">
+<img alt="Church Media" loading="lazy" src="/assets/img/ministry-media.svg"/>
+</a>
+</div>
+</div>
+</section>
 <section class="section">
 <div class="container split">
 <div class="photo photo-clickable" data-gallery="">
@@ -150,8 +189,8 @@
 <div class="card glass welcome-card welcome-card--premium">
 <div class="welcome-card__icon">🤍</div>
 <p class="kicker">WELCOME</p>
-<h2>A church family for worship, prayer and hope</h2>
-<p class="lead">We gather in Bern to worship Jesus, grow in God’s Word, and walk together as one family with faith, love, and hospitality.</p>
+<h2>You are warmly welcome</h2>
+<p class="lead">We are a Christ‑centered Eritrean evangelical community in Bern. Our desire is simple: to worship Jesus, grow in the Word, and walk together as one family.</p>
 <p>Whether you are new to faith, returning to church, or searching for hope — you are welcome to come as you are. We believe God restores, heals, and leads people into new life through Jesus Christ.</p>
 <div class="verse-inline welcome-card__verse">
 <span class="vref">Psalm 122:1</span>
@@ -304,7 +343,12 @@
 <div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
 </div>
 </div>
-
+<div class="footer-lang">
+<span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
 <div class="lightbox__toolbar">

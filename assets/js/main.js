@@ -52,15 +52,7 @@
     $$('.lang-btn').forEach(btn => btn.addEventListener('click', (e) => {
       e.preventDefault();
       applyLang(btn.getAttribute('data-lang'));
-      const details = btn.closest('details');
-      if(details) details.removeAttribute('open');
     }));
-
-    document.addEventListener('click', (e) => {
-      $$('.lang-dropdown[open]').forEach(drop => {
-        if(!drop.contains(e.target)) drop.removeAttribute('open');
-      });
-    });
   }
 
   function initMobileNav(){
@@ -516,5 +508,57 @@ document.body.appendChild(overlay)
     if(zoomBtn) zoomBtn.textContent = 'Zoom';
     box.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+  });
+})();
+
+
+
+// V30 hero slider
+(function(){
+  const slider = document.querySelector('[data-hero-slider]');
+  if(!slider) return;
+  const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+  const dots = Array.from(slider.querySelectorAll('.hero-slider__dots button'));
+  const prev = slider.querySelector('.hero-slider__btn--prev');
+  const next = slider.querySelector('.hero-slider__btn--next');
+  let index = 0;
+  let timer = null;
+
+  function show(i){
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('is-active', idx === index));
+    dots.forEach((d, idx) => d.classList.toggle('is-active', idx === index));
+  }
+  function start(){
+    if(timer) clearInterval(timer);
+    timer = setInterval(() => show(index + 1), 4800);
+  }
+  if(prev) prev.addEventListener('click', ()=>{ show(index - 1); start(); });
+  if(next) next.addEventListener('click', ()=>{ show(index + 1); start(); });
+  dots.forEach((d, i) => d.addEventListener('click', ()=>{ show(i); start(); }));
+  show(0); start();
+})();
+
+// V30 language dropdown
+(function(){
+  const item = document.querySelector('.nav-item--lang');
+  const toggle = item ? item.querySelector('.lang-toggle') : null;
+  if(toggle && item){
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      item.classList.toggle('is-open');
+    });
+  }
+  document.querySelectorAll('.lang-menu [data-set-lang]').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const lang = this.getAttribute('data-set-lang');
+      localStorage.setItem('lang', lang);
+      if (typeof window.setLang === 'function') {
+        window.setLang(lang);
+      } else {
+        document.documentElement.setAttribute('lang', lang);
+        location.reload();
+      }
+    });
   });
 })();

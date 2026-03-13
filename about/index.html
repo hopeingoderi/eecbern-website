@@ -32,20 +32,15 @@
 <li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
 <li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
 <li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li><li class="nav-item nav-lang-item">
-<details class="lang-dropdown">
-<summary>
-<span data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
-<svg aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" fill-rule="evenodd"></path></svg>
-</summary>
-<div class="lang-dropdown__menu">
-<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
-<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
-<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+<li class="nav-item nav-item--lang">
+<a aria-label="Languages" class="lang-toggle" href="#">🌐</a>
+<div class="lang-menu">
+<button data-set-lang="en" type="button">EN</button>
+<button data-set-lang="de" type="button">DE</button>
+<button data-set-lang="ti" type="button">TI</button>
 </div>
-</details>
-</li>
-</ul></nav>
+</li></ul></nav>
 </div>
 </header>
 <main id="main">
@@ -116,7 +111,12 @@
 <div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
 </div>
 </div>
-
+<div class="footer-lang">
+<span class="footer-lang__label" data-de="Sprache" data-en="Language" data-ti="ቋንቋ">Language</span>
+<button aria-pressed="true" class="lang-btn" data-lang="en" type="button">English</button>
+<button aria-pressed="false" class="lang-btn" data-lang="de" type="button">Deutsch</button>
+<button aria-pressed="false" class="lang-btn" data-lang="ti" type="button">ትግርኛ</button>
+</div>
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
 <div class="lightbox__toolbar">
