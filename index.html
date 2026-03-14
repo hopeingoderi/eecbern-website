@@ -9,44 +9,44 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="/assets/homev3/css/style.css" rel="stylesheet">
-</link><link href="/assets/img/logo.svg" rel="icon" type="image/svg+xml"/></head>
+<link href="/assets/homev3/css/style.css" rel="stylesheet"/>
+<link href="/assets/img/logo.svg" rel="icon" type="image/svg+xml"/></head>
 <body>
 <div class="site-shell">
+<header class="header" id="top">
+<div class="container nav-wrap">
+<a aria-label="EEC Bern home" class="brand" href="/">
+<img alt="EEC Bern logo" class="brand__logo" src="/assets/homev3/images/logo-cross-heart.svg"/>
+<div class="brand__text">
+<strong>EEC Bern</strong>
+<span>A Home of Peace &amp; Hope</span>
+</div>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="nav-toggle">
+<span></span><span></span><span></span>
+</button>
+<nav class="nav">
+<a data-i18n="nav.home" href="/">Home</a>
+<a data-i18n="nav.about" href="/about/">About</a>
+<a data-i18n="nav.ministries" href="/ministries/">Ministries</a>
+<a data-i18n="nav.sermons" href="/sermons/">Sermons</a>
+<a data-i18n="nav.events" href="/events/">Events</a>
+<a data-i18n="nav.visit" href="/visit-us/">Visit</a>
+<a data-i18n="nav.prayer" href="/prayer/">Prayer</a>
+<a data-i18n="nav.contact" href="/contact/">Contact</a>
 
-<header class="site-header" id="top">
-  <div class="container navbar unified-navbar">
-    <a class="brand" href="/">
-      <img src="/assets/img/logo.svg" alt="EEC Bern logo" />
-      <div class="title">
-        <strong>EEC Bern</strong>
-        <span data-en="Eritrean Evangelical Church Bern" data-de="Eritreische Evangelische Kirche Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
-      </div>
-    </a>
+<div aria-label="Language switcher" class="v42-lang">
+<button class="v42-lang__btn is-active" data-lang="en" type="button">EN</button>
+<button class="v42-lang__btn" data-lang="de" type="button">DE</button>
+<button class="v42-lang__btn" data-lang="ti" type="button">TI</button>
+</div>
+</nav>
+<div class="actions">
 
-    <button class="mobile-toggle unified-toggle" type="button" data-mobile-toggle aria-controls="site-nav" aria-expanded="false">
-      <span class="mobile-toggle__icon">☰</span>
-      <span data-en="Menu" data-de="Menü" data-ti="ምናሌ">Menu</span>
-    </button>
-
-    <nav id="site-nav" aria-label="Primary" class="unified-nav">
-      <ul>
-        <li><a href="/" class="nav-item is-active"><span data-en="Home" data-de="Start" data-ti="ቤት">Home</span></a></li>
-        <li><a href="/about/" class="nav-item"><span data-en="About" data-de="Über uns" data-ti="ብዛዕባና">About</span></a></li>
-        <li><a href="/ministries/" class="nav-item"><span data-en="Ministries" data-de="Dienste" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-        <li><a href="/events/" class="nav-item"><span data-en="Events" data-de="Veranstaltungen" data-ti="ተግባራት">Events</span></a></li>
-        <li><a href="/sermons/" class="nav-item"><span data-en="Sermons" data-de="Predigten" data-ti="ስብከታት">Sermons</span></a></li>
-        <li><a href="/visit-us/" class="nav-item"><span data-en="Visit" data-de="Besuch" data-ti="ምብጻሕ">Visit</span></a></li>
-        <li><a href="/calendar/" class="nav-item"><span data-en="Calendar" data-de="Kalender" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-        <li><a href="/contact/" class="nav-item"><span data-en="Contact" data-de="Kontakt" data-ti="ርኸቡና">Contact</span></a></li>
-        <li><a href="/give/" class="nav-donate-pill "><span data-en="Donate" data-de="Spenden" data-ti="ምሃብ">Donate</span></a></li>
-      </ul>
-    </nav>
-
-    
-  </div>
+<a class="btn btn--sm btn--ghost" data-i18n="nav.visitCta" href="/visit-us/">Plan a Visit</a>
+<a class="btn btn--sm" href="/give/">Donate</a></div>
+</div>
 </header>
-
 <main>
 <section class="hero" id="home">
 <div class="hero__glow hero__glow--one"></div>

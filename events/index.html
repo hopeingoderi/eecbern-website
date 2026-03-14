@@ -10,40 +10,38 @@
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
+<header>
+<div class="container navbar">
+<a class="brand" href="/">
+<img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
+<div class="title">
+<strong>EEC Bern</strong>
+<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
+</div>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
+<span class="mobile-toggle__icon">☰</span>
+<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
+</button>
+<nav aria-label="Primary" id="site-nav"><ul>
+<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
+<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
+<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
+<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
+<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
+<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
+<li class="nav-item"><a href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
+<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
+<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
+</ul></nav>
 
-<header class="site-header" id="top">
-  <div class="container navbar unified-navbar">
-    <a class="brand" href="/">
-      <img src="/assets/img/logo.svg" alt="EEC Bern logo" />
-      <div class="title">
-        <strong>EEC Bern</strong>
-        <span data-en="Eritrean Evangelical Church Bern" data-de="Eritreische Evangelische Kirche Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
-      </div>
-    </a>
-
-    <button class="mobile-toggle unified-toggle" type="button" data-mobile-toggle aria-controls="site-nav" aria-expanded="false">
-      <span class="mobile-toggle__icon">☰</span>
-      <span data-en="Menu" data-de="Menü" data-ti="ምናሌ">Menu</span>
-    </button>
-
-    <nav id="site-nav" aria-label="Primary" class="unified-nav">
-      <ul>
-        <li><a href="/" class="nav-item"><span data-en="Home" data-de="Start" data-ti="ቤት">Home</span></a></li>
-        <li><a href="/about/" class="nav-item"><span data-en="About" data-de="Über uns" data-ti="ብዛዕባና">About</span></a></li>
-        <li><a href="/ministries/" class="nav-item"><span data-en="Ministries" data-de="Dienste" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-        <li><a href="/events/" class="nav-item is-active"><span data-en="Events" data-de="Veranstaltungen" data-ti="ተግባራት">Events</span></a></li>
-        <li><a href="/sermons/" class="nav-item"><span data-en="Sermons" data-de="Predigten" data-ti="ስብከታት">Sermons</span></a></li>
-        <li><a href="/visit-us/" class="nav-item"><span data-en="Visit" data-de="Besuch" data-ti="ምብጻሕ">Visit</span></a></li>
-        <li><a href="/calendar/" class="nav-item"><span data-en="Calendar" data-de="Kalender" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-        <li><a href="/contact/" class="nav-item"><span data-en="Contact" data-de="Kontakt" data-ti="ርኸቡና">Contact</span></a></li>
-        <li><a href="/give/" class="nav-donate-pill "><span data-en="Donate" data-de="Spenden" data-ti="ምሃብ">Donate</span></a></li>
-      </ul>
-    </nav>
-
-    
-  </div>
+<div aria-label="Language switcher" class="v42-lang">
+<button class="v42-lang__btn is-active" data-lang="en" type="button">EN</button>
+<button class="v42-lang__btn" data-lang="de" type="button">DE</button>
+<button class="v42-lang__btn" data-lang="ti" type="button">TI</button>
+</div>
+</div>
 </header>
-
 <main id="main">
 <section class="section">
 <div class="container">
@@ -127,7 +125,6 @@
 <div class="footer-copy">© <span data-year=""></span> EEC Bern. All rights reserved.</div>
 </div>
 </div>
-
 </footer>
 <div aria-label="Image viewer" class="lightbox" data-lightbox="" role="dialog">
 <div class="lightbox__toolbar">
