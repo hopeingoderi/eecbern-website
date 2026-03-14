@@ -92,15 +92,15 @@ function updateVerseContent(reset = false) {
   if (reset) verseIndex = 0;
   const current = verses[verseIndex % verses.length];
   const secondary = verses[(verseIndex + 1) % verses.length];
-  verseText.textContent = `“${current[0]}”`;
-  verseRef.textContent = current[1];
-  sliderVerseText.textContent = secondary[0];
-  sliderVerseRef.textContent = secondary[1];
+  if (verseText) verseText.textContent = `“${current[0]}”`;
+  if (verseRef) verseRef.textContent = current[1];
+  if (sliderVerseText) sliderVerseText.textContent = secondary[0];
+  if (sliderVerseRef) sliderVerseRef.textContent = secondary[1];
 }
 
-select.value = activeLang;
+if (select) select.value = activeLang;
 applyTranslations(activeLang);
-select.addEventListener('change', (e) => applyTranslations(e.target.value));
+if (select) select.addEventListener('change', (e) => applyTranslations(e.target.value));
 setInterval(() => { verseIndex += 1; updateVerseContent(); }, 5200);
 
 const observer = new IntersectionObserver((entries) => {
@@ -162,3 +162,116 @@ document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click
     });
   });
 })();
+
+
+(function(){
+  function applyMenuLanguage(lang){
+    document.querySelectorAll('[data-en][data-de][data-ti]').forEach(function(el){
+      if(el.children.length > 0 && el.querySelector('[data-en],[data-de],[data-ti]')) return;
+      var value = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if(value){ el.textContent = value; }
+    });
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.value = lang;
+    });
+  }
+
+  function initExtraLangFix(){
+    var supported = ['en','de','ti'];
+    var lang = 'en';
+    try{
+      lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+    }catch(e){}
+    if(supported.indexOf(lang) === -1) lang = 'en';
+
+    applyMenuLanguage(lang);
+
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(e){
+        var next = e.target.value;
+        try{ localStorage.setItem('eec_lang', next); }catch(err){}
+        document.documentElement.setAttribute('lang', next);
+        document.documentElement.setAttribute('data-lang', next);
+        applyMenuLanguage(next);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initExtraLangFix);
+})();
+
+
+(function(){
+  function updateTranslatedText(lang){
+    document.querySelectorAll('[data-en][data-de][data-ti]').forEach(function(el){
+      if(el.closest('option')) return;
+      var target = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if(target){ el.textContent = target; }
+    });
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.value = lang;
+    });
+  }
+
+  function bootLanguageFix(){
+    var lang = 'en';
+    try{
+      lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+    }catch(e){}
+    if(!['en','de','ti'].includes(lang)) lang = 'en';
+    updateTranslatedText(lang);
+
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(e){
+        var next = e.target.value;
+        try{ localStorage.setItem('eec_lang', next); }catch(err){}
+        document.documentElement.setAttribute('lang', next);
+        document.documentElement.setAttribute('data-lang', next);
+        updateTranslatedText(next);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bootLanguageFix);
+  } else {
+    bootLanguageFix();
+  }
+})();
+
+
+(function(){
+  function initCalendarFallbackV56(){
+    const frame = document.querySelector('[data-calendar-embed]');
+    if(!frame) return;
+    const empty = document.querySelector('[data-calendar-empty]');
+    const url = ((window.EEC_CONFIG && window.EEC_CONFIG.googleCalendarEmbedUrl) || '').trim();
+    if(url){
+      frame.src = url;
+      frame.style.display = 'block';
+      if(empty) empty.style.display = 'none';
+    } else {
+      frame.removeAttribute('src');
+      frame.style.display = 'none';
+      if(empty) empty.style.display = 'flex';
+    }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initCalendarFallbackV56);
+  } else {
+    initCalendarFallbackV56();
+  }
+})();
+
+
+/* ===== V58 homepage safety guard ===== */
+window.addEventListener('error', function(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.classList.add('in-view');
+  });
+});
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.classList.add('in-view');
+  });
+});

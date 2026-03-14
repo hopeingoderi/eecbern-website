@@ -960,7 +960,7 @@ document.body.appendChild(overlay)
 })();
 
 async function loadProgramme(){
- const res = await fetch('/assets/data/sunday-programme.json');
+ const res = await fetch((document.body.dataset.base || '') + 'assets/data/sunday-programme.json');
  const data = await res.json();
  const el = document.getElementById('programmeTable');
  if(!el) return;
@@ -970,7 +970,7 @@ async function loadProgramme(){
    el.appendChild(row);
  });
 }
-document.addEventListener('DOMContentLoaded',loadProgramme);
+// loadProgramme disabled in V56;
 
 
 // ===== V47 premium calendar + sunday programme + reveal =====
@@ -995,7 +995,7 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
   function renderPremiumProgramme(){
     const table = document.getElementById('programmeTable');
     if(!table) return;
-    fetch('/assets/data/sunday-programme.json')
+    fetch((document.body.dataset.base || '') + 'assets/data/sunday-programme.json')
       .then(r=>r.json())
       .then(data=>{
         const lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
@@ -1054,7 +1054,7 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
 
   document.addEventListener('DOMContentLoaded', function(){
     initReveal();
-    renderPremiumProgramme();
+    // renderPremiumProgramme disabled in V56;
     initCalendarEmbed();
     initProgrammeLightbox();
   });
@@ -1065,7 +1065,7 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
   function renderInlineProgramme(){
     const table = document.getElementById('programmeTableInline');
     if(!table || table.dataset.loaded === '1') return;
-    fetch('/assets/data/sunday-programme.json')
+    fetch((document.body.dataset.base || '') + 'assets/data/sunday-programme.json')
       .then(r => r.json())
       .then(data => {
         const lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
@@ -1081,7 +1081,7 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
       })
       .catch(err => console.warn('Inline programme could not be loaded', err));
   }
-  document.addEventListener('DOMContentLoaded', renderInlineProgramme);
+  // renderInlineProgramme disabled in V56;
 })();
 
 
@@ -1141,3 +1141,116 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
     initSharedLanguage();
   });
 })();
+
+
+(function(){
+  function applyMenuLanguage(lang){
+    document.querySelectorAll('[data-en][data-de][data-ti]').forEach(function(el){
+      if(el.children.length > 0 && el.querySelector('[data-en],[data-de],[data-ti]')) return;
+      var value = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if(value){ el.textContent = value; }
+    });
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.value = lang;
+    });
+  }
+
+  function initExtraLangFix(){
+    var supported = ['en','de','ti'];
+    var lang = 'en';
+    try{
+      lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+    }catch(e){}
+    if(supported.indexOf(lang) === -1) lang = 'en';
+
+    applyMenuLanguage(lang);
+
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(e){
+        var next = e.target.value;
+        try{ localStorage.setItem('eec_lang', next); }catch(err){}
+        document.documentElement.setAttribute('lang', next);
+        document.documentElement.setAttribute('data-lang', next);
+        applyMenuLanguage(next);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initExtraLangFix);
+})();
+
+
+(function(){
+  function updateTranslatedText(lang){
+    document.querySelectorAll('[data-en][data-de][data-ti]').forEach(function(el){
+      if(el.closest('option')) return;
+      var target = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if(target){ el.textContent = target; }
+    });
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.value = lang;
+    });
+  }
+
+  function bootLanguageFix(){
+    var lang = 'en';
+    try{
+      lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+    }catch(e){}
+    if(!['en','de','ti'].includes(lang)) lang = 'en';
+    updateTranslatedText(lang);
+
+    document.querySelectorAll('.languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(e){
+        var next = e.target.value;
+        try{ localStorage.setItem('eec_lang', next); }catch(err){}
+        document.documentElement.setAttribute('lang', next);
+        document.documentElement.setAttribute('data-lang', next);
+        updateTranslatedText(next);
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bootLanguageFix);
+  } else {
+    bootLanguageFix();
+  }
+})();
+
+
+(function(){
+  function initCalendarFallbackV56(){
+    const frame = document.querySelector('[data-calendar-embed]');
+    if(!frame) return;
+    const empty = document.querySelector('[data-calendar-empty]');
+    const url = ((window.EEC_CONFIG && window.EEC_CONFIG.googleCalendarEmbedUrl) || '').trim();
+    if(url){
+      frame.src = url;
+      frame.style.display = 'block';
+      if(empty) empty.style.display = 'none';
+    } else {
+      frame.removeAttribute('src');
+      frame.style.display = 'none';
+      if(empty) empty.style.display = 'flex';
+    }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initCalendarFallbackV56);
+  } else {
+    initCalendarFallbackV56();
+  }
+})();
+
+
+/* ===== V58 homepage safety guard ===== */
+window.addEventListener('error', function(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.classList.add('in-view');
+  });
+});
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.reveal').forEach(function(el){
+    el.classList.add('in-view');
+  });
+});

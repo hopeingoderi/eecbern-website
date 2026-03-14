@@ -35,3 +35,12 @@ V49 updates
 - Same menu colors, same active state, same dropdown language style
 - Same mobile menu logic across the whole website
 - Events remains "Events" in German to avoid menu overlap
+
+
+V56 Final Church Version
+- Sunday programme poster removed from calendar page
+- Sunday programme now shows Ministry | Date | Time | Room
+- Events and Visit Sunday programme also use Date column
+- Calendar page shows a visible Google Calendar setup card when no embed URL is configured
+- German menu translations preserved
+- Faster local testing because programme rows are now static in HTML
