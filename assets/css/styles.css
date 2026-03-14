@@ -3434,87 +3434,35 @@ header .navbar{display:flex;align-items:center;gap:14px}.header-lang{position:re
 @media (max-width:640px){.homev38-hero-copy,.homev38-card,.homev38-path-card,.homev38-pastor-card,.homev38-prayer-card,.homev38-word-card{padding:24px}.homev38-hero-copy h1{font-size:clamp(2.2rem,10vw,3.4rem)}}
 
 
-/* ===== V42 SAFE RESTORE ===== */
-/* Hide old broken language/globe controls without touching the pretty V3 layout */
-.header-lang,
-.v40-lang,
-.nav-item--lang,
-.lang-dropdown,
-.header-lang-dropdown,
-#languageSelect,
-.footer-langs,
-.language-switcher,
-.footer-language,
-.lang-switch,
-.footer-lang,
-.footer__langs {
-  display: none !important;
-}
-
-/* Small clean language pills */
-.v42-lang{
-  display:inline-flex;
+/* ===== V43 subpage menu harmony + dropdown ===== */
+.header-lang,.v40-lang,.v42-lang,.nav-item--lang,.lang-dropdown,.header-lang-dropdown,
+.footer-langs,.language-switcher,.footer-language,.lang-switch.footer-lang,.footer__langs{display:none !important;}
+header .lang-switch{
+  display:inline-flex !important;
   align-items:center;
-  gap:8px;
-  margin-left:12px;
-  flex:none;
-}
-.v42-lang__btn{
-  min-height:38px;
-  min-width:50px;
-  padding:0 12px;
+  padding:.24rem .55rem;
+  min-height:42px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.12);
   background:rgba(255,255,255,.08);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+header .lang-switch select,
+header .languageSelect{
+  background:transparent;
   color:#fff;
+  border:0;
+  outline:0;
   font-weight:800;
   cursor:pointer;
-  transition:all .18s ease;
 }
-.v42-lang__btn:hover{
-  background:rgba(255,255,255,.14);
-}
-.v42-lang__btn.is-active{
-  background:linear-gradient(135deg, rgba(213,163,86,.96), rgba(240,212,158,.96));
-  color:#101418;
-  border-color:rgba(213,163,86,.55);
-  box-shadow:0 10px 24px rgba(213,163,86,.20);
-}
-
+header .lang-switch select option,
+header .languageSelect option{ color:#111; }
+header nav ul{ list-style:none; }
 @media (max-width: 980px){
-  .v42-lang{
-    margin-left:8px;
-    gap:6px;
+  header .lang-switch{
+    order:3;
+    min-height:38px;
+    padding:.18rem .42rem;
   }
-  .v42-lang__btn{
-    min-width:42px;
-    min-height:36px;
-    padding:0 10px;
-    font-size:12px;
-  }
-}
-
-/* Preserve pretty menu spacing and stop ugly list fallback */
-header ul{
-  list-style:none;
-}
-header a{
-  text-decoration:none;
-}
-
-/* Slight smoothness polish only */
-header .nav-item,
-header nav a,
-header .menu-link{
-  transition:background .18s ease, color .18s ease, transform .18s ease;
-}
-header .nav-item:hover,
-header nav a:hover,
-header .menu-link:hover{
-  transform:translateY(-1px);
-}
-
-/* prevent accidental double language row in footer */
-footer .v42-lang{
-  display:none !important;
 }

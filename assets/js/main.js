@@ -845,31 +845,42 @@ document.body.appendChild(overlay)
 })();
 
 
-// ===== V42 language pills (safe) =====
+// ===== V43 dropdown language support =====
 (function(){
-  function activateLang(lang){
-    document.querySelectorAll('.v42-lang__btn').forEach(function(btn){
-      btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+  function syncLanguageSelects(lang){
+    document.querySelectorAll('.languageSelect, #languageSelect').forEach(function(sel){
+      sel.value = lang;
     });
-    try { localStorage.setItem('eec_lang', lang); } catch(e) {}
-    if (typeof window.setLang === 'function') {
-      try { window.setLang(lang); } catch(e) {}
-    } else if (typeof setLang === 'function') {
-      try { setLang(lang); } catch(e) {}
-    } else {
-      document.documentElement.setAttribute('lang', lang);
-    }
   }
 
   document.addEventListener('DOMContentLoaded', function(){
     var current = 'en';
-    try { current = localStorage.getItem('eec_lang') || 'en'; } catch(e) {}
-    activateLang(current);
+    try { current = localStorage.getItem('eec_lang') || 'en'; } catch(e){}
+    syncLanguageSelects(current);
 
-    document.querySelectorAll('.v42-lang__btn').forEach(function(btn){
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        activateLang(this.getAttribute('data-lang') || 'en');
+    document.querySelectorAll('.languageSelect, #languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(){
+        var next = this.value || 'en';
+        try { localStorage.setItem('eec_lang', next); } catch(e){}
+        syncLanguageSelects(next);
+
+        if (typeof window.applyLang === 'function') {
+          try { window.applyLang(next); return; } catch(e){}
+        }
+        if (typeof window.setLang === 'function') {
+          try { window.setLang(next); return; } catch(e){}
+        }
+        if (typeof applyLang === 'function') {
+          try { applyLang(next); return; } catch(e){}
+        }
+        if (typeof setLang === 'function') {
+          try { setLang(next); return; } catch(e){}
+        }
+
+        document.documentElement.setAttribute('lang', next);
+        document.querySelectorAll('.lang-btn').forEach(function(btn){
+          btn.classList.toggle('is-active', btn.getAttribute('data-lang') === next);
+        });
       });
     });
   });

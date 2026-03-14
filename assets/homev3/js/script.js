@@ -120,3 +120,23 @@ document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click
   nav.classList.remove('is-open');
   navToggle?.setAttribute('aria-expanded', 'false');
 }));
+
+
+// ===== V43 sync V3 language dropdown =====
+(function(){
+  function syncV3LanguageSelect(lang){
+    var sel = document.getElementById('languageSelect');
+    if(sel) sel.value = lang;
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var sel = document.getElementById('languageSelect');
+    var saved = 'en';
+    try { saved = localStorage.getItem('eec_lang') || localStorage.getItem('eec_lang_v3') || 'en'; } catch(e){}
+    syncV3LanguageSelect(saved);
+    if(sel){
+      sel.addEventListener('change', function(){
+        try { localStorage.setItem('eec_lang', this.value); } catch(e){}
+      });
+    }
+  });
+})();
