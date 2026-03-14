@@ -764,7 +764,7 @@ document.body.appendChild(overlay)
   });
 })();
 
-// V37 globe language menu
+// V38 globe language menu
 (function(){
   const wrap = document.querySelector('.header-lang');
   const toggle = wrap ? wrap.querySelector('.header-lang__toggle') : null;
@@ -794,15 +794,15 @@ document.body.appendChild(overlay)
   } catch(e) {}
 })();
 
-// V37 rotating verse
+// V38 rotating verse
 (function(){
   const card = document.querySelector('[data-rotating-verse]');
   if(!card) return;
   const refEl = card.querySelector('[data-verse-ref]');
   const textEl = card.querySelector('[data-verse-text]');
   const verses = [
-    {ref:'Psalm 34:18', text:'The Lord is close to the brokenhearted and saves those who are crushed in spirit.'},
     {ref:'Matthew 11:28', text:'Come to me, all you who are weary and burdened, and I will give you rest.'},
+    {ref:'Psalm 34:18', text:'The Lord is close to the brokenhearted and saves those who are crushed in spirit.'},
     {ref:'John 14:27', text:'Peace I leave with you; my peace I give you.'},
     {ref:'Romans 15:13', text:'May the God of hope fill you with all joy and peace as you trust in him.'},
     {ref:'Isaiah 41:10', text:'Do not fear, for I am with you; do not be dismayed, for I am your God.'}
@@ -810,22 +810,24 @@ document.body.appendChild(overlay)
   let i = 0;
   setInterval(() => {
     i = (i + 1) % verses.length;
-    textEl.style.opacity = '0'; textEl.style.transform = 'translateY(6px)';
+    textEl.style.opacity = '0';
+    textEl.style.transform = 'translateY(6px)';
     setTimeout(() => {
       refEl.textContent = verses[i].ref;
       textEl.textContent = '“' + verses[i].text + '”';
-      textEl.style.opacity = '1'; textEl.style.transform = 'translateY(0)';
+      textEl.style.opacity = '1';
+      textEl.style.transform = 'translateY(0)';
     }, 180);
   }, 4200);
 })();
 
-// V37 contained pastor preview
+// V38 contained pastor preview
 (function(){
-  const box = document.getElementById('siteLightbox');
-  const img = document.getElementById('siteLightboxImg');
-  const cap = document.getElementById('siteLightboxCaption');
+  const box = document.getElementById('homev38Lightbox');
+  const img = document.getElementById('homev38LightboxImg');
+  const cap = document.getElementById('homev38LightboxCaption');
   if(!box || !img || !cap) return;
-  function closeBox(){ box.classList.remove('is-open'); box.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+  function closeBox(){ box.classList.remove('is-open'); box.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
   document.addEventListener('click', function(e){
     const opener = e.target.closest('[data-lightbox-open]');
     if(opener){
@@ -834,7 +836,7 @@ document.body.appendChild(overlay)
       cap.textContent = opener.getAttribute('data-lightbox-title') || '';
       box.classList.add('is-open');
       box.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow='hidden';
       return;
     }
     if(e.target.closest('[data-lightbox-close]')) closeBox();
