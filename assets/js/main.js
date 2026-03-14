@@ -843,3 +843,34 @@ document.body.appendChild(overlay)
   });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeBox(); });
 })();
+
+(function(){
+  function applyLang(lang){
+    try{localStorage.setItem('lang', lang);}catch(e){}
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('.v40-lang__option').forEach(btn=>btn.classList.toggle('is-active', btn.dataset.lang===lang));
+    document.querySelectorAll('.v40-lang__label').forEach(el=>el.textContent=(lang||'en').toUpperCase());
+    if(typeof window.setLang==='function'){try{window.setLang(lang);}catch(e){}}
+    else if(typeof setLang==='function'){try{setLang(lang);}catch(e){}}
+  }
+  document.addEventListener('click', function(e){
+    const toggle = e.target.closest('.v40-lang__toggle');
+    const opt = e.target.closest('.v40-lang__option');
+    if(toggle){
+      const wrap = toggle.closest('.v40-lang');
+      document.querySelectorAll('.v40-lang').forEach(el=>{if(el!==wrap)el.classList.remove('is-open');});
+      if(wrap) wrap.classList.toggle('is-open');
+      return;
+    }
+    if(opt){
+      applyLang(opt.dataset.lang || 'en');
+      const wrap = opt.closest('.v40-lang'); if(wrap) wrap.classList.remove('is-open');
+      return;
+    }
+    if(!e.target.closest('.v40-lang')) document.querySelectorAll('.v40-lang').forEach(el=>el.classList.remove('is-open'));
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+    let lang='en'; try{lang=localStorage.getItem('lang')||'en';}catch(e){}
+    applyLang(lang);
+  });
+})();
