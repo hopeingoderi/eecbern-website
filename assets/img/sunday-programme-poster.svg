@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#050d5e"/>
+    <stop offset="100%" stop-color="#081447"/>
+  </linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#5ce7ee"/>
+    <stop offset="100%" stop-color="#40d3da"/>
+  </linearGradient>
+  <style>
+    .sans{font-family:Inter,Arial,sans-serif}
+    .serif{font-family:"Georgia",serif}
+    .tiny{font-size:34px;fill:#ffffff;opacity:.92}
+    .title1{font-size:110px;font-weight:900;fill:#50e6ef}
+    .title2{font-size:110px;font-weight:900;fill:#ffffff}
+    .chip{fill:#ffffff;rx:18}
+    .head{font-size:56px;font-weight:900;fill:#081447}
+    .label{font-size:34px;font-weight:800;fill:#d8e6ff}
+    .cellText{font-size:46px;font-weight:800;fill:#0e1421}
+    .whiteBox{fill:#f6f6f6}
+    .cyanBox{fill:url(#cyan)}
+    .line{stroke:#c9d7f8;stroke-width:6}
+  </style>
+</defs>
+<rect width="1400" height="1400" fill="url(#bg)"/>
+<text x="84" y="92" class="sans tiny">EEC Bern • Sunday Programme</text>
+<text x="84" y="220" class="sans title1">PROGRAMME</text>
+<text x="84" y="330" class="sans title2">OUTLINE</text>
+<text x="930" y="120" class="serif" font-size="118" fill="#ffffff" opacity=".96">Church</text>
+<rect x="915" y="148" width="355" height="86" rx="22" class="chip"/>
+<text x="1092" y="205" text-anchor="middle" class="sans head">SUNDAYS PLAN</text>
+
+<rect x="590" y="280" width="270" height="120" fill="#ffffff"/>
+<text x="725" y="325" text-anchor="middle" class="sans" font-size="42" font-weight="800" fill="#081447">Sunday Service</text>
+<text x="725" y="375" text-anchor="middle" class="sans" font-size="54" font-weight="900" fill="#081447">15.03.2026</text>
+
+<text x="370" y="530" class="sans label">Ministry</text>
+<text x="760" y="530" class="sans label">Time</text>
+<text x="1088" y="530" class="sans label">Room</text>
+
+<line x1="90" y1="500" x2="90" y2="1230" class="line"/>
+<circle cx="90" cy="540" r="16" fill="#ffffff"/>
+<circle cx="90" cy="710" r="16" fill="#ffffff"/>
+<circle cx="90" cy="880" r="16" fill="#ffffff"/>
+<circle cx="90" cy="1050" r="16" fill="#ffffff"/>
+<circle cx="90" cy="1230" r="16" fill="#ffffff"/>
+<g transform="translate(42,1110) rotate(-90)">
+  <text class="serif" font-size="116" fill="#ffffff">Sunday flow</text>
+</g>
+
+<rect x="260" y="560" width="400" height="132" rx="18" class="whiteBox"/>
+<rect x="680" y="560" width="350" height="132" rx="18" class="whiteBox"/>
+<rect x="1048" y="560" width="255" height="132" rx="18" class="cyanBox"/>
+<text x="460" y="625" text-anchor="middle" class="sans cellText">Worship Preparation</text>
+<text x="855" y="635" text-anchor="middle" class="sans cellText">14:00 – 15:20</text>
+<text x="1175" y="635" text-anchor="middle" class="sans cellText">Room A</text>
+
+<rect x="260" y="730" width="400" height="132" rx="18" class="whiteBox"/>
+<rect x="680" y="730" width="350" height="132" rx="18" class="whiteBox"/>
+<rect x="1048" y="730" width="255" height="132" rx="18" class="cyanBox"/>
+<text x="460" y="795" text-anchor="middle" class="sans cellText">Children's Ministry</text>
+<text x="855" y="805" text-anchor="middle" class="sans cellText">14:30 – 15:20</text>
+<text x="1175" y="805" text-anchor="middle" class="sans cellText">Room D</text>
+
+<rect x="260" y="900" width="400" height="132" rx="18" class="whiteBox"/>
+<rect x="680" y="900" width="350" height="132" rx="18" class="whiteBox"/>
+<rect x="1048" y="900" width="255" height="132" rx="18" class="cyanBox"/>
+<text x="460" y="965" text-anchor="middle" class="sans cellText">Youth Gathering</text>
+<text x="855" y="975" text-anchor="middle" class="sans cellText">14:00 – 15:20</text>
+<text x="1175" y="975" text-anchor="middle" class="sans cellText">Room B</text>
+
+<rect x="260" y="1070" width="400" height="132" rx="18" class="whiteBox"/>
+<rect x="680" y="1070" width="350" height="132" rx="18" class="whiteBox"/>
+<rect x="1048" y="1070" width="255" height="132" rx="18" class="cyanBox"/>
+<text x="460" y="1135" text-anchor="middle" class="sans cellText">Main Worship Service</text>
+<text x="855" y="1145" text-anchor="middle" class="sans cellText">15:30 – 18:30</text>
+<text x="1175" y="1130" text-anchor="middle" class="sans cellText">Main</text>
+<text x="1175" y="1180" text-anchor="middle" class="sans cellText">Hall</text>
+</svg>

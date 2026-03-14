@@ -1,25 +1,22 @@
-EEC Bern Premium Power Website v2
+EEC Bern Website V47 – Church Premium Version
 
-1) Hero video
-   Put your file at: assets/video/hero.mp4
+Quick update guide
 
-2) Latest sermon
-   Replace VIDEO_ID in:
-   - /index.html
-   - /sermons/index.html
+1) Google Calendar auto updates
+- Open: assets/js/config.js
+- Paste your public Google Calendar embed URL into:
+  googleCalendarEmbedUrl: "https://calendar.google.com/calendar/embed?src=..."
 
-3) Replace placeholder images
-   - assets/img/church-photo.svg
-   - assets/img/gallery-1..4.svg
-   - assets/img/ministry-*.svg
-   You can replace with .jpg/.png and update the HTML src if you change filenames.
+2) Sunday programme each week
+- Edit: assets/data/sunday-programme.json
+- Replace the poster image if needed:
+  assets/img/sunday-programme-poster.svg
+  or replace it with your own JPG/PNG and update the path in the JSON file.
 
-4) Leaders
-   Mission/Family/Counseling/Hospitality are set to TBD (you can tell me the names and I’ll update).
+3) Pastor profile
+- Replace homepage preview image:
+  assets/homev3/images/pastor-placeholder.svg
 
-
-v3 upgrades:
-- Language switch EN/DE/TI
-- Auto latest sermon via YouTube channel RSS (set youtubeChannelId)
-- Calendar page /calendar/ with embed URL from config
-- Prayer request form (Formspree endpoint in config)
+4) Sermons
+- Open: assets/js/config.js
+- Add your youtubeChannelId or youtubeFallbackVideoId

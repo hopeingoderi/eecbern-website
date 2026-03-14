@@ -43,25 +43,45 @@
 </label>
 </div>
 </header>
-<main id="main"><section class="section"><div class="container"><div class="section-intro-bar"><div><p class="kicker">CALENDAR</p><h1>Church calendar</h1><p class="lead">A clean monthly overview for services, prayer, Bible study, and special events.</p></div></div><div class="calendar-highlight-grid"><div class="calendar-day-card"><strong>Sun</strong><span>Worship</span><small>Weekly</small></div><div class="calendar-day-card"><strong>Thu</strong><span>Prayer</span><small>Weekly</small></div><div class="calendar-day-card"><strong>Thu</strong><span>Bible Study</span><small>Weekly</small></div><div class="calendar-day-card"><strong>Monthly</strong><span>Special Events</span><small>As announced</small></div></div></div></section>
-<section class="section">
+<main id="main">
+<section class="section calendar-premium">
 <div class="container">
-<p class="kicker" data-de="KALENDER" data-en="CALENDAR" data-i18n="" data-ti="ካሌንዳር">CALENDAR</p>
-<h1 data-de="Gemeindekalender" data-en="Church Calendar" data-i18n="" data-ti="ናይ ቤተ-ክርስቲያን ካሌንዳር">Church Calendar</h1>
-<p class="lead" data-de="Wenn du einen Google Kalender öffentlich machst, aktualisiert sich diese Seite automatisch — ohne wöchentliches Programmieren." data-en="When you make a Google Calendar public, this page updates automatically — no weekly coding." data-i18n="" data-ti="Google Calendar ህዝባዊ ምግባር እንተገበርካዮ፣ እዚ ገጽ ብራሱ ይተዓራረይ — ሳምንታዊ ኮድ የለን።">
-      When you make a Google Calendar public, this page updates automatically — no weekly coding.
-    </p>
+<div class="section-head reveal">
+<div>
+<p class="kicker" data-de="KALENDER" data-en="CALENDAR" data-ti="ካሌንዳር">CALENDAR</p>
+<h1 data-de="Gemeindekalender" data-en="Church calendar" data-ti="ናይ ቤተ ክርስቲያን ካሌንዳር">Church calendar</h1>
+<p class="lead" data-de="Nutze Google Calendar für automatische Aktualisierungen, ohne die Website jede Woche zu bearbeiten." data-en="Use Google Calendar for automatic updates without touching the website every week." data-ti="ብ Google Calendar ኣጠቓቕማ ነቲ ወቕታዊ ምሕዳስ ዘይኮድ ብራሱ ክሰርሕ ይኽእል።">Use Google Calendar for automatic updates without touching the website every week.</p>
+</div>
 <div class="verse-inline">
 <span class="vref">Ecclesiastes 3:1</span>
-<span class="vtext">“There is a time for everything…”</span>
+<span class="vtext">“There is a time for everything...”</span>
 </div>
-<div class="card glass" style="padding:16px 14px; margin-top:16px;">
-<div class="video" style="aspect-ratio:16/10;">
-<iframe data-calendar-embed="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="" title="Google Calendar"></iframe>
 </div>
-<p class="small" style="margin-top:10px;">
-        Paste your Google Calendar embed URL into <b>assets/js/config.js</b> (googleCalendarEmbedUrl).
-      </p>
+<div class="calendar-premium__grid reveal delay-1">
+<div class="calendar-premium__embed card glass">
+<div class="calendar-premium__toolbar">
+<strong data-de="Live Google Kalender" data-en="Live Google Calendar" data-ti="ቀጥታዊ Google Calendar">Live Google Calendar</strong>
+<span data-de="Automatische Updates aus einem öffentlichen Kalender" data-en="Auto-updates from one public calendar" data-ti="ካብ ሓደ ህዝባዊ ካሌንዳር ራሱ ዝተሓድሰ">Auto-updates from one public calendar</span>
+</div>
+<div class="calendar-premium__stage">
+<iframe data-calendar-embed="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Calendar"></iframe>
+<div class="calendar-premium__empty" data-calendar-empty="">
+<h3 data-de="Google Kalender ist noch nicht verbunden" data-en="Google Calendar not connected yet" data-ti="Google Calendar ገና ኣይተያየደን">Google Calendar not connected yet</h3>
+<p data-de="Füge deine öffentliche Google-Kalender-Embed-URL in assets/js/config.js unter googleCalendarEmbedUrl ein." data-en="Paste your public Google Calendar embed URL into assets/js/config.js under googleCalendarEmbedUrl." data-ti="ናይ ህዝባዊ Google Calendar embed URL ኣብ assets/js/config.js ትሕቲ googleCalendarEmbedUrl ኣእቱ።">Paste your public Google Calendar embed URL into assets/js/config.js under googleCalendarEmbedUrl.</p>
+</div>
+</div>
+</div>
+<div class="calendar-premium__steps card glass">
+<p class="kicker" data-de="EINRICHTUNG" data-en="SETUP" data-ti="ምድላው">SETUP</p>
+<h3 data-de="So aktualisierst du ohne zu programmieren" data-en="How to update without coding" data-ti="ኮድ ዘይብሉ ኣተሓሳስባ ምሕዳስ">How to update without coding</h3>
+<ol>
+<li data-de="Erstelle einen Gemeinde-Google-Kalender." data-en="Create one church Google Calendar." data-ti="ሓደ ናይ ቤተ ክርስቲያን Google Calendar ፍጠር።">Create one church Google Calendar.</li>
+<li data-de="Füge Gottesdienste, Gebet, Bibelstudium und spezielle Anlässe hinzu." data-en="Add services, prayer meetings, Bible study, and special events." data-ti="ኣገልግሎት፣ ጸሎት፣ መጽሓፍ ቅዱስ ምምሃርን ፍሉያት ተግባራትን ኣእቱ።">Add services, prayer meetings, Bible study, and special events.</li>
+<li data-de="Mache den Kalender öffentlich und kopiere die Embed-URL." data-en="Make the calendar public and copy the embed URL." data-ti="ካሌንዳሩ ህዝባዊ ግበሮ እና embed URL ቅዳሕ።">Make the calendar public and copy the embed URL.</li>
+<li data-de="Füge sie einmal in assets/js/config.js ein." data-en="Paste it once into assets/js/config.js." data-ti="ሓንሳብ ኣብ assets/js/config.js ኣእቱ።">Paste it once into assets/js/config.js.</li>
+</ol>
+<a class="btn" data-de="Zur Event-Seite" data-en="Open events page" data-ti="ገጽ ተግባራት ክፈት" href="/events/">Open events page</a>
+</div>
 </div>
 </div>
 </section>

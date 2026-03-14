@@ -43,7 +43,6 @@
 <option value="ti">TI</option>
 </select>
 </label>
-
 <a class="btn btn--sm" href="/give/">Donate</a></div>
 </div>
 </header>
@@ -66,10 +65,21 @@
 <a class="btn btn--ghost" data-i18n="hero.ctaPrayer" href="/prayer/">Prayer Request</a>
 <a class="btn btn--ghost-light" data-i18n="hero.ctaVisit" href="/visit-us/">Visit This Sunday</a>
 </div>
+<div class="hero__stats">
+<div class="hero__stat reveal delay-1"><strong data-i18n="hero.stat1Title">Grace</strong><span data-i18n="hero.stat1Copy">A quiet place for healing hearts</span></div>
+<div class="hero__stat reveal delay-2"><strong data-i18n="hero.stat2Title">Truth</strong><span data-i18n="hero.stat2Copy">Biblical teaching with spiritual depth</span></div>
+<div class="hero__stat reveal delay-3"><strong data-i18n="hero.stat3Title">Hope</strong><span data-i18n="hero.stat3Copy">A loving community for all generations</span></div>
+</div>
+
 </div>
 <div class="hero__visual reveal delay-2">
 <div class="hero-card hero-card--main">
-<img alt="Warm spiritual abstract light" src="/assets/homev3/images/hero-light.svg"/>
+<div class="hero-illustration">
+<div class="hero-illustration__halo hero-illustration__halo--one"></div>
+<div class="hero-illustration__halo hero-illustration__halo--two"></div>
+<div class="hero-illustration__cross"></div>
+<div class="hero-illustration__path"></div>
+</div>
 </div>
 <div class="hero-card hero-card--small card-soft">
 <p class="mini-title" data-i18n="hero.cardTitle">God is love</p>
@@ -207,15 +217,25 @@
 </div>
 </section>
 <section class="section section--calm">
-<div class="container split split--pastor">
+<div class="container split split--pastor split--pastor-premium">
 <div class="pastor-visual reveal">
-<img alt="Pastor profile placeholder" class="pastor-img" src="/assets/homev3/images/pastor-placeholder.svg"/>
+<div class="pastor-card-preview">
+<button class="pastor-card-preview__button" data-programme-open="/assets/homev3/images/pastor-placeholder.svg" data-programme-title="Pastor Bahta Tekleweyni" type="button">
+<img alt="Pastor preview" class="pastor-img" src="/assets/homev3/images/pastor-placeholder.svg"/>
+<span class="programme-poster-btn__label" data-i18n="pastor.preview">Profile preview</span>
+</button>
+</div>
 </div>
 <div class="reveal delay-2">
 <p class="eyebrow" data-i18n="pastor.eyebrow">Pastor Message</p>
 <h2 data-i18n="pastor.title">A shepherd's heart for the church family in Bern.</h2>
 <blockquote data-i18n="pastor.quote">“Our desire is to lead people to Jesus, build a strong community of faith, and share God's love in Bern and beyond.”</blockquote>
 <p class="section-copy" data-i18n="pastor.copy">This section can be linked to the full pastor profile page without forcing the image or profile to fill the entire screen. It is designed as a respectful preview card with warm, dignified spacing.</p>
+
+<div class="pastor-actions">
+<a class="btn" data-i18n="pastor.contact" href="/contact/">Contact pastor</a>
+<a class="btn btn--ghost" data-i18n="pastor.watch" href="/sermons/">Watch message</a>
+</div>
 </div>
 </div>
 </section>
@@ -261,6 +281,38 @@
 </form>
 </div>
 </section>
+
+<section class="section section--programme" id="sunday-programme">
+<div class="container">
+<div class="section-head reveal">
+<div>
+<p class="eyebrow" data-i18n="programme.eyebrow">This Sunday</p>
+<h2 data-i18n="programme.title">Sunday programme</h2>
+<p class="section-copy" data-i18n="programme.copy">A calm, clear service flow for families, ministries, worship, and room planning.</p>
+</div>
+<a class="btn btn--ghost-light" data-i18n="programme.calendar" href="/calendar/">Open full calendar</a>
+</div>
+<div class="programme-premium reveal delay-2">
+<div class="programme-premium__poster">
+<button class="programme-poster-btn" data-programme-open="/assets/img/sunday-programme-poster.svg" data-programme-title="Sunday Programme" type="button">
+<img alt="Sunday programme poster" src="/assets/img/sunday-programme-poster.svg"/>
+<span class="programme-poster-btn__label" data-i18n="programme.preview">Preview poster</span>
+</button>
+</div>
+<div class="programme-premium__board">
+<div class="programme-premium__date" data-programme-date="">15.03.2026</div>
+<div class="programme-premium__table" id="programmeTable">
+<div class="programme-premium__head">
+<span data-i18n="programme.headMinistry">Ministry</span>
+<span data-i18n="programme.headTime">Time</span>
+<span data-i18n="programme.headRoom">Room</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 </main>
 <footer class="footer" id="contact">
 <div class="container footer__grid">

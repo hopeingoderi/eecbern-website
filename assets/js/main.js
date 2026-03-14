@@ -946,3 +946,104 @@ document.body.appendChild(overlay)
 
   window.__eecApplyAllLang = applyAll;
 })();
+
+async function loadProgramme(){
+ const res = await fetch('/assets/data/sunday-programme.json');
+ const data = await res.json();
+ const el = document.getElementById('programmeTable');
+ if(!el) return;
+ data.items.forEach(i=>{
+   const row=document.createElement('div');
+   row.innerHTML=`<strong>${i.title.en}</strong> — ${i.time} — ${i.room.en}`;
+   el.appendChild(row);
+ });
+}
+document.addEventListener('DOMContentLoaded',loadProgramme);
+
+
+// ===== V47 premium calendar + sunday programme + reveal =====
+(function(){
+  function initReveal(){
+    const items = Array.from(document.querySelectorAll('.reveal'));
+    if(!('IntersectionObserver' in window) || !items.length){
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    items.forEach(el=>io.observe(el));
+  }
+
+  function renderPremiumProgramme(){
+    const table = document.getElementById('programmeTable');
+    if(!table) return;
+    fetch('/assets/data/sunday-programme.json')
+      .then(r=>r.json())
+      .then(data=>{
+        const lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+        const dateEl = document.querySelector('[data-programme-date]');
+        if(dateEl && data.date){ dateEl.textContent = data.date.split('-').reverse().join('.'); }
+        if(table.dataset.loaded === '1') return;
+        const rows = (data.items || []).map(item=>{
+          const title = (item.title && (item.title[lang] || item.title.en)) || '';
+          const room = (item.room && (item.room[lang] || item.room.en)) || '';
+          return `<div class="programme-premium__row"><span>${title}</span><span>${item.time || ''}</span><span>${room}</span></div>`;
+        }).join('');
+        table.insertAdjacentHTML('beforeend', rows);
+        table.dataset.loaded = '1';
+      }).catch(()=>{});
+  }
+
+  function initCalendarEmbed(){
+    const frame = document.querySelector('[data-calendar-embed]');
+    if(!frame || !window.EEC_CONFIG) return;
+    const empty = document.querySelector('[data-calendar-empty]');
+    const url = (window.EEC_CONFIG.googleCalendarEmbedUrl || '').trim();
+    if(url){
+      frame.src = url;
+      if(empty) empty.style.display = 'none';
+    } else {
+      frame.style.display = 'none';
+      if(empty) empty.style.display = 'flex';
+    }
+  }
+
+  function initProgrammeLightbox(){
+    const box = document.getElementById('programmeLightbox');
+    if(!box) return;
+    const img = document.getElementById('programmeLightboxImg');
+    const cap = document.getElementById('programmeLightboxCaption');
+    const close = ()=>{
+      box.classList.remove('is-open');
+      box.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    };
+    document.addEventListener('click', function(e){
+      const opener = e.target.closest('[data-programme-open]');
+      if(opener){
+        e.preventDefault();
+        if(img) img.src = opener.getAttribute('data-programme-open') || '';
+        if(cap) cap.textContent = opener.getAttribute('data-programme-title') || 'Preview';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+        return;
+      }
+      if(e.target.closest('[data-programme-close]')) close();
+    });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initReveal();
+    renderPremiumProgramme();
+    initCalendarEmbed();
+    initProgrammeLightbox();
+  });
+})();

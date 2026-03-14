@@ -1,0 +1,68 @@
+{
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": {
+        "en": "Worship Preparation",
+        "de": "Vorbereitung Lobpreis",
+        "ti": "ቅድመ ምድላው መዝሙር"
+      },
+      "time": "14:00 – 15:20",
+      "room": {
+        "en": "Room A",
+        "de": "Raum A",
+        "ti": "ክፍሊ A"
+      }
+    },
+    {
+      "title": {
+        "en": "Children's Ministry",
+        "de": "Kinderdienst",
+        "ti": "ኣገልግሎት ህጻናት"
+      },
+      "time": "14:30 – 15:20",
+      "room": {
+        "en": "Room D",
+        "de": "Raum D",
+        "ti": "ክፍሊ D"
+      }
+    },
+    {
+      "title": {
+        "en": "Youth Gathering",
+        "de": "Jugendtreffen",
+        "ti": "ስብሰባ ወጣቶት"
+      },
+      "time": "14:00 – 15:20",
+      "room": {
+        "en": "Room B",
+        "de": "Raum B",
+        "ti": "ክፍሊ B"
+      }
+    },
+    {
+      "title": {
+        "en": "Main Worship Service",
+        "de": "Hauptgottesdienst",
+        "ti": "ዋና ኣገልግሎት ስግደት"
+      },
+      "time": "15:30 – 18:30",
+      "room": {
+        "en": "Main Hall",
+        "de": "Grosser Saal",
+        "ti": "ዓቢ ሳሎን"
+      }
+    }
+  ],
+  "poster": "/assets/img/sunday-programme-poster.svg",
+  "title": {
+    "en": "Sunday Programme",
+    "de": "Sonntagsprogramm",
+    "ti": "መደብ ሰንበት"
+  },
+  "subtitle": {
+    "en": "A peaceful overview for ministries, worship, and rooms this Sunday.",
+    "de": "Eine ruhige Übersicht für Dienste, Gottesdienst und Räume an diesem Sonntag.",
+    "ti": "ናይ ሰንበት ኣገልግሎታትን ሰዓታትን ክፍልታትን ብሰላም ዝገልጽ ሓፈሻዊ እዩ።"
+  }
+}
