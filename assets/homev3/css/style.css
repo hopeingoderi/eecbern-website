@@ -468,3 +468,28 @@ blockquote { font-size: clamp(1.7rem, 3vw, 2.5rem); margin: 18px 0 18px; color: 
   .programme-premium{grid-template-columns:1fr}
   .section-head{flex-direction:column; align-items:flex-start}
 }
+
+
+/* ===== V48 header consistency ===== */
+.header{
+  background: linear-gradient(180deg, rgba(9,24,21,.96), rgba(12,34,29,.92)) !important;
+  border-bottom: 1px solid rgba(255,255,255,.10) !important;
+}
+.nav a{
+  border-radius: 999px;
+}
+.lang-switch{
+  border-radius: 999px;
+}
+
+
+/* ===== V49 bridge to shared header ===== */
+body{padding-top:92px}
+.header,
+.site-header.shared-header{
+  background:linear-gradient(180deg, rgba(9,24,21,.97), rgba(12,34,29,.94)) !important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 18px 34px rgba(3,11,9,.22)!important;
+}
+.navbar,
+.navbar--shared{align-items:center}

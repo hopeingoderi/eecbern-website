@@ -44,15 +44,25 @@
     });
 
     setTextByLang(document, safe);
+    $$('.languageSelect').forEach(sel => { sel.value = safe; });
     renderVerses();
   }
 
   function initLang(){
-    applyLang(getSavedLang());
+    const current = getSavedLang();
+    applyLang(current);
+
     $$('.lang-btn').forEach(btn => btn.addEventListener('click', (e) => {
       e.preventDefault();
       applyLang(btn.getAttribute('data-lang'));
     }));
+
+    $$('.languageSelect').forEach(sel => {
+      sel.value = current;
+      sel.addEventListener('change', (e) => {
+        applyLang(e.target.value);
+      });
+    });
   }
 
   function initMobileNav(){
@@ -108,6 +118,7 @@
   }
 
   function initVerseRotation(){
+    $$('.languageSelect').forEach(sel => { sel.value = safe; });
     renderVerses();
     setInterval(renderVerses, 7000);
   }
@@ -928,7 +939,8 @@ document.body.appendChild(overlay)
     translateDataAttrs(safe);
 
     if (typeof renderVerses === 'function') {
-      try { renderVerses(); } catch(e){}
+      try { $$('.languageSelect').forEach(sel => { sel.value = safe; });
+    renderVerses(); } catch(e){}
     }
   }
 
@@ -1045,5 +1057,87 @@ document.addEventListener('DOMContentLoaded',loadProgramme);
     renderPremiumProgramme();
     initCalendarEmbed();
     initProgrammeLightbox();
+  });
+})();
+
+
+(function(){
+  function renderInlineProgramme(){
+    const table = document.getElementById('programmeTableInline');
+    if(!table || table.dataset.loaded === '1') return;
+    fetch('/assets/data/sunday-programme.json')
+      .then(r => r.json())
+      .then(data => {
+        const lang = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en';
+        const dateEl = document.querySelector('#sunday-programme-inline [data-programme-date]');
+        if(dateEl && data.date){ dateEl.textContent = data.date.split('-').reverse().join('.'); }
+        const rows = (data.items || []).map(item => {
+          const title = (item.title && (item.title[lang] || item.title.en)) || '';
+          const room = (item.room && (item.room[lang] || item.room.en)) || '';
+          return `<div class="programme-text-card__row"><span>${title}</span><span>${item.time || ''}</span><span>${room}</span></div>`;
+        }).join('');
+        table.insertAdjacentHTML('beforeend', rows);
+        table.dataset.loaded = '1';
+      })
+      .catch(err => console.warn('Inline programme could not be loaded', err));
+  }
+  document.addEventListener('DOMContentLoaded', renderInlineProgramme);
+})();
+
+
+(function(){
+  function initSharedMenu(){
+    const toggle = document.querySelector('[data-mobile-toggle]');
+    const nav = document.getElementById('site-nav');
+    if(!toggle || !nav) return;
+    const closeMenu = () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    };
+    const openMenu = () => {
+      nav.classList.add('open');
+      toggle.setAttribute('aria-expanded','true');
+    };
+    toggle.addEventListener('click', function(){
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      expanded ? closeMenu() : openMenu();
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('click', function(e){
+      if(window.innerWidth > 980) return;
+      if(!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 980){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+    });
+  }
+
+  function initSharedLanguage(){
+    const selects = Array.from(document.querySelectorAll('.languageSelect'));
+    if(!selects.length) return;
+    const supported = ['en','de','ti'];
+    let current = 'en';
+    try{ current = localStorage.getItem('eec_lang') || document.documentElement.getAttribute('lang') || 'en'; }catch(e){}
+    if(!supported.includes(current)) current = 'en';
+    selects.forEach(sel => sel.value = current);
+    selects.forEach(sel => {
+      sel.addEventListener('change', function(e){
+        const lang = e.target.value;
+        try{ localStorage.setItem('eec_lang', lang); }catch(err){}
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('data-lang', lang);
+        selects.forEach(other => other.value = lang);
+        document.querySelectorAll('[data-en], [data-de], [data-ti]').forEach(el => {
+          const next = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+          if(next && !el.querySelector('[data-en],[data-de],[data-ti]')) el.textContent = next;
+        });
+        if(typeof renderVerses === 'function') renderVerses();
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initSharedMenu();
+    initSharedLanguage();
   });
 })();

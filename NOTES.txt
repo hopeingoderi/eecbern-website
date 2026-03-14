@@ -20,3 +20,18 @@ Quick update guide
 4) Sermons
 - Open: assets/js/config.js
 - Add your youtubeChannelId or youtubeFallbackVideoId
+
+
+V48 updates
+- Sunday programme text section added to Visit and Events pages
+- Removed image-style programme dependency from those sections
+- Inner-page language dropdown fixed to work from the same saved language logic
+- Events stays 'Events' in German to avoid menu overlap
+- Inner-page menu colors and smoothness unified
+
+
+V49 updates
+- Homepage and all inner pages now use one shared header system
+- Same menu colors, same active state, same dropdown language style
+- Same mobile menu logic across the whole website
+- Events remains "Events" in German to avoid menu overlap

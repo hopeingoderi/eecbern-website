@@ -10,32 +10,23 @@
 <link href="/assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header>
-<div class="container navbar">
+
+<header class="site-header shared-header">
+<div class="container navbar navbar--shared">
 <a class="brand" href="/">
 <img alt="EEC Bern logo" src="/assets/img/logo.svg"/>
 <div class="title">
 <strong>EEC Bern</strong>
-<span data-de="Eritreische Evangelische Kirche Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
+<span data-de="Eritrean Evangelical Church Bern" data-en="Eritrean Evangelical Church Bern" data-ti="ቤተ-ክርስቲያን ኤቭንጀሊካል ኤርትራዊት በርን">Eritrean Evangelical Church Bern</span>
 </div>
 </a>
 <button aria-controls="site-nav" aria-expanded="false" class="mobile-toggle" data-mobile-toggle="" type="button">
 <span class="mobile-toggle__icon">☰</span>
-<span data-de="Menü" data-en="Menu" data-ti="ምናሌ">Menu</span>
+<span data-de="Menu" data-en="Menu" data-ti="ምናሌ">Menu</span>
 </button>
-<nav aria-label="Primary" id="site-nav"><ul>
-<li class="nav-item"><a href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li>
-<li class="nav-item"><a href="/about/"><span data-de="Über uns" data-en="About" data-ti="ብዛዕባና">About</span></a></li>
-<li class="nav-item"><a href="/ministries/"><span data-de="Dienste" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li>
-<li class="nav-item"><a href="/events/"><span data-de="Veranstaltungen" data-en="Events" data-ti="ተግባራት">Events</span></a></li>
-<li class="nav-item"><a href="/sermons/"><span data-de="Predigten" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li>
-<li class="nav-item"><a href="/visit-us/"><span data-de="Besuch" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li>
-<li class="nav-item"><a class="is-current is-active" href="/calendar/"><span data-de="Kalender" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li>
-<li class="nav-item"><a href="/contact/"><span data-de="Kontakt" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li>
-<li class="nav-item"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Spenden" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li>
-</ul></nav>
-<label aria-label="Language switch" class="lang-switch lang-switch--compact">
-<select class="languageSelect" id="languageSelect">
+<nav aria-label="Primary" class="site-nav" id="site-nav"><ul><li class="nav-item"><a class="" href="/"><span data-de="Home" data-en="Home" data-ti="ቤት">Home</span></a></li><li class="nav-item"><a class="" href="/about/"><span data-de="About" data-en="About" data-ti="ብዛዕባና">About</span></a></li><li class="nav-item"><a class="" href="/ministries/"><span data-de="Ministries" data-en="Ministries" data-ti="ኣገልግሎታት">Ministries</span></a></li><li class="nav-item"><a class="" href="/events/"><span data-de="Events" data-en="Events" data-ti="ተግባራት">Events</span></a></li><li class="nav-item"><a class="" href="/sermons/"><span data-de="Sermons" data-en="Sermons" data-ti="ስብከታት">Sermons</span></a></li><li class="nav-item"><a class="" href="/visit-us/"><span data-de="Visit" data-en="Visit" data-ti="ምብጻሕ">Visit</span></a></li><li class="nav-item"><a class="is-current is-active" href="/calendar/"><span data-de="Calendar" data-en="Calendar" data-ti="ቀንዲ መዝገብ">Calendar</span></a></li><li class="nav-item"><a class="" href="/contact/"><span data-de="Contact" data-en="Contact" data-ti="ርኸቡና">Contact</span></a></li><li class="nav-item nav-item--donate"><a class="btn btn-small nav-donate" href="/give/"><span data-de="Donate" data-en="Donate" data-ti="ምሃብ">Donate</span></a></li></ul></nav>
+<label aria-label="Language switch" class="lang-switch lang-switch--compact shared-lang">
+<select class="languageSelect" data-lang-select="true" id="languageSelect">
 <option value="en">EN</option>
 <option value="de">DE</option>
 <option value="ti">TI</option>
@@ -43,6 +34,7 @@
 </label>
 </div>
 </header>
+
 <main id="main">
 <section class="section calendar-premium">
 <div class="container">
