@@ -874,3 +874,32 @@ document.body.appendChild(overlay)
     applyLang(lang);
   });
 })();
+
+
+// ===== V41 ensure no globe + unified language pills =====
+(function(){
+  document.querySelectorAll('.v40-lang,.header-lang').forEach(el => el.remove());
+
+  function setActiveLang(lang){
+    document.querySelectorAll('.lang-switch-inline .lang-btn, .lang-btn').forEach(btn => {
+      const active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    let lang = 'en';
+    try { lang = localStorage.getItem('eec_lang') || 'en'; } catch(e){}
+    setActiveLang(lang);
+    document.querySelectorAll('.lang-switch-inline .lang-btn').forEach(btn => {
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const next = this.getAttribute('data-lang') || 'en';
+        try { localStorage.setItem('eec_lang', next); } catch(e){}
+        setActiveLang(next);
+        if (typeof location !== 'undefined') location.reload();
+      });
+    });
+  });
+})();
