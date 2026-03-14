@@ -140,3 +140,25 @@ document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click
     }
   });
 })();
+
+
+// ===== V44 homepage language bridge =====
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var sel = document.getElementById('languageSelect');
+    if(!sel) return;
+    try {
+      var saved = localStorage.getItem('eec_lang') || 'en';
+      sel.value = saved;
+    } catch(e){}
+    sel.addEventListener('change', function(){
+      try { localStorage.setItem('eec_lang', this.value); } catch(e){}
+      if (typeof applyTranslations === 'function') {
+        try { applyTranslations(this.value); } catch(e){}
+      }
+      if (window.__eecApplyAllLang) {
+        try { window.__eecApplyAllLang(this.value); } catch(e){}
+      }
+    });
+  });
+})();

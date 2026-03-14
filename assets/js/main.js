@@ -885,3 +885,64 @@ document.body.appendChild(overlay)
     });
   });
 })();
+
+
+// ===== V44 robust language sync =====
+(function(){
+  const LANG_KEY = 'eec_lang';
+  const supported = ['en','de','ti'];
+
+  function translateDataAttrs(lang){
+    document.querySelectorAll('[data-en],[data-de],[data-ti]').forEach(function(el){
+      // Only replace direct text when element does not contain child elements with translations
+      const hasNested = el.querySelector && el.querySelector('[data-en],[data-de],[data-ti]');
+      const next = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if (!next) return;
+      if (!hasNested) {
+        el.textContent = next;
+      }
+    });
+  }
+
+  function setSelects(lang){
+    document.querySelectorAll('#languageSelect, .languageSelect').forEach(function(sel){
+      sel.value = lang;
+    });
+  }
+
+  function setLangButtons(lang){
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      const active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  function applyAll(lang){
+    const safe = supported.includes(lang) ? lang : 'en';
+    try { localStorage.setItem(LANG_KEY, safe); } catch(e){}
+    document.documentElement.setAttribute('lang', safe);
+    document.documentElement.setAttribute('data-lang', safe);
+    setSelects(safe);
+    setLangButtons(safe);
+    translateDataAttrs(safe);
+
+    if (typeof renderVerses === 'function') {
+      try { renderVerses(); } catch(e){}
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    let current = 'en';
+    try { current = localStorage.getItem(LANG_KEY) || 'en'; } catch(e){}
+    applyAll(current);
+
+    document.querySelectorAll('#languageSelect, .languageSelect').forEach(function(sel){
+      sel.addEventListener('change', function(){
+        applyAll(this.value || 'en');
+      });
+    });
+  });
+
+  window.__eecApplyAllLang = applyAll;
+})();

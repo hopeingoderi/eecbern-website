@@ -3466,3 +3466,53 @@ header nav ul{ list-style:none; }
     padding:.18rem .42rem;
   }
 }
+
+
+/* ===== V44 subpage language fix + uniform menu colors ===== */
+header nav a.is-current,
+header nav a.is-active,
+header nav .nav-item.is-current > a,
+header nav .nav-item.is-active > a{
+  background:linear-gradient(135deg, rgba(213,163,86,.96), rgba(240,212,158,.96)) !important;
+  color:#101418 !important;
+  border-radius:999px;
+  padding:10px 14px;
+  box-shadow:0 10px 24px rgba(213,163,86,.22);
+}
+header nav a{
+  transition:all .18s ease;
+}
+header .lang-switch,
+header .lang-switch--compact{
+  display:inline-flex !important;
+  align-items:center;
+  min-height:42px;
+  padding:.24rem .55rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+header .lang-switch select,
+header .lang-switch--compact select,
+header .languageSelect{
+  background:transparent;
+  color:#fff;
+  border:0;
+  outline:0;
+  font-weight:800;
+  cursor:pointer;
+  min-width:56px;
+}
+header .lang-switch select option,
+header .lang-switch--compact select option,
+header .languageSelect option{ color:#111; }
+
+@media (max-width:980px){
+  header nav a.is-current,
+  header nav a.is-active{
+    width:100%;
+    justify-content:center;
+    min-height:58px;
+  }
+}
