@@ -12,7 +12,7 @@ const translations = {
     "pastor.eyebrow": "Pastor Message", "pastor.title": "A shepherd's heart for the church family in Bern.", "pastor.quote": "“Our desire is to lead people to Jesus, build a strong community of faith, and share God's love in Bern and beyond.”", "pastor.copy": "This section can be linked to the full pastor profile page without forcing the image or profile to fill the entire screen. It is designed as a respectful preview card with warm, dignified spacing.",
     "visit.eyebrow": "Visit Us", "visit.title": "Come as you are and worship with us.", "visit.copy": "Whether you are new to faith, returning to church, or simply searching for peace, you are warmly welcome at EEC Bern.", "visit.addr": "Eymattstrasse 2b, 3027 Bern", "visit.time": "Sunday Worship · 14:00 – 19:00", "visit.map": "Open Map",
     "prayer.eyebrow": "Prayer Request", "prayer.title": "Let us stand with you in faith.", "prayer.copy": "Prayer is not a last resort. It is a holy invitation to bring every need before God. This form is designed to feel gentle, safe and respectful.", "prayer.name": "Name", "prayer.email": "Email", "prayer.request": "Prayer request", "prayer.button": "Send Prayer Request",
-    "footer.tag": "A home of love, peace and hope", "footer.copy": "Built as Version 3: an ultra spiritual website concept with smoother flow, richer warmth, stronger responsiveness and a more peaceful digital presence.", "footer.links": "Quick Links", "footer.contact": "Contact", "hero.stat1Title": "Grace", "hero.stat1Copy": "A quiet place for healing hearts", "hero.stat2Title": "Truth", "hero.stat2Copy": "Biblical teaching with spiritual depth", "hero.stat3Title": "Hope", "hero.stat3Copy": "A loving community for all generations", "programme.eyebrow": "This Sunday", "programme.title": "Sunday programme", "programme.copy": "A calm, clear service flow for families, ministries, worship, and room planning.", "programme.calendar": "Open full calendar", "programme.preview": "Preview poster", "programme.headMinistry": "Ministry", "programme.headTime": "Time", "programme.headRoom": "Room", "pastor.preview": "Profile preview", "pastor.contact": "Contact pastor", "pastor.watch": "Watch message"
+    "footer.tag": "A home of love, peace and hope", "footer.copy": "A welcoming church home in Bern for worship, prayer, fellowship and spiritual growth.", "footer.links": "Quick Links", "footer.contact": "Contact", "hero.stat1Title": "Grace", "hero.stat1Copy": "A quiet place for healing hearts", "hero.stat2Title": "Truth", "hero.stat2Copy": "Biblical teaching with spiritual depth", "hero.stat3Title": "Hope", "hero.stat3Copy": "A loving community for all generations", "programme.eyebrow": "This Sunday", "programme.title": "Sunday programme", "programme.copy": "A calm, clear service flow for families, ministries, worship, and room planning.", "programme.calendar": "Open full calendar", "programme.preview": "Preview poster", "programme.headMinistry": "Ministry", "programme.headTime": "Time", "programme.headRoom": "Room", "pastor.preview": "Profile preview", "pastor.contact": "Contact pastor", "pastor.watch": "Watch message"
   },
   de: {
     "nav.home": "Start", "nav.about": "Über uns", "nav.ministries": "Dienste", "nav.sermons": "Predigten", "nav.events": "Events", "nav.visit": "Besuch", "nav.prayer": "Gebet", "nav.contact": "Kontakt", "nav.visitCta": "Besuch planen",
@@ -27,7 +27,7 @@ const translations = {
     "pastor.eyebrow": "Botschaft des Pastors", "pastor.title": "Ein Hirtenherz für die Gemeindefamilie in Bern.", "pastor.quote": "„Unser Wunsch ist es, Menschen zu Jesus zu führen, eine starke Glaubensgemeinschaft aufzubauen und Gottes Liebe in Bern und darüber hinaus zu teilen.“", "pastor.copy": "Dieser Bereich kann mit der vollständigen Pastorenseite verknüpft werden, ohne dass Bild oder Profil den ganzen Bildschirm füllen. Er ist bewusst als würdige Vorschau gestaltet.",
     "visit.eyebrow": "Besuche uns", "visit.title": "Komm wie du bist und bete mit uns an.", "visit.copy": "Ob du neu im Glauben bist, zur Gemeinde zurückkehrst oder einfach Frieden suchst — du bist bei EEC Bern herzlich willkommen.", "visit.addr": "Eymattstrasse 2b, 3027 Bern", "visit.time": "Sonntagsgottesdienst · 14:00 – 19:00", "visit.map": "Karte öffnen",
     "prayer.eyebrow": "Gebetsanliegen", "prayer.title": "Lass uns im Glauben mit dir stehen.", "prayer.copy": "Gebet ist nicht der letzte Ausweg. Es ist eine heilige Einladung, jede Not vor Gott zu bringen. Dieses Formular ist sanft, sicher und respektvoll gestaltet.", "prayer.name": "Name", "prayer.email": "E-Mail", "prayer.request": "Gebetsanliegen", "prayer.button": "Gebetsanliegen senden",
-    "footer.tag": "Ein Zuhause voller Liebe, Frieden und Hoffnung", "footer.copy": "Erstellt als Version 3: ein ultra-spirituelles Website-Konzept mit sanfterem Fluss, mehr Wärme, stärkerer Responsivität und friedlicher digitaler Präsenz.", "footer.links": "Schnellzugriff", "footer.contact": "Kontakt", "hero.stat1Title": "Gnade", "hero.stat1Copy": "Ein stiller Ort für heilende Herzen", "hero.stat2Title": "Wahrheit", "hero.stat2Copy": "Biblische Lehre mit geistlicher Tiefe", "hero.stat3Title": "Hoffnung", "hero.stat3Copy": "Eine liebevolle Gemeinschaft für alle Generationen", "programme.eyebrow": "Diesen Sonntag", "programme.title": "Sonntagsprogramm", "programme.copy": "Ein ruhiger, klarer Ablauf für Familien, Dienste, Anbetung und Raumplanung.", "programme.calendar": "Vollen Kalender öffnen", "programme.preview": "Poster ansehen", "programme.headMinistry": "Dienst", "programme.headTime": "Zeit", "programme.headRoom": "Raum", "pastor.preview": "Profil ansehen", "pastor.contact": "Pastor kontaktieren", "pastor.watch": "Botschaft ansehen"
+    "footer.tag": "Ein Zuhause voller Liebe, Frieden und Hoffnung", "footer.copy": "Ein einladendes Gemeindezuhause in Bern für Anbetung, Gebet, Gemeinschaft und geistliches Wachstum.", "footer.links": "Schnellzugriff", "footer.contact": "Kontakt", "hero.stat1Title": "Gnade", "hero.stat1Copy": "Ein stiller Ort für heilende Herzen", "hero.stat2Title": "Wahrheit", "hero.stat2Copy": "Biblische Lehre mit geistlicher Tiefe", "hero.stat3Title": "Hoffnung", "hero.stat3Copy": "Eine liebevolle Gemeinschaft für alle Generationen", "programme.eyebrow": "Diesen Sonntag", "programme.title": "Sonntagsprogramm", "programme.copy": "Ein ruhiger, klarer Ablauf für Familien, Dienste, Anbetung und Raumplanung.", "programme.calendar": "Vollen Kalender öffnen", "programme.preview": "Poster ansehen", "programme.headMinistry": "Dienst", "programme.headTime": "Zeit", "programme.headRoom": "Raum", "pastor.preview": "Profil ansehen", "pastor.contact": "Pastor kontaktieren", "pastor.watch": "Botschaft ansehen"
   },
   ti: {
     "nav.home": "ቤት", "nav.about": "ብዛዕባና", "nav.ministries": "ኣገልግሎት", "nav.sermons": "ስብከት", "nav.events": "መደባት", "nav.visit": "ምብጻሕ", "nav.prayer": "ጸሎት", "nav.contact": "ርክብ", "nav.visitCta": "ምብጻሕ መደብ",
@@ -42,28 +42,25 @@ const translations = {
     "pastor.eyebrow": "መልእኽቲ ፓስተር", "pastor.title": "ንስድራ ቤተ ክርስቲያን ኣብ በርን ዝተዋህበ ልቢ መራሒ።", "pastor.quote": "“ሰባት ናብ የሱስ ክንመርሕ፣ ጽኑዕ ሕብረት እምነት ክንሃንጽን ፍቕሪ ኣምላኽ ኣብ በርንን ካልእን ክንካፈልን ምኞትና እዩ።”", "pastor.copy": "እዚ ክፍሊ ምስ ምሉእ ገጽ ፓስተር ክገናነብ ይኽእል እዩ፣ ስእሊ ወይ ፕሮፋይል ንኹሉ ስክሪን ከይምልእ። ብኽብርን ሙቐትን ዝተሰርሐ ቅድመ ርእይቶ እዩ።",
     "visit.eyebrow": "ምብጻሕ", "visit.title": "ከም ዘለኻ መጺእካ ምሳና ኣምልኽ።", "visit.copy": "ኣብ እምነት ሓድሽ ትኸውን፣ ወይ ወደ ቤተ ክርስቲያን ትምለስ፣ ወይ ሰላም ትደሊ ትሃልው — ኣብ EEC Bern እንቋዕ ብደሓን መጻእካ።", "visit.addr": "Eymattstrasse 2b, 3027 Bern", "visit.time": "ናይ ሰንበት ኣምልኾ · 14:00 – 19:00", "visit.map": "ካርታ ክፈት",
     "prayer.eyebrow": "ጸሎት ሕቶ", "prayer.title": "ብእምነት ምሳኻ ክንቀውም ንደሊ።", "prayer.copy": "ጸሎት ዝመጨረሻ መፍትሒ ኣይኮነን። ኩሉ ድሌት ኣብ ቅድሚ ኣምላኽ ንምምጻእ ቅዱስ ጥሪ እዩ። እዚ ፎርም ብልሕቀትን ብደሓንነትን ብክብርን ዝተሰርሐ እዩ።", "prayer.name": "ስም", "prayer.email": "ኢመይል", "prayer.request": "ጸሎት ሕቶ", "prayer.button": "ጸሎት ሕቶ ስደድ",
-    "footer.tag": "ቤት ፍቕሪ፣ ሰላምን ተስፋን", "footer.copy": "እዚ Version 3 እዩ፣ ብዝለስለሰ ንቕሓት፣ ብዝበለጸ ሙቐት፣ ብዝሓየለ ሞባይል ምስራሕን ብዝሰላማዊ ዲጂታል ህላወን ዝተሃንጸ።", "footer.links": "ፈጣን መራኸቢ", "footer.contact": "ርክብ"
+    "footer.tag": "ቤት ፍቕሪ፣ ሰላምን ተስፋን", "footer.copy": "ኣብ በርን ንኣምልኾ፣ ጸሎት፣ ሕብረትን መንፈሳዊ ዕብየትን ዝኸውን ኣብ እግዚኣብሄር ዝተሞልአ ቤት።", "footer.links": "ፈጣን መራኸቢ", "footer.contact": "ርክብ"
   }
 };
 
 const verseSets = {
   en: [
     ["Come to me, all you who are weary and burdened, and I will give you rest.", "Matthew 11:28"],
-    ["The Lord is close to the brokenhearted and saves those who are crushed in spirit.", "Psalm 34:18"],
-    ["Fear not, for I am with you; be not dismayed, for I am your God.", "Isaiah 41:10"],
-    ["Let all that you do be done in love.", "1 Corinthians 16:14"]
+    ["Praise be to the God and Father of our Lord Jesus Christ! In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ from the dead.", "1 Peter 1:3"],
+    ["Fear not, for I am with you; be not dismayed, for I am your God.", "Isaiah 41:10"]
   ],
   de: [
-    ["Kommt her zu mir, alle ihr Mühseligen und Beladenen; ich will euch erquicken.", "Matthäus 11:28"],
-    ["Der Herr ist nahe denen, die zerbrochenen Herzens sind.", "Psalm 34:18"],
-    ["Fürchte dich nicht, denn ich bin mit dir.", "Jesaja 41:10"],
-    ["Alles bei euch geschehe in Liebe.", "1. Korinther 16:14"]
+    ["Kommt her zu mir, alle ihr Müden und Beladenen; ich will euch erquicken.", "Matthäus 11,28"],
+    ["Gepriesen sei der Gott und Vater unseres Herrn Jesus Christus, der uns nach seiner großen Barmherzigkeit wiedergeboren hat zu einer lebendigen Hoffnung durch die Auferstehung Jesu Christi.", "1 Petrus 1,3"],
+    ["Fürchte dich nicht, denn ich bin mit dir; sei nicht ängstlich, denn ich bin dein Gott.", "Jesaja 41,10"]
   ],
   ti: [
-    ["ኩላትኩም ዝደኸምኩምን ጾር ዝጸንዐልኩምን፣ ናባይ ንዑ፣ ኣነ ከኣ ከዕርፈኩም እየ።", "ማቴዎስ 11:28"],
-    ["እግዚኣብሄር ንተሰባቢሩ ልቢ ቀረባ እዩ።", "መዝሙር 34:18"],
-    ["ኣይትፍራህ፣ ኣነ ምሳኻ እየ።", "ኢሳይያስ 41:10"],
-    ["ኩሉ ብፍቕሪ ይኹን።", "1 ቈረንቶስ 16:14"]
+    ["ኣቱም ኵልኹም እትጽዕሩን ጾር ዝኸበደኩምን፡ ኣነ ኸዕርፈኩም ናባይ ንዑ።", "ማቴዎስ 11:28"],
+    ["እቲ ብናይ የሱስ ክርስቶስ ትንሳኤ ካብ ምውታት ብዝሒ ምሕረት ንህያው ተስፋ ብሓድሽ ዝወለደና ኣምላኽ፡ ኣቦ ጐይታና የሱስ ክርስቶስ ይባረኽ።", "1ይ ጴጥሮስ 1:3"],
+    ["ኣይትፍራሕ፤ ኣነ ምሳኻ እየ፤ ኣይትጨነቕ፤ ኣነ ኣምላኽካ እየ።", "ኢሳይያስ 41:10"]
   ]
 };
 
@@ -275,3 +272,92 @@ document.addEventListener('DOMContentLoaded', function(){
     el.classList.add('in-view');
   });
 });
+
+
+/* ===== V59 lightbox trigger buttons ===== */
+(function(){
+  function initLightboxButtonsV59(){
+    var box = document.querySelector('[data-lightbox]');
+    if(!box) return;
+    var img = box.querySelector('img');
+    var caption = box.querySelector('[data-lightbox-caption]');
+    document.querySelectorAll('[data-lightbox-open]').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var src = btn.getAttribute('data-lightbox-open');
+        var title = btn.getAttribute('data-lightbox-title') || '';
+        if(img) img.src = src;
+        if(img) img.alt = title;
+        if(caption) caption.textContent = title;
+        box.classList.add('open');
+        document.body.classList.add('modal-open');
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initLightboxButtonsV59);
+  } else {
+    initLightboxButtonsV59();
+  }
+})();
+
+
+/* ===== V60 robust lightbox close ===== */
+(function(){
+  function bindRobustLightboxV60(){
+    var box = document.querySelector('[data-lightbox]');
+    if(!box) return;
+    var img = box.querySelector('.lightbox__stage img');
+    var cap = box.querySelector('[data-lightbox-caption]');
+    var closeBtn = box.querySelector('[data-lightbox-close]');
+    var prevBtn = box.querySelector('[data-lightbox-prev]');
+    var nextBtn = box.querySelector('[data-lightbox-next]');
+    var zoomBtn = box.querySelector('[data-lightbox-zoom]');
+    var stage = box.querySelector('.lightbox__stage');
+    var zoomed = false;
+
+    function closeBox(){
+      box.classList.remove('open');
+      document.body.classList.remove('modal-open');
+      zoomed = false;
+      if(img) img.classList.remove('is-zoomed');
+    }
+
+    document.querySelectorAll('[data-lightbox-open]').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var src = btn.getAttribute('data-lightbox-open');
+        var title = btn.getAttribute('data-lightbox-title') || '';
+        if(img){ img.src = src; img.alt = title; img.classList.remove('is-zoomed'); }
+        if(cap) cap.textContent = title;
+        box.classList.add('open');
+        document.body.classList.add('modal-open');
+      });
+    });
+
+    if(closeBtn) closeBtn.addEventListener('click', closeBox);
+    if(box) box.addEventListener('click', function(e){
+      if(e.target === box) closeBox();
+    });
+    if(stage) stage.addEventListener('click', function(e){
+      if(e.target === stage) closeBox();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeBox();
+    });
+    if(zoomBtn) zoomBtn.addEventListener('click', function(){
+      zoomed = !zoomed;
+      if(img) img.classList.toggle('is-zoomed', zoomed);
+    });
+    if(prevBtn) prevBtn.style.display = 'none';
+    if(nextBtn) nextBtn.style.display = 'none';
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bindRobustLightboxV60);
+  } else {
+    bindRobustLightboxV60();
+  }
+})();
+
+

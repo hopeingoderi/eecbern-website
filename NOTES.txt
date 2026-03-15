@@ -44,3 +44,10 @@ V56 Final Church Version
 - Calendar page shows a visible Google Calendar setup card when no embed URL is configured
 - German menu translations preserved
 - Faster local testing because programme rows are now static in HTML
+
+
+V64 final updates
+- Sunday programme fixed to Date | Ministry | Time | Room
+- Room now stays in the same row and no longer breaks to a new line
+- Homepage keeps the Living Hope card
+- Timetable board styling refined for a more beautiful premium appearance
